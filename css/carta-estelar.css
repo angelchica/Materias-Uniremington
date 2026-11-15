@@ -1,0 +1,362 @@
+/* ===================================================
+   CARTA ESTELAR — BASE COMPARTIDA
+   Tokens, fondo, encabezado, pie y animaciones comunes.
+   Lo usan la portada (portada.css) y Líneas de Énfasis 3 (estilos.css).
+   Fuentes: Fraunces + IBM Plex Mono, cargadas desde el <head> de cada página.
+=================================================== */
+
+:root {
+    --tinta: #060a1a;
+    --oro: #e6c17a;
+    --oro-tenue: rgba(230, 193, 122, 0.22);
+    --marfil: #f1ead9;
+    --niebla: #8f95b5;
+    --linea: rgba(241, 234, 217, 0.1);
+    --curva: cubic-bezier(0.22, 1, 0.36, 1);
+    --fuente-titulo: 'Fraunces', Georgia, serif;
+    --fuente-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-titulo);
+    background: radial-gradient(ellipse 120% 80% at 50% 0%, #101a44 0%, var(--tinta) 60%) fixed;
+    background-color: var(--tinta);
+    color: var(--marfil);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: opacity 0.35s ease;
+}
+
+/* Transición al salir hacia otra página (js/carta-estelar.js) */
+body.saliendo {
+    opacity: 0;
+}
+
+.eyebrow,
+.brand-title,
+.coordenadas,
+.site-footer,
+.dibujo .nombre,
+code {
+    font-family: var(--fuente-mono);
+}
+
+a:focus-visible {
+    outline: 1px solid var(--oro);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: var(--oro);
+    color: var(--tinta);
+}
+
+/* ==================================
+   FONDO: RETÍCULA, CONSTELACIONES Y ASTROLABIO
+================================== */
+
+.reticula {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image:
+        linear-gradient(var(--linea) 1px, transparent 1px),
+        linear-gradient(90deg, var(--linea) 1px, transparent 1px);
+    background-size: 120px 120px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%);
+}
+
+#constelacion {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.astrolabio {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(900px, 130vw);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.astrolabio svg {
+    width: 100%;
+    height: 100%;
+    animation: rotar 240s linear infinite;
+}
+
+.astrolabio .contrario {
+    position: absolute;
+    inset: 0;
+    animation-direction: reverse;
+    animation-duration: 180s;
+}
+
+@keyframes rotar {
+    to { transform: rotate(360deg); }
+}
+
+/* Entrada escalonada: usar style="--d: .3s" para el retraso */
+.revelar {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: aparecer 1.4s var(--curva) forwards;
+    animation-delay: var(--d, 0s);
+}
+
+@keyframes aparecer {
+    to { opacity: 1; transform: none; }
+}
+
+/* ==================================
+   ENCABEZADO
+================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--linea);
+    background: rgba(6, 10, 26, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-row {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-mark {
+    position: relative;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--oro);
+    color: var(--oro);
+    font-style: italic;
+    font-size: 1rem;
+    transition: background 0.4s, color 0.4s;
+}
+
+.brand-mark::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px dashed var(--oro-tenue);
+    animation: rotar 30s linear infinite;
+}
+
+.brand-row:hover .brand-mark {
+    background: var(--oro);
+    color: var(--tinta);
+}
+
+.brand-title {
+    font-size: 0.66rem;
+    letter-spacing: 0.32em;
+    color: var(--niebla);
+}
+
+.brand-subtitle-main {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.coordenadas {
+    grid-column: 3;
+    justify-self: end;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--niebla);
+}
+
+/* ==================================
+   CONTENIDO Y ELEMENTOS COMUNES
+================================== */
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 0 28px 40px;
+    flex: 1;
+    /* El astrolabio es más ancho que la pantalla en móvil: se recorta sin crear scroll lateral */
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+.eyebrow::before,
+.eyebrow::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: var(--oro-tenue);
+}
+
+/* Constelaciones dibujadas en SVG (pathLength="400" en cada trazo) */
+.dibujo {
+    display: grid;
+    place-items: center;
+}
+
+.dibujo svg {
+    width: min(100%, 300px);
+    overflow: visible;
+}
+
+.dibujo .trazo {
+    fill: none;
+    stroke: var(--oro);
+    stroke-width: 0.7;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: stroke-dashoffset 1.6s var(--curva);
+}
+
+.dibujo .astro {
+    fill: var(--marfil);
+    transition: fill 0.5s;
+}
+
+.dibujo .halo {
+    fill: var(--oro);
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.dibujo .nombre {
+    font-size: 6px;
+    letter-spacing: 0.2em;
+    fill: var(--niebla);
+}
+
+/* ==================================
+   PIE DE PÁGINA
+================================== */
+
+.site-footer {
+    margin-top: 40px;
+    padding: 32px 20px;
+    border-top: 1px solid var(--linea);
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+/* ==================================
+   RESPONSIVE
+================================== */
+
+@media (max-width: 900px) {
+    .header-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .brand-row {
+        grid-column: 1;
+    }
+
+    .coordenadas {
+        display: none;
+    }
+
+    /* En pantallas táctiles no hay hover: las constelaciones se muestran dibujadas */
+    .dibujo .trazo {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .header-inner {
+        padding: 14px 16px;
+    }
+
+    .brand-subtitle-main {
+        font-size: 0.95rem;
+    }
+
+    main {
+        padding: 0 16px 30px;
+    }
+
+    .eyebrow {
+        letter-spacing: 0.22em;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+        width: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .revelar {
+        opacity: 1;
+        transform: none;
+    }
+
+    .dibujo .trazo {
+        stroke-dashoffset: 0;
+    }
+}

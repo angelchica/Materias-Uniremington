@@ -4,10 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Casos Prácticos | Líneas de Énfasis 3 — Portal de Innovación y Desarrollo</title>
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../css/carta-estelar.css">
     <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/carta-estelar.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
         <div class="header-inner">
             <div class="header-left">
                 <a href="index.html" class="home-btn">← Volver al inicio</a>
@@ -17,19 +27,21 @@
                 <div class="brand-mark">L3</div>
                 <div class="brand-text">
                     <div class="brand-title">LÍNEAS DE ÉNFASIS 3</div>
-                    <div class="brand-subtitle-main">PORTAL DE INNOVACIÓN Y DESARROLLO TECNOLÓGICO</div>
+                    <div class="brand-subtitle-main">Innovación y desarrollo tecnológico</div>
                 </div>
             </a>
+
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
         </div>
 
         <div class="nav-wrap">
-            <nav class="navbar">
-                <a href="../index.html">🎓 Todas las Materias</a>
-                <a href="index.html">🏠 Inicio</a>
-                <a href="temas.html">📚 Temas</a>
-                <a href="conceptos.html">💡 Conceptos</a>
-                <a href="casos-practicos.html" aria-current="page">🧩 Casos prácticos</a>
-                <a href="proyecto.html">🎥 Proyecto</a>
+            <nav class="navbar" aria-label="Secciones de Líneas de Énfasis 3">
+                <a href="../index.html">Todas las materias</a>
+                <a href="index.html">Inicio</a>
+                <a href="temas.html">Temas</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="casos-practicos.html" aria-current="page">Casos prácticos</a>
+                <a href="proyecto.html">Proyecto</a>
             </nav>
         </div>
     </header>
@@ -37,31 +49,40 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-top-bar">
-                    <span class="eyebrow">🧩 Aplicación Real</span>
+                <span class="eyebrow revelar" style="--d: .15s">Aplicación real</span>
+                <h1 class="revelar" style="--d: .3s">Casos <span>prácticos</span></h1>
+                <p class="revelar" style="--d: .45s">Ejemplos y escenarios donde se aplican los conocimientos adquiridos en situaciones reales.</p>
+                <div class="hero-actions revelar" style="--d: .6s">
+                    <a class="button" href="index.html">← Regresar al inicio de la materia</a>
+                    <a class="button" href="../index.html">Ir a selección de materias</a>
                 </div>
-                <h1>Casos <span>prácticos</span></h1>
-                <p>Ejemplos y escenarios donde se aplican los conocimientos adquiridos en situaciones reales.</p>
-                <div class="hero-actions">
-                    <a class="button button-secondary" href="index.html">← Regresar al inicio de la materia</a>
-                    <a class="button button-secondary" href="../index.html">🎓 Ir a selección de materias</a>
-                </div>
+            </div>
+            <div class="dibujo revelar" style="--d: .5s" aria-hidden="true">
+                <svg viewBox="0 0 200 150">
+                    <path class="trazo" pathLength="400" d="M15,50 L55,105 L95,60 L135,110 L185,45" />
+                    <circle class="halo" cx="15" cy="50" r="7" /><circle class="astro" cx="15" cy="50" r="2.6" style="--i: 0" />
+                    <circle class="halo" cx="55" cy="105" r="7" /><circle class="astro" cx="55" cy="105" r="1.7" style="--i: 1" />
+                    <circle class="halo" cx="95" cy="60" r="7" /><circle class="astro" cx="95" cy="60" r="1.7" style="--i: 2" />
+                    <circle class="halo" cx="135" cy="110" r="7" /><circle class="astro" cx="135" cy="110" r="2.6" style="--i: 3" />
+                    <circle class="halo" cx="185" cy="45" r="7" /><circle class="astro" cx="185" cy="45" r="1.7" style="--i: 4" />
+                    <text class="nombre" x="10" y="148">CASOS · PRACTICOS</text>
+                </svg>
             </div>
         </section>
 
-        <div class="card-grid">
+        <div class="card-grid revelar" style="--d: .7s">
             <div class="card">
-                <div class="card-icon">🧩</div>
+                <span class="card-icon">I</span>
                 <h3>Caso 1</h3>
                 <p>Análisis de escenario práctico, planteamiento del problema y solución propuesta.</p>
             </div>
             <div class="card">
-                <div class="card-icon">📊</div>
+                <span class="card-icon">II</span>
                 <h3>Caso 2</h3>
                 <p>Implementación de estrategias tecnológicas para optimizar procesos y resultados.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🛠️</div>
+                <span class="card-icon">III</span>
                 <h3>Caso 3</h3>
                 <p>Evaluación de resultados, métricas de mejora y lecciones aprendidas del caso.</p>
             </div>
@@ -69,7 +90,7 @@
     </main>
 
     <footer class="site-footer">
-        Portal académico editable · Líneas de Énfasis 3 — Materias vistas con Mahecha
+        Portal académico · Líneas de Énfasis 3 — Materias vistas con Mahecha
     </footer>
 </body>
 </html>

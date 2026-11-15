@@ -4,71 +4,101 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Materias vistas con Mahecha — Portal Académico</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="css/carta-estelar.css">
+    <link rel="stylesheet" href="css/portada.css">
+    <script src="js/carta-estelar.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
         <div class="header-inner">
             <a href="index.html" class="brand-row">
                 <div class="brand-mark">MM</div>
                 <div class="brand-text">
                     <div class="brand-title">PORTAL ACADÉMICO</div>
-                    <div class="brand-subtitle-main">MATERIAS VISTAS CON MAHECHA</div>
+                    <div class="brand-subtitle-main">Materias vistas con Mahecha</div>
                 </div>
             </a>
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
         </div>
     </header>
 
     <main>
         <div class="portal-wrapper">
-            <!-- Recuadro Superior del Título (según boceto) -->
+            <!-- Recuadro superior del título (según boceto) -->
             <section class="portal-title-box">
-                <span class="eyebrow">⚡ Portal de Asignaturas</span>
-                <h1>Materias vistas con <span>Mahecha</span></h1>
-                <p>Selecciona una asignatura para acceder a su conjunto completo de páginas (Inicio, Temas, Conceptos, Casos prácticos y Proyecto).</p>
+                <div class="astrolabio" aria-hidden="true" data-astrolabio></div>
+                <span class="eyebrow revelar" style="--d: .2s">Portal de asignaturas</span>
+                <h1 class="revelar" style="--d: .35s">Materias vistas<br>con <span>Mahecha</span></h1>
+                <p class="revelar" style="--d: .5s">Selecciona una asignatura para acceder a su conjunto completo de páginas (Inicio, Temas, Conceptos, Casos prácticos y Proyecto).</p>
             </section>
 
-            <!-- Dos Botones / Tarjetas Grandes (según boceto) -->
-            <section class="portal-subjects-grid">
-                <!-- Botón Izquierdo: Líneas de Énfasis 3 -->
-                <a href="linea-enfasis-3/index.html" class="subject-card-btn">
-                    <div>
-                        <div class="subject-card-top">
-                            <div class="card-icon" style="margin-bottom: 0;">L3</div>
-                            <span class="subject-badge">Asignatura 01</span>
-                        </div>
-                        <div class="subject-card-body">
-                            <h2>Líneas de Énfasis 3</h2>
-                            <p>Portal de innovación y desarrollo tecnológico. Explora unidades temáticas, conceptos fundamentales, casos prácticos y proyecto final.</p>
-                        </div>
+            <!-- Dos botones / tarjetas grandes (según boceto) -->
+            <section class="portal-subjects-grid revelar" style="--d: .65s">
+                <!-- Botón izquierdo: Líneas de Énfasis 3 -->
+                <a href="linea-enfasis-3/index.html" class="subject-card-btn card-enfasis">
+                    <div class="subject-card-top">
+                        <span class="card-icon">L3</span>
+                        <span class="subject-badge">Placa I · Asignatura 01</span>
                     </div>
-                    <div class="subject-card-footer">
-                        Ingresar a Líneas de Énfasis 3 →
+                    <div class="dibujo" aria-hidden="true">
+                        <svg viewBox="0 0 200 150">
+                            <polyline class="trazo" pathLength="400" points="20,110 55,80 90,95 120,45 160,30 185,60 150,100 90,95" />
+                            <circle class="halo" cx="20" cy="110" r="7" /><circle class="astro" cx="20" cy="110" r="2.6" />
+                            <circle class="halo" cx="55" cy="80" r="7" /><circle class="astro" cx="55" cy="80" r="1.7" />
+                            <circle class="halo" cx="90" cy="95" r="7" /><circle class="astro" cx="90" cy="95" r="1.7" />
+                            <circle class="halo" cx="120" cy="45" r="7" /><circle class="astro" cx="120" cy="45" r="2.6" />
+                            <circle class="halo" cx="160" cy="30" r="7" /><circle class="astro" cx="160" cy="30" r="1.7" />
+                            <circle class="halo" cx="185" cy="60" r="7" /><circle class="astro" cx="185" cy="60" r="1.7" />
+                            <circle class="halo" cx="150" cy="100" r="7" /><circle class="astro" cx="150" cy="100" r="2.6" />
+                            <text class="nombre" x="20" y="140">LINEA · ENFASIS · III</text>
+                        </svg>
                     </div>
+                    <div class="subject-card-body">
+                        <h2>Líneas de Énfasis 3</h2>
+                        <p>Portal de innovación y desarrollo tecnológico. Explora unidades temáticas, conceptos fundamentales, casos prácticos y proyecto final.</p>
+                    </div>
+                    <div class="subject-card-footer">Ingresar a Líneas de Énfasis 3 <b aria-hidden="true">→</b></div>
                 </a>
 
-                <!-- Botón Derecho: Auditoría de Sistemas -->
-                <a href="auditoria-sistemas/index.html" class="subject-card-btn">
-                    <div>
-                        <div class="subject-card-top">
-                            <div class="card-icon" style="margin-bottom: 0;">🛡️</div>
-                            <span class="subject-badge">Asignatura 02</span>
-                        </div>
-                        <div class="subject-card-body">
-                            <h2>Auditoría de Sistemas</h2>
-                            <p>Portal de control, seguridad y evaluación de sistemas de información. Accede a sus temas, conceptos clave, casos de auditoría y proyecto.</p>
-                        </div>
+                <!-- Botón derecho: Auditoría de Sistemas -->
+                <a href="auditoria-sistemas/index.html" class="subject-card-btn card-auditoria">
+                    <div class="subject-card-top">
+                        <span class="card-icon">AS</span>
+                        <span class="subject-badge">Placa II · Asignatura 02</span>
                     </div>
-                    <div class="subject-card-footer">
-                        Ingresar a Auditoría de Sistemas →
+                    <div class="dibujo" aria-hidden="true">
+                        <svg viewBox="0 0 200 150">
+                            <polyline class="trazo" pathLength="400" points="100,15 160,35 155,90 100,130 45,90 40,35 100,15 100,75 155,90" />
+                            <circle class="halo" cx="100" cy="15" r="7" /><circle class="astro" cx="100" cy="15" r="2.6" />
+                            <circle class="halo" cx="160" cy="35" r="7" /><circle class="astro" cx="160" cy="35" r="1.7" />
+                            <circle class="halo" cx="155" cy="90" r="7" /><circle class="astro" cx="155" cy="90" r="1.7" />
+                            <circle class="halo" cx="100" cy="130" r="7" /><circle class="astro" cx="100" cy="130" r="2.6" />
+                            <circle class="halo" cx="45" cy="90" r="7" /><circle class="astro" cx="45" cy="90" r="1.7" />
+                            <circle class="halo" cx="40" cy="35" r="7" /><circle class="astro" cx="40" cy="35" r="1.7" />
+                            <circle class="halo" cx="100" cy="75" r="7" /><circle class="astro" cx="100" cy="75" r="2.6" />
+                            <text class="nombre" x="40" y="148">AUDITORIA · SISTEMAS</text>
+                        </svg>
                     </div>
+                    <div class="subject-card-body">
+                        <h2>Auditoría de Sistemas</h2>
+                        <p>Portal de control, seguridad y evaluación de sistemas de información. Accede a sus temas, conceptos clave, casos de auditoría y proyecto.</p>
+                    </div>
+                    <div class="subject-card-footer">Ingresar a Auditoría de Sistemas <b aria-hidden="true">→</b></div>
                 </a>
             </section>
         </div>
     </main>
 
     <footer class="site-footer">
-        Portal académico editable · Materias vistas con Mahecha — Líneas de Énfasis 3 &amp; Auditoría de Sistemas
+        Portal académico · Materias vistas con Mahecha — Líneas de Énfasis 3 &amp; Auditoría de Sistemas
     </footer>
 </body>
 </html>

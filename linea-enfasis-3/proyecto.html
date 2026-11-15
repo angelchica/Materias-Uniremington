@@ -4,10 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyecto | Líneas de Énfasis 3 — Portal de Innovación y Desarrollo</title>
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../css/carta-estelar.css">
     <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/carta-estelar.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
         <div class="header-inner">
             <div class="header-left">
                 <a href="index.html" class="home-btn">← Volver al inicio</a>
@@ -17,19 +27,21 @@
                 <div class="brand-mark">L3</div>
                 <div class="brand-text">
                     <div class="brand-title">LÍNEAS DE ÉNFASIS 3</div>
-                    <div class="brand-subtitle-main">PORTAL DE INNOVACIÓN Y DESARROLLO TECNOLÓGICO</div>
+                    <div class="brand-subtitle-main">Innovación y desarrollo tecnológico</div>
                 </div>
             </a>
+
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
         </div>
 
         <div class="nav-wrap">
-            <nav class="navbar">
-                <a href="../index.html">🎓 Todas las Materias</a>
-                <a href="index.html">🏠 Inicio</a>
-                <a href="temas.html">📚 Temas</a>
-                <a href="conceptos.html">💡 Conceptos</a>
-                <a href="casos-practicos.html">🧩 Casos prácticos</a>
-                <a href="proyecto.html" aria-current="page">🎥 Proyecto</a>
+            <nav class="navbar" aria-label="Secciones de Líneas de Énfasis 3">
+                <a href="../index.html">Todas las materias</a>
+                <a href="index.html">Inicio</a>
+                <a href="temas.html">Temas</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="casos-practicos.html">Casos prácticos</a>
+                <a href="proyecto.html" aria-current="page">Proyecto</a>
             </nav>
         </div>
     </header>
@@ -37,31 +49,40 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-top-bar">
-                    <span class="eyebrow">🎥 Demostración</span>
+                <span class="eyebrow revelar" style="--d: .15s">Demostración</span>
+                <h1 class="revelar" style="--d: .3s">Proyecto — <span>Video tutorial</span></h1>
+                <p class="revelar" style="--d: .45s">Presentación audiovisual y documentación del proyecto desarrollado en Líneas de Énfasis 3.</p>
+                <div class="hero-actions revelar" style="--d: .6s">
+                    <a class="button" href="index.html">← Regresar al inicio de la materia</a>
+                    <a class="button" href="../index.html">Ir a selección de materias</a>
                 </div>
-                <h1>Proyecto — <span>Video Tutorial</span></h1>
-                <p>Presentación audiovisual y documentación del proyecto desarrollado en Líneas de Énfasis 3.</p>
-                <div class="hero-actions">
-                    <a class="button button-secondary" href="index.html">← Regresar al inicio de la materia</a>
-                    <a class="button button-secondary" href="../index.html">🎓 Ir a selección de materias</a>
-                </div>
+            </div>
+            <div class="dibujo revelar" style="--d: .5s" aria-hidden="true">
+                <svg viewBox="0 0 200 150">
+                    <path class="trazo" pathLength="400" d="M100,10 L100,135 M30,55 L100,65 L170,50 M60,110 L100,100" />
+                    <circle class="halo" cx="100" cy="10" r="7" /><circle class="astro" cx="100" cy="10" r="2.6" style="--i: 0" />
+                    <circle class="halo" cx="100" cy="65" r="7" /><circle class="astro" cx="100" cy="65" r="1.7" style="--i: 1" />
+                    <circle class="halo" cx="100" cy="135" r="7" /><circle class="astro" cx="100" cy="135" r="1.7" style="--i: 2" />
+                    <circle class="halo" cx="30" cy="55" r="7" /><circle class="astro" cx="30" cy="55" r="2.6" style="--i: 3" />
+                    <circle class="halo" cx="170" cy="50" r="7" /><circle class="astro" cx="170" cy="50" r="1.7" style="--i: 4" />
+                    <circle class="halo" cx="60" cy="110" r="7" /><circle class="astro" cx="60" cy="110" r="1.7" style="--i: 5" />
+                    <circle class="halo" cx="100" cy="100" r="7" /><circle class="astro" cx="100" cy="100" r="2.6" style="--i: 6" />
+                    <text class="nombre" x="10" y="148">PROYECTO · FINAL</text>
+                </svg>
             </div>
         </section>
 
-        <div class="content-panel">
-            <h3>Resumen del Proyecto</h3>
-            <p style="margin-top: 10px; color: var(--texto-suave);">
-                Espacio reservado para describir tu proyecto final, los objetivos alcanzados y colocar el enlace o reproductor de tu video tutorial.
-            </p>
+        <section class="content-panel revelar" style="--d: .7s">
+            <h3>Resumen del proyecto</h3>
+            <p>Espacio reservado para describir tu proyecto final, los objetivos alcanzados y colocar el enlace o reproductor de tu video tutorial.</p>
             <div class="note">
-                💡 <strong>Nota:</strong> Puedes insertar aquí un video local con la etiqueta <code>&lt;video&gt;</code> o un enlace de YouTube / Drive.
+                <strong>Nota:</strong> Puedes insertar aquí un video local con la etiqueta <code>&lt;video&gt;</code> o un enlace de YouTube / Drive.
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="site-footer">
-        Portal académico editable · Líneas de Énfasis 3 — Materias vistas con Mahecha
+        Portal académico · Líneas de Énfasis 3 — Materias vistas con Mahecha
     </footer>
 </body>
 </html>
