@@ -1,0 +1,671 @@
+/* ===================================================
+   AUDITORÍA — CONTENIDO DE LA MATERIA
+   Resúmenes de clases y talleres con componentes
+   interactivos (js/auditoria.js). Parte 1: estructura,
+   cifras, ruta, acordeones, pestañas y pasos.
+   La parte 2 (tarjetas, casos y cuestionario) está en
+   auditoria-casos.css.
+=================================================== */
+
+.seccion-num,
+.doc-tipo,
+.pestana,
+.cifra span,
+.ruta-docs,
+.paso-num,
+.matriz dt,
+.cita figcaption,
+.nota-clave strong {
+    font-family: var(--fuente-mono);
+}
+
+/* Aparición al hacer scroll (solo con JS activo) */
+html.con-js .aparecer {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 1s var(--curva), transform 1s var(--curva);
+    transition-delay: var(--d, 0s);
+}
+
+html.con-js .aparecer.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Secciones ---------- */
+
+.seccion {
+    padding: 110px 0 20px;
+    scroll-margin-top: 140px;
+}
+
+.seccion-cabeza {
+    max-width: 760px;
+    margin-bottom: 48px;
+}
+
+.seccion-num {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+.seccion-cabeza h2 {
+    font-weight: 300;
+    font-size: clamp(2rem, 4.4vw, 3.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+}
+
+.seccion-cabeza h2 em,
+.subtitulo em {
+    color: var(--oro);
+}
+
+.seccion-cabeza p {
+    margin-top: 18px;
+    color: var(--niebla);
+    font-size: 1.05rem;
+    font-weight: 300;
+}
+
+.subtitulo {
+    margin: 70px 0 26px;
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+}
+
+/* ---------- Cifras animadas ---------- */
+
+.cifras {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 70px;
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+}
+
+.cifra {
+    padding: 34px 26px;
+    border-right: 1px solid var(--linea);
+}
+
+.cifra:last-child {
+    border-right: 0;
+}
+
+.cifra b {
+    display: block;
+    font-size: clamp(2.8rem, 6vw, 4.4rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1;
+    color: var(--oro);
+    font-variant-numeric: tabular-nums;
+}
+
+.cifra span {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+/* ---------- Objetivos numerados ---------- */
+
+.objetivos {
+    list-style: none;
+    counter-reset: objetivo;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--linea);
+    border: 1px solid var(--linea);
+}
+
+.objetivos li {
+    counter-increment: objetivo;
+    padding: 34px 28px;
+    background: var(--tinta);
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+.objetivos li::before {
+    content: "0" counter(objetivo);
+    display: block;
+    margin-bottom: 18px;
+    font-family: var(--fuente-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--oro);
+}
+
+.objetivos b {
+    color: var(--marfil);
+    font-weight: 500;
+}
+
+/* ---------- Ruta de la materia (línea de tiempo) ---------- */
+
+.ruta {
+    list-style: none;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-top: 34px;
+}
+
+.ruta::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--oro);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.8s var(--curva) 0.2s;
+}
+
+html:not(.con-js) .ruta::before,
+.ruta.visible::before {
+    transform: scaleX(1);
+}
+
+.ruta li {
+    position: relative;
+}
+
+.ruta li::before {
+    content: "";
+    position: absolute;
+    top: -34px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--oro);
+    border-radius: 50%;
+    background: var(--tinta);
+    box-shadow: 0 0 0 4px var(--tinta), 0 0 18px var(--oro-tenue);
+}
+
+.ruta a {
+    display: block;
+    padding: 6px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.ruta h3 {
+    margin: 6px 0 8px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.ruta a:hover h3,
+.ruta a:focus-visible h3 {
+    color: var(--oro);
+}
+
+.ruta p {
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+.ruta-docs {
+    display: block;
+    margin-top: 14px;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+/* ---------- Cita destacada ---------- */
+
+.cita {
+    margin: 110px auto 0;
+    max-width: 900px;
+    text-align: center;
+}
+
+.cita blockquote {
+    font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+}
+
+.cita blockquote::before {
+    content: "\201C";
+    color: var(--oro);
+}
+
+.cita blockquote::after {
+    content: "\201D";
+    color: var(--oro);
+}
+
+.cita figcaption {
+    margin-top: 22px;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+/* ---------- Acordeones de documentos ---------- */
+
+.docs {
+    border-top: 1px solid var(--linea);
+}
+
+.doc {
+    border-bottom: 1px solid var(--linea);
+}
+
+.doc summary {
+    display: grid;
+    grid-template-columns: 190px 1fr 28px;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 6px;
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.4s;
+}
+
+.doc summary::-webkit-details-marker {
+    display: none;
+}
+
+.doc summary:hover {
+    background: rgba(230, 193, 122, 0.04);
+}
+
+.doc summary:focus-visible {
+    outline: 1px solid var(--oro);
+    outline-offset: -1px;
+}
+
+.doc-tipo {
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+.doc-titulo {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 500;
+}
+
+.doc-icono {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--linea);
+    border-radius: 50%;
+    transition: transform 0.6s var(--curva), border-color 0.3s;
+}
+
+.doc-icono::before,
+.doc-icono::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 1px;
+    background: var(--oro);
+    transform: translate(-50%, -50%);
+}
+
+.doc-icono::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: transform 0.6s var(--curva);
+}
+
+.doc[open] .doc-icono {
+    transform: rotate(180deg);
+    border-color: var(--oro);
+}
+
+.doc[open] .doc-icono::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.doc-cuerpo {
+    padding: 0 6px 32px 216px;
+}
+
+.doc[open] .doc-cuerpo {
+    animation: desplegar 0.7s var(--curva);
+}
+
+@keyframes desplegar {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+.puntos {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    max-width: 780px;
+}
+
+.puntos li {
+    position: relative;
+    padding-left: 26px;
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+.puntos li::before {
+    content: "\2726";
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    font-size: 0.75rem;
+    color: var(--oro);
+}
+
+.puntos b {
+    color: var(--marfil);
+    font-weight: 500;
+}
+
+.doc-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* ---------- Pestañas (proceso, tipos de control, síntomas) ---------- */
+
+.pestanas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--linea);
+}
+
+.pestana {
+    position: relative;
+    padding: 14px 18px;
+    border: 0;
+    background: none;
+    color: var(--niebla);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.pestana::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: var(--oro);
+    transform: scaleX(0);
+    transition: transform 0.5s var(--curva);
+}
+
+.pestana:hover {
+    color: var(--marfil);
+}
+
+.pestana[aria-selected="true"] {
+    color: var(--oro);
+}
+
+.pestana[aria-selected="true"]::after {
+    transform: scaleX(1);
+}
+
+.pestana:focus-visible {
+    outline: 1px solid var(--oro);
+    outline-offset: -4px;
+}
+
+.pestana-num {
+    margin-right: 8px;
+    opacity: 0.6;
+}
+
+.pestana-panel {
+    padding: 36px 0 10px;
+}
+
+.pestana-panel:not([hidden]) {
+    animation: desplegar 0.6s var(--curva);
+}
+
+.pestana-panel h4 {
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+}
+
+.pestana-panel > p:not(.ejemplo) {
+    max-width: 720px;
+    margin-top: 10px;
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+.ejemplo {
+    margin-top: 22px;
+    max-width: 720px;
+    padding: 16px 20px;
+    border-left: 1px solid var(--oro);
+    background: rgba(230, 193, 122, 0.06);
+    font-weight: 300;
+}
+
+.ejemplo strong {
+    color: var(--oro);
+    font-weight: 500;
+}
+
+/* Rejilla de datos dentro de un panel (síntoma → evidencia) */
+.matriz {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 26px;
+    background: var(--linea);
+    border: 1px solid var(--linea);
+}
+
+.matriz div {
+    padding: 22px 20px;
+    background: var(--tinta);
+}
+
+.matriz dt {
+    margin-bottom: 8px;
+    font-size: 0.64rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+.matriz dd {
+    font-weight: 300;
+}
+
+/* ---------- Secuencia de pasos ---------- */
+
+.secuencia {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--linea);
+    border: 1px solid var(--linea);
+}
+
+.secuencia li {
+    padding: 26px 22px 30px;
+    background: var(--tinta);
+    font-weight: 300;
+    transition: background 0.4s;
+}
+
+.secuencia li:hover {
+    background: #0b1230;
+}
+
+.paso-num {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--oro);
+}
+
+/* ---------- Nota clave ---------- */
+
+.nota-clave {
+    margin-top: 40px;
+    padding: 26px 30px;
+    border: 1px solid var(--oro-tenue);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.nota-clave strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.66rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+/* ==================================
+   RESPONSIVE
+================================== */
+
+@media (max-width: 900px) {
+    .seccion {
+        padding-top: 80px;
+    }
+
+    .cifras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cifra:nth-child(2) {
+        border-right: 0;
+    }
+
+    .cifra:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--linea);
+    }
+
+    .objetivos,
+    .matriz {
+        grid-template-columns: 1fr;
+    }
+
+    .ruta {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 0 0 0 34px;
+    }
+
+    .ruta::before {
+        top: 0;
+        bottom: 0;
+        left: 6px;
+        right: auto;
+        width: 1px;
+        height: auto;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    html:not(.con-js) .ruta::before,
+    .ruta.visible::before {
+        transform: scaleY(1);
+    }
+
+    .ruta li::before {
+        top: 12px;
+        left: -34px;
+    }
+
+    .doc summary {
+        grid-template-columns: 1fr 28px;
+        gap: 6px 16px;
+    }
+
+    .doc-tipo {
+        grid-column: 1;
+    }
+
+    .doc-titulo {
+        grid-column: 1;
+    }
+
+    .doc-icono {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .doc-cuerpo {
+        padding-left: 6px;
+    }
+
+    .secuencia {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .cifra {
+        padding: 26px 16px;
+    }
+
+    .pestanas-lista {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .pestana {
+        flex-shrink: 0;
+        padding: 14px 14px;
+    }
+
+    .secuencia {
+        grid-template-columns: 1fr;
+    }
+
+    .nota-clave {
+        padding: 22px 20px;
+    }
+}

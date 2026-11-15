@@ -4,66 +4,270 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Conceptos | Auditoría de Sistemas</title>
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../css/carta-estelar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/auditoria.css">
+    <link rel="stylesheet" href="../css/auditoria-contenido.css">
+    <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <script src="../js/carta-estelar.js" defer></script>
+    <script src="../js/auditoria.js" defer></script>
 </head>
 <body>
-    <header class="orvexa-header">
-        <div class="orvexa-nav-inner">
-            <a href="index.html" class="orvexa-brand">
-                <span class="orvexa-brand-name">Auditoría</span>
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="../index.html" class="home-btn">← Materias</a>
+            </div>
+
+            <a href="index.html" class="brand-row">
+                <div class="brand-mark">AS</div>
+                <div class="brand-text">
+                    <div class="brand-title">AUDITORÍA DE SISTEMAS</div>
+                    <div class="brand-subtitle-main">Control, seguridad y cumplimiento</div>
+                </div>
             </a>
 
-            <nav class="orvexa-menu-links">
-                <a href="../index.html" class="orvexa-back-btn">← Materias</a>
-                <a href="index.html" class="orvexa-link">Inicio</a>
-                <a href="temas.html" class="orvexa-link">Temas</a>
-                <a href="conceptos.html" class="orvexa-link active">Conceptos</a>
-                <a href="casos-practicos.html" class="orvexa-link">Casos</a>
-                <a href="proyecto.html" class="orvexa-link">Proyecto</a>
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+        </div>
+
+        <div class="nav-wrap">
+            <nav class="navbar" aria-label="Secciones de Auditoría de Sistemas">
+                <a href="index.html">Inicio</a>
+                <a href="temas.html">Temas</a>
+                <a href="conceptos.html" aria-current="page">Conceptos</a>
+                <a href="casos-practicos.html">Casos</a>
+                <a href="proyecto.html">Proyecto</a>
             </nav>
         </div>
     </header>
 
-    <main class="orvexa-main">
-        <section class="orvexa-hero">
-            <span class="orvexa-eyebrow">Glosario y Base Teórica</span>
-            <h1 class="orvexa-title">Conceptos Fundamentales</h1>
-            <p class="orvexa-subtitle">Principios clave para entender el control, los riesgos y la seguridad tecnológica.</p>
-            <div class="orvexa-hero-actions">
-                <a href="casos-practicos.html" class="orvexa-pill-btn">Ir a Casos Prácticos <span>→</span></a>
-                <a href="temas.html" class="orvexa-pill-btn-secondary">← Volver a Temas</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow revelar" style="--d: .15s">Glosario y base teórica</span>
+                <h1 class="revelar" style="--d: .3s">Conceptos <span>fundamentales</span></h1>
+                <p class="revelar" style="--d: .45s">Principios clave para entender el control, los riesgos y la seguridad tecnológica.</p>
+                <div class="hero-actions revelar" style="--d: .6s">
+                    <a class="button button-primary" href="casos-practicos.html">Ir a Casos prácticos →</a>
+                    <a class="button" href="temas.html">← Volver a Temas</a>
+                </div>
+            </div>
+            <div class="dibujo revelar" style="--d: .5s" aria-hidden="true">
+                <svg viewBox="0 0 200 150">
+                    <path class="trazo" pathLength="400" d="M40,30 L160,30 L160,120 L40,120 L40,30 L100,75 L160,30 M40,120 L100,75 L160,120" />
+                    <circle class="halo" cx="40" cy="30" r="7" /><circle class="astro" cx="40" cy="30" r="2.6" style="--i: 0" />
+                    <circle class="halo" cx="160" cy="30" r="7" /><circle class="astro" cx="160" cy="30" r="1.7" style="--i: 1" />
+                    <circle class="halo" cx="160" cy="120" r="7" /><circle class="astro" cx="160" cy="120" r="1.7" style="--i: 2" />
+                    <circle class="halo" cx="40" cy="120" r="7" /><circle class="astro" cx="40" cy="120" r="2.6" style="--i: 3" />
+                    <circle class="halo" cx="100" cy="75" r="7" /><circle class="astro" cx="100" cy="75" r="1.7" style="--i: 4" />
+                    <text class="nombre" x="10" y="148">CONCEPTOS · BASE</text>
+                </svg>
             </div>
         </section>
 
-        <section class="orvexa-grid">
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Concepto A</div>
-                    <h3 class="orvexa-card-title">Control Interno</h3>
-                    <p class="orvexa-card-desc">Conjunto de políticas, procesos y mecanismos diseñados para mitigar riesgos y asegurar la confidencialidad, integridad y disponibilidad.</p>
-                </div>
-            </div>
+        <div class="card-grid revelar" style="--d: .7s">
+            <a class="card" href="#diagnostico">
+                <span class="card-icon">I</span>
+                <span class="card-tag">Concepto A</span>
+                <h3>Auditoría</h3>
+                <p>Investigación crítica e independiente que evalúa los procesos para protegerlos y verificar que cumplan las normas.</p>
+                <span class="card-link">Ver ejemplos <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#tipos-control">
+                <span class="card-icon">II</span>
+                <span class="card-tag">Concepto B</span>
+                <h3>Control Interno</h3>
+                <p>Políticas, procedimientos y mecanismos que reducen riesgos, protegen la información y apoyan los objetivos.</p>
+                <span class="card-link">Ver tipos <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#glosario">
+                <span class="card-icon">III</span>
+                <span class="card-tag">Concepto C</span>
+                <h3>Evidencia</h3>
+                <p>Entrevistas, inspección y pruebas contrastadas que permiten confirmar o descartar una hipótesis.</p>
+                <span class="card-link">Ir al glosario <b aria-hidden="true">↓</b></span>
+            </a>
+        </div>
 
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Concepto B</div>
-                    <h3 class="orvexa-card-title">Evidencia y Papeles de Trabajo</h3>
-                    <p class="orvexa-card-desc">Registros formales y pruebas digitales verificables que respaldan las conclusiones y observaciones formuladas por el auditor.</p>
-                </div>
+        <!-- ============ SÍNTOMA, CAUSA, RIESGO E IMPACTO ============ -->
+        <section class="seccion" id="diagnostico" aria-labelledby="titulo-diag">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">01 · No confundir</span>
+                <h2 id="titulo-diag">Síntoma, causa, riesgo <em>e impacto</em></h2>
+                <p>Son cuatro ideas distintas que la clase 2 pide no mezclar. Toca cada tarjeta para ver un ejemplo.</p>
+            </header>
+            <div class="volteos aparecer">
+                <button class="volteo" type="button" aria-pressed="false">
+                    <span class="volteo-interior">
+                        <span class="volteo-cara"><small>Lo que se observa o reporta</small><strong>Síntoma</strong><small>Toca para ver el ejemplo ↻</small></span>
+                        <span class="volteo-cara atras"><small>Ejemplo</small><span class="volteo-texto">Las existencias del sistema no coinciden con las del inventario físico.</span></span>
+                    </span>
+                </button>
+                <button class="volteo" type="button" aria-pressed="false">
+                    <span class="volteo-interior">
+                        <span class="volteo-cara"><small>Una explicación por verificar</small><strong>Causa posible</strong><small>Toca para ver el ejemplo ↻</small></span>
+                        <span class="volteo-cara atras"><small>Ejemplo</small><span class="volteo-texto">Movimientos de entrada, salida o ajuste que se registran sin validación.</span></span>
+                    </span>
+                </button>
+                <button class="volteo" type="button" aria-pressed="false">
+                    <span class="volteo-interior">
+                        <span class="volteo-cara"><small>Lo que podría suceder</small><strong>Riesgo</strong><small>Toca para ver el ejemplo ↻</small></span>
+                        <span class="volteo-cara atras"><small>Ejemplo</small><span class="volteo-texto">Vender unidades que en realidad no existen en bodega.</span></span>
+                    </span>
+                </button>
+                <button class="volteo" type="button" aria-pressed="false">
+                    <span class="volteo-interior">
+                        <span class="volteo-cara"><small>La consecuencia para el negocio</small><strong>Impacto</strong><small>Toca para ver el ejemplo ↻</small></span>
+                        <span class="volteo-cara atras"><small>Ejemplo</small><span class="volteo-texto">Pérdidas, reclamos de clientes y decisiones tomadas con datos errados.</span></span>
+                    </span>
+                </button>
             </div>
+            <p class="nota-clave aparecer"><strong>Regla de oro</strong>La evidencia confirma o descarta una hipótesis. Nunca se presenta una sospecha como un hecho demostrado.</p>
+        </section>
 
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Concepto C</div>
-                    <h3 class="orvexa-card-title">Gestión de Riesgos TI</h3>
-                    <p class="orvexa-card-desc">Identificación de amenazas y vulnerabilidades, análisis de impacto al negocio y determinación de controles mitigantes.</p>
+        <!-- ============ TIPOS DE CONTROL ============ -->
+        <section class="seccion" id="tipos-control" aria-labelledby="titulo-tipos">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">02 · Control interno</span>
+                <h2 id="titulo-tipos">Tres momentos <em>para controlar</em></h2>
+                <p>Un control puede actuar antes, durante o después de un problema. La clase 3 y el taller teórico los explican con ejemplos informáticos.</p>
+            </header>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Tipos de control">
+                    <button class="pestana" role="tab" id="tc-1" aria-controls="tc-panel-1" aria-selected="true"><span class="pestana-num">Antes</span>Preventivo</button>
+                    <button class="pestana" role="tab" id="tc-2" aria-controls="tc-panel-2" aria-selected="false"><span class="pestana-num">Durante</span>Detectivo</button>
+                    <button class="pestana" role="tab" id="tc-3" aria-controls="tc-panel-3" aria-selected="false"><span class="pestana-num">Después</span>Correctivo</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="tc-panel-1" aria-labelledby="tc-1">
+                    <h4>Evita que ocurra el error o el incidente</h4>
+                    <ul class="puntos">
+                        <li>Autenticación multifactor (MFA) para entrar a sistemas críticos.</li>
+                        <li>Permisos asignados según el cargo de cada persona.</li>
+                        <li>Firewall y validaciones de los datos que se ingresan.</li>
+                    </ul>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="tc-panel-2" aria-labelledby="tc-2" hidden>
+                    <h4>Identifica eventos o desviaciones</h4>
+                    <ul class="puntos">
+                        <li>Revisión de logs y alertas por varios intentos fallidos de inicio de sesión.</li>
+                        <li>Conciliaciones periódicas entre ventas, inventario y facturación.</li>
+                        <li>Monitoreo de comportamientos anómalos en los accesos.</li>
+                    </ul>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="tc-panel-3" aria-labelledby="tc-3" hidden>
+                    <h4>Restaura o corrige la situación</h4>
+                    <ul class="puntos">
+                        <li>Restaurar la información desde una copia de seguridad probada.</li>
+                        <li>Aplicar el plan de respuesta a incidentes: identificar, contener y solucionar.</li>
+                        <li>Revertir una actualización que causó fallos.</li>
+                    </ul>
                 </div>
             </div>
+            <dl class="matriz aparecer" style="grid-template-columns: repeat(2, 1fr)">
+                <div>
+                    <dt>Diseñar un control</dt>
+                    <dd>Definir qué actividad reduce el riesgo, quién la hace, cada cuánto y con qué recursos.</dd>
+                </div>
+                <div>
+                    <dt>Comprobar que funciona</dt>
+                    <dd>Revisar con evidencia que la actividad sí se ejecuta y logra lo esperado. Un “Sí” en una entrevista no basta.</dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- ============ INDEPENDENCIA ============ -->
+        <section class="seccion" id="independencia" aria-labelledby="titulo-indep">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">03 · Ética del auditor</span>
+                <h2 id="titulo-indep">Independencia <em>y objetividad</em></h2>
+                <p>Una auditoría sin independencia pierde valor: puede ocultar riesgos, generar desconfianza y terminar en pérdidas o sanciones. Estos son los cuatro frentes que el auditor debe cuidar.</p>
+            </header>
+            <div class="aspectos aparecer">
+                <div><h4>Personal</h4><p>Sus propios intereses o beneficios no pueden influir en los resultados.</p></div>
+                <div><h4>Familiar</h4><p>No debe auditar el trabajo de familiares cercanos.</p></div>
+                <div><h4>Amistad</h4><p>No puede ocultar errores para proteger a un amigo.</p></div>
+                <div><h4>Económica</h4><p>No acepta dinero, regalos ni beneficios de quien audita.</p></div>
+            </div>
+            <div class="casos aparecer" style="margin-top: 26px">
+                <article class="caso">
+                    <span class="caso-num">Caso para pensar · Taller 1</span>
+                    <h4>El amigo del cuarto frío</h4>
+                    <p>En una floricultora, el auditor encuentra diferencias entre el inventario del sistema y las flores almacenadas. El responsable es su amigo cercano y le pide no reportarlas. ¿Qué debe hacer?</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-independencia">Ver qué debe hacer</button>
+                    <div class="respuesta" id="resp-independencia" hidden>
+                        <strong>Actuar con transparencia</strong>
+                        <p>Registrar las diferencias y presentarlas con evidencia, informar a su superior sobre la relación personal y pedir que otro auditor tome la revisión.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ GLOSARIO ============ -->
+        <section class="seccion" id="glosario" aria-labelledby="titulo-glosario" data-glosario>
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">04 · Glosario</span>
+                <h2 id="titulo-glosario">Términos <em>clave</em></h2>
+                <p>Definiciones breves tomadas de las clases y los talleres. Filtra por tema.</p>
+            </header>
+            <div class="filtros aparecer" role="group" aria-label="Filtrar términos">
+                <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+                <button class="filtro" type="button" data-filtro="auditoria" aria-pressed="false">Auditoría</button>
+                <button class="filtro" type="button" data-filtro="control" aria-pressed="false">Control interno</button>
+                <button class="filtro" type="button" data-filtro="seguridad" aria-pressed="false">Seguridad</button>
+            </div>
+            <dl class="glosario aparecer">
+                <div class="termino" data-categoria="auditoria"><dt>Auditoría de sistemas</dt><dd>Evaluación sistemática y documentada de los sistemas de información, sus controles y cómo apoyan los procesos.</dd></div>
+                <div class="termino" data-categoria="auditoria"><dt>Escepticismo profesional</dt><dd>No dar por cierta la información: compararla, verificarla y pedir más pruebas si hay contradicciones.</dd></div>
+                <div class="termino" data-categoria="auditoria"><dt>Evidencia</dt><dd>Entrevistas, inspección de documentos y configuraciones, y pruebas que permiten confirmar o descartar una hipótesis.</dd></div>
+                <div class="termino" data-categoria="auditoria"><dt>Hallazgo</dt><dd>Debilidad documentada y sustentada en evidencia, con su impacto y una recomendación de mejora.</dd></div>
+                <div class="termino" data-categoria="control"><dt>Control interno</dt><dd>Políticas, procedimientos y mecanismos que reducen riesgos, protegen los recursos y apoyan los objetivos.</dd></div>
+                <div class="termino" data-categoria="control"><dt>Trazabilidad</dt><dd>Poder saber quién hizo una operación, cuándo y qué cambió, incluido el dato anterior.</dd></div>
+                <div class="termino" data-categoria="control"><dt>Segregación de funciones</dt><dd>Repartir autorizar, ejecutar, registrar y revisar entre personas distintas para evitar fraudes y errores.</dd></div>
+                <div class="termino" data-categoria="control"><dt>Conciliación</dt><dd>Comparar periódicamente pedidos, inventario, facturas y contabilidad para encontrar diferencias.</dd></div>
+                <div class="termino" data-categoria="control"><dt>Gestión de cambios</dt><dd>Todo cambio se solicita, se autoriza, se prueba antes de producción, se documenta y se puede revertir.</dd></div>
+                <div class="termino" data-categoria="control"><dt>Cuestionario de control</dt><dd>Preguntas claras y verificables (Sí, No, No aplica) cuyas respuestas se validan con evidencia.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Autenticación</dt><dd>Comprueba quién es el usuario: contraseña, autenticación multifactor o biometría.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Autorización</dt><dd>Define qué puede hacer el usuario después de entrar: consultar, registrar, aprobar o administrar.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Mínimo privilegio</dt><dd>Cada persona recibe solo los permisos que necesita para cumplir su trabajo.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Logs</dt><dd>Registros de accesos, cambios y errores. Deben protegerse para que nadie los altere.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Incidente de seguridad</dt><dd>Violación, o amenaza cercana, de las normas de seguridad o del uso permitido de los sistemas.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Copia de seguridad</dt><dd>Respaldo protegido y separado que solo sirve si se prueba que puede restaurarse. Regla 3-2-1: tres copias, dos medios, una fuera del sitio.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Continuidad del negocio</dt><dd>Estrategias para mantener o recuperar las operaciones ante fallas, ataques o imprevistos.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Confidencialidad, integridad y disponibilidad</dt><dd>Los tres pilares que la protección de datos busca garantizar.</dd></div>
+            </dl>
+            <p class="glosario-conteo" data-conteo aria-live="polite">18 de 18 términos</p>
+        </section>
+
+        <!-- ============ NORMAS ============ -->
+        <section class="seccion" id="normas" aria-labelledby="titulo-normas">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">05 · Marco de referencia</span>
+                <h2 id="titulo-normas">Normas y marcos <em>que se citan</em></h2>
+                <p>Las leyes son obligaciones; los estándares ISO, COSO y COBIT son referencias técnicas. Los talleres insisten en no confundirlos.</p>
+            </header>
+            <ul class="normas aparecer">
+                <li class="norma"><b>Ley 1581 de 2012</b><span>Protección de datos personales en Colombia. La vigila la Superintendencia de Industria y Comercio.</span></li>
+                <li class="norma"><b>Decreto 1074 de 2015</b><span>Reglamenta la política de tratamiento de datos y el Registro Nacional de Bases de Datos.</span></li>
+                <li class="norma"><b>Ley 87 de 1993</b><span>Control interno en entidades del Estado; sirve de referencia para empresas privadas.</span></li>
+                <li class="norma"><b>Ley 1273 de 2009</b><span>Crea el bien jurídico de la protección de la información y de los datos (delitos informáticos).</span></li>
+                <li class="norma"><b>ISO/IEC 27001 y 27002:2022</b><span>Sistema de gestión y catálogo de controles de seguridad de la información.</span></li>
+                <li class="norma"><b>COSO 2013 · COBIT 2019</b><span>Marcos de control interno y de gobierno de tecnología.</span></li>
+                <li class="norma"><b>Normas Globales IIA 2024</b><span>Independencia, objetividad y planeación de la auditoría interna.</span></li>
+                <li class="norma"><b>ISO 690:2021</b><span>Cómo citar y referenciar fuentes. No es una norma de controles de seguridad.</span></li>
+            </ul>
         </section>
     </main>
 
-    <footer class="orvexa-footer">
-        Auditoría de Sistemas
+    <footer class="site-footer">
+        Portal académico · Auditoría de Sistemas — Materias vistas con Mahecha
     </footer>
 </body>
 </html>

@@ -1,0 +1,822 @@
+/* ===================================================
+   AUDITORÍA — CONTENIDO DE LA MATERIA (parte 2)
+   Tarjetas que se voltean, glosario con filtros, normas,
+   flujo de procesos, hoja de ruta de prioridades, casos
+   para revelar y cuestionario interactivo (js/auditoria.js).
+=================================================== */
+
+.volteo-cara small,
+.filtro,
+.termino dt,
+.norma b,
+.flujo-paso small,
+.prioridad,
+.plazo-texto,
+.caso-num,
+.boton-revelar,
+.cuestionario-area,
+.opcion span,
+.medidor-texto {
+    font-family: var(--fuente-mono);
+}
+
+/* ---------- Tarjetas que se voltean ---------- */
+
+.volteos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.volteo {
+    position: relative;
+    min-height: 250px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    perspective: 900px;
+}
+
+.volteo-interior {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.9s var(--curva);
+}
+
+.volteo[aria-pressed="true"] .volteo-interior {
+    transform: rotateY(180deg);
+}
+
+.volteo-cara {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 26px 24px;
+    border: 1px solid var(--linea);
+    background: rgba(6, 10, 26, 0.6);
+    backface-visibility: hidden;
+}
+
+.volteo-cara.atras {
+    transform: rotateY(180deg);
+    border-color: var(--oro-tenue);
+    background: #0c1433;
+}
+
+.volteo:hover .volteo-cara,
+.volteo:focus-visible .volteo-cara {
+    border-color: var(--oro);
+}
+
+.volteo:focus-visible {
+    outline: none;
+}
+
+.volteo-cara strong {
+    font-size: 1.7rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro);
+}
+
+.volteo-texto {
+    font-size: 1.15rem;
+    color: var(--marfil);
+    font-weight: 300;
+}
+
+.volteo-cara small {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+/* ---------- Mosaico de 4 aspectos (independencia) ---------- */
+
+.aspectos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--linea);
+    border: 1px solid var(--linea);
+}
+
+.aspectos div {
+    padding: 26px 22px;
+    background: var(--tinta);
+    transition: background 0.4s;
+}
+
+.aspectos div:hover {
+    background: #0b1230;
+}
+
+.aspectos h4 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--oro);
+}
+
+.aspectos p {
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+/* ---------- Glosario con filtros ---------- */
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.filtro {
+    padding: 9px 16px;
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+    background: none;
+    color: var(--niebla);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.filtro:hover {
+    color: var(--marfil);
+    border-color: var(--oro-tenue);
+}
+
+.filtro[aria-pressed="true"] {
+    color: var(--tinta);
+    background: var(--oro);
+    border-color: var(--oro);
+}
+
+.filtro:focus-visible {
+    outline: 1px solid var(--oro);
+    outline-offset: 3px;
+}
+
+.glosario {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--linea);
+    border: 1px solid var(--linea);
+}
+
+.termino {
+    padding: 24px 22px;
+    background: var(--tinta);
+    animation: desplegar 0.5s var(--curva);
+}
+
+.termino[hidden] {
+    display: none;
+}
+
+.termino dt {
+    margin-bottom: 8px;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+.termino dd {
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+.glosario-conteo {
+    margin-top: 14px;
+    font-family: var(--fuente-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+/* ---------- Normas y marcos ---------- */
+
+.normas {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--linea);
+}
+
+.norma {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.8fr) 1.4fr;
+    gap: 18px;
+    padding: 18px 6px;
+    border-bottom: 1px solid var(--linea);
+}
+
+.norma:nth-child(odd) {
+    padding-right: 30px;
+}
+
+.norma b {
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--oro);
+}
+
+.norma span {
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+/* ---------- Flujo de procesos ---------- */
+
+.flujo {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    counter-reset: flujo;
+}
+
+.flujo-paso {
+    position: relative;
+    padding: 0 24px 0 0;
+    counter-increment: flujo;
+}
+
+.flujo-paso::before {
+    content: counter(flujo);
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 20px;
+    border: 1px solid var(--oro);
+    border-radius: 50%;
+    font-style: italic;
+    color: var(--oro);
+    background: var(--tinta);
+    position: relative;
+    z-index: 1;
+}
+
+.flujo-paso::after {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 46px;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--oro), var(--oro-tenue));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s var(--curva);
+    transition-delay: calc(0.3s + var(--i, 0) * 0.25s);
+}
+
+.flujo-paso:last-child::after {
+    display: none;
+}
+
+html:not(.con-js) .flujo-paso::after,
+.flujo.visible .flujo-paso::after {
+    transform: scaleX(1);
+}
+
+.flujo-paso h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.flujo-paso small {
+    display: block;
+    margin: 6px 0 8px;
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+.flujo-paso p {
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+/* ---------- Etiquetas de prioridad ---------- */
+
+.prioridad {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.prioridad.critica { color: #ff9b85; }
+.prioridad.alta,
+.prioridad.preventivo { color: var(--oro); }
+.prioridad.media,
+.prioridad.correctivo { color: #9fb4ff; }
+
+/* ---------- Acciones priorizadas (tabla ligera) ---------- */
+
+.acciones {
+    list-style: none;
+    border-top: 1px solid var(--linea);
+}
+
+.acciones li {
+    display: grid;
+    grid-template-columns: 90px 1fr 1fr;
+    align-items: baseline;
+    gap: 20px;
+    padding: 18px 6px;
+    border-bottom: 1px solid var(--linea);
+    font-weight: 300;
+}
+
+.acciones .quien {
+    color: var(--niebla);
+}
+
+/* ---------- Hoja de ruta con plazos ---------- */
+
+.hoja-ruta {
+    border-top: 1px solid var(--linea);
+}
+
+.hallazgo summary {
+    display: grid;
+    grid-template-columns: 90px 1.3fr 1fr 28px;
+    align-items: center;
+    gap: 22px;
+    padding: 22px 6px;
+    border-bottom: 1px solid var(--linea);
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.4s;
+}
+
+.hallazgo summary::-webkit-details-marker {
+    display: none;
+}
+
+.hallazgo summary:hover {
+    background: rgba(230, 193, 122, 0.04);
+}
+
+.hallazgo summary:focus-visible {
+    outline: 1px solid var(--oro);
+    outline-offset: -1px;
+}
+
+.hallazgo-titulo {
+    font-size: 1.12rem;
+    font-weight: 500;
+}
+
+.plazo {
+    position: relative;
+    display: block;
+    height: 6px;
+    background: var(--linea);
+}
+
+.plazo-inicio,
+.plazo-fin {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.4s var(--curva) 0.3s;
+}
+
+.plazo-fin {
+    width: calc(var(--fin) / 90 * 100%);
+    background: var(--oro-tenue);
+}
+
+.plazo-inicio {
+    width: calc(var(--inicio) / 90 * 100%);
+    background: var(--oro);
+}
+
+html:not(.con-js) .plazo-inicio,
+html:not(.con-js) .plazo-fin,
+.hoja-ruta.visible .plazo-inicio,
+.hoja-ruta.visible .plazo-fin {
+    transform: scaleX(1);
+}
+
+.plazo-texto {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+.hallazgo .doc-icono {
+    justify-self: end;
+}
+
+.hallazgo[open] .doc-icono {
+    transform: rotate(180deg);
+    border-color: var(--oro);
+}
+
+.hallazgo[open] .doc-icono::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.hallazgo .matriz {
+    margin: 0 0 26px;
+    grid-template-columns: repeat(2, 1fr);
+    animation: desplegar 0.7s var(--curva);
+}
+
+.escala {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-family: var(--fuente-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+/* ---------- Casos para revelar ---------- */
+
+.casos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.caso {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 28px;
+    border: 1px solid var(--linea);
+    background: rgba(6, 10, 26, 0.55);
+    transition: border-color 0.4s;
+}
+
+.caso:hover,
+.caso.resuelto {
+    border-color: var(--oro-tenue);
+}
+
+.caso:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+.caso-num {
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+.caso h4 {
+    margin: 10px 0 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.caso > p {
+    flex: 1;
+    color: var(--niebla);
+    font-weight: 300;
+}
+
+.boton-revelar {
+    align-self: flex-start;
+    margin-top: 22px;
+    padding: 11px 18px;
+    border: 1px solid var(--oro);
+    background: none;
+    color: var(--oro);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.boton-revelar:hover,
+.boton-revelar[aria-expanded="true"] {
+    background: var(--oro);
+    color: var(--tinta);
+}
+
+.boton-revelar:focus-visible {
+    outline: 1px solid var(--oro);
+    outline-offset: 3px;
+}
+
+.respuesta {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--linea);
+    animation: desplegar 0.6s var(--curva);
+}
+
+.respuesta strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--oro);
+    font-weight: 500;
+}
+
+.respuesta p {
+    color: var(--marfil);
+    font-weight: 300;
+}
+
+/* ---------- Cuestionario interactivo ---------- */
+
+.cuestionario {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.cuestionario ol {
+    list-style: none;
+    border-top: 1px solid var(--linea);
+}
+
+.pregunta {
+    padding: 20px 0;
+    border: 0;
+    border-bottom: 1px solid var(--linea);
+}
+
+.pregunta legend {
+    float: left;
+    width: 100%;
+    margin-bottom: 14px;
+    font-weight: 300;
+}
+
+.cuestionario-area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+.opciones {
+    clear: both;
+    display: flex;
+    gap: 8px;
+}
+
+.opcion {
+    position: relative;
+}
+
+.opcion input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.opcion span {
+    display: inline-block;
+    min-width: 64px;
+    padding: 8px 14px;
+    border: 1px solid var(--linea);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--niebla);
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.opcion span:hover {
+    color: var(--marfil);
+    border-color: var(--oro-tenue);
+}
+
+.opcion input:checked + span {
+    color: var(--tinta);
+    background: var(--oro);
+    border-color: var(--oro);
+}
+
+.opcion input:focus-visible + span {
+    outline: 1px solid var(--oro);
+    outline-offset: 3px;
+}
+
+.resultado {
+    position: sticky;
+    top: 150px;
+    padding: 30px 28px;
+    border: 1px solid var(--oro-tenue);
+    background: rgba(6, 10, 26, 0.7);
+}
+
+.resultado-cifra {
+    display: block;
+    font-size: 4rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1;
+    color: var(--oro);
+    font-variant-numeric: tabular-nums;
+}
+
+.medidor {
+    height: 6px;
+    margin: 22px 0 14px;
+    background: var(--linea);
+    overflow: hidden;
+}
+
+.medidor i {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: var(--oro);
+    transform: scaleX(var(--valor, 0));
+    transform-origin: left;
+    transition: transform 0.8s var(--curva), background 0.4s;
+}
+
+.medidor-texto {
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--niebla);
+}
+
+.resultado-veredicto {
+    margin-top: 16px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.resultado-ayuda {
+    margin-top: 10px;
+    color: var(--niebla);
+    font-weight: 300;
+    font-size: 0.95rem;
+}
+
+.resultado .button {
+    margin-top: 20px;
+    cursor: pointer;
+    background: none;
+}
+
+/* ==================================
+   RESPONSIVE
+================================== */
+
+@media (max-width: 1000px) {
+    .volteos,
+    .aspectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .glosario {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cuestionario {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado {
+        position: static;
+    }
+}
+
+@media (max-width: 900px) {
+    .normas {
+        grid-template-columns: 1fr;
+    }
+
+    .norma:nth-child(odd) {
+        padding-right: 6px;
+    }
+
+    .flujo {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .flujo-paso {
+        padding: 0 0 0 66px;
+    }
+
+    .flujo-paso::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+
+    .flujo-paso::after {
+        top: 46px;
+        left: 23px;
+        right: auto;
+        bottom: -28px;
+        width: 1px;
+        height: auto;
+        background: linear-gradient(180deg, var(--oro), var(--oro-tenue));
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    html:not(.con-js) .flujo-paso::after,
+    .flujo.visible .flujo-paso::after {
+        transform: scaleY(1);
+    }
+
+    .hallazgo summary {
+        grid-template-columns: 1fr 28px;
+        gap: 10px 16px;
+    }
+
+    .hallazgo summary .prioridad {
+        justify-self: start;
+    }
+
+    .hallazgo summary .doc-icono {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+    }
+
+    .hallazgo summary > :not(.doc-icono) {
+        grid-column: 1;
+    }
+
+    .acciones li {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .casos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .volteos,
+    .aspectos,
+    .glosario,
+    .hallazgo .matriz {
+        grid-template-columns: 1fr;
+    }
+
+    .volteo {
+        min-height: 200px;
+    }
+
+    .norma {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .caso {
+        padding: 26px 20px;
+    }
+
+    .opcion span {
+        min-width: 0;
+        padding: 8px 12px;
+    }
+}

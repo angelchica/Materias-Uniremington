@@ -4,50 +4,88 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyecto | Auditoría de Sistemas</title>
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../css/carta-estelar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/auditoria.css">
+    <link rel="stylesheet" href="../css/auditoria-contenido.css">
+    <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <script src="../js/carta-estelar.js" defer></script>
+    <script src="../js/auditoria.js" defer></script>
 </head>
 <body>
-    <header class="orvexa-header">
-        <div class="orvexa-nav-inner">
-            <a href="index.html" class="orvexa-brand">
-                <span class="orvexa-brand-name">Auditoría</span>
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="../index.html" class="home-btn">← Materias</a>
+            </div>
+
+            <a href="index.html" class="brand-row">
+                <div class="brand-mark">AS</div>
+                <div class="brand-text">
+                    <div class="brand-title">AUDITORÍA DE SISTEMAS</div>
+                    <div class="brand-subtitle-main">Control, seguridad y cumplimiento</div>
+                </div>
             </a>
 
-            <nav class="orvexa-menu-links">
-                <a href="../index.html" class="orvexa-back-btn">← Materias</a>
-                <a href="index.html" class="orvexa-link">Inicio</a>
-                <a href="temas.html" class="orvexa-link">Temas</a>
-                <a href="conceptos.html" class="orvexa-link">Conceptos</a>
-                <a href="casos-practicos.html" class="orvexa-link">Casos</a>
-                <a href="proyecto.html" class="orvexa-link active">Proyecto</a>
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+        </div>
+
+        <div class="nav-wrap">
+            <nav class="navbar" aria-label="Secciones de Auditoría de Sistemas">
+                <a href="index.html">Inicio</a>
+                <a href="temas.html">Temas</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="casos-practicos.html">Casos</a>
+                <a href="proyecto.html" aria-current="page">Proyecto</a>
             </nav>
         </div>
     </header>
 
-    <main class="orvexa-main">
-        <section class="orvexa-hero">
-            <span class="orvexa-eyebrow">Demostración Audiovisual</span>
-            <h1 class="orvexa-title">Proyecto Final y Video Tutorial</h1>
-            <p class="orvexa-subtitle">Documentación integral del proceso de auditoría y presentación audiovisual del trabajo final.</p>
-            <a href="index.html" class="orvexa-pill-btn">← Volver al inicio</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow revelar" style="--d: .15s">Demostración audiovisual</span>
+                <h1 class="revelar" style="--d: .3s">Proyecto final y <span>video tutorial</span></h1>
+                <p class="revelar" style="--d: .45s">Documentación integral del proceso de auditoría y presentación audiovisual del trabajo final.</p>
+                <div class="hero-actions revelar" style="--d: .6s">
+                    <a class="button" href="index.html">← Volver al inicio</a>
+                </div>
+            </div>
+            <div class="dibujo revelar" style="--d: .5s" aria-hidden="true">
+                <svg viewBox="0 0 200 150">
+                    <path class="trazo" pathLength="400" d="M100,12 L100,60 L40,95 M100,60 L160,95 M100,60 L100,135 M40,95 L60,135 M160,95 L140,135" />
+                    <circle class="halo" cx="100" cy="12" r="7" /><circle class="astro" cx="100" cy="12" r="2.6" style="--i: 0" />
+                    <circle class="halo" cx="100" cy="60" r="7" /><circle class="astro" cx="100" cy="60" r="1.7" style="--i: 1" />
+                    <circle class="halo" cx="40" cy="95" r="7" /><circle class="astro" cx="40" cy="95" r="1.7" style="--i: 2" />
+                    <circle class="halo" cx="160" cy="95" r="7" /><circle class="astro" cx="160" cy="95" r="2.6" style="--i: 3" />
+                    <circle class="halo" cx="100" cy="135" r="7" /><circle class="astro" cx="100" cy="135" r="1.7" style="--i: 4" />
+                    <circle class="halo" cx="60" cy="135" r="7" /><circle class="astro" cx="60" cy="135" r="1.7" style="--i: 5" />
+                    <circle class="halo" cx="140" cy="135" r="7" /><circle class="astro" cx="140" cy="135" r="2.6" style="--i: 6" />
+                    <text class="nombre" x="10" y="148">PROYECTO · FINAL</text>
+                </svg>
+            </div>
         </section>
 
-        <section class="orvexa-grid" style="grid-template-columns: 1fr;">
-            <div class="orvexa-card" style="padding: 38px;">
-                <div class="orvexa-card-num">Entrega Final</div>
-                <h3 class="orvexa-card-title">Resumen del Proyecto de Auditoría</h3>
-                <p class="orvexa-card-desc" style="margin-top: 10px;">
-                    Espacio reservado para describir los alcances de la auditoría ejecutada, los hallazgos principales y el dictamen final. Aquí puedes incrustar directamente tu reproductor de video tutorial o el enlace a YouTube / Drive.
-                </p>
-                <div style="margin-top: 24px; padding: 16px 20px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--orvexa-border); color: var(--orvexa-muted); font-size: 0.9rem;">
-                    💡 <strong>Nota técnica:</strong> Puedes insertar aquí tu etiqueta <code>&lt;video controls src="..."&gt;&lt;/video&gt;</code> o un <code>&lt;iframe&gt;</code> para reproducir el video.
-                </div>
+        <section class="content-panel revelar" style="--d: .7s">
+            <span class="card-tag">Entrega final</span>
+            <h3>Resumen del proyecto de auditoría</h3>
+            <p>Espacio reservado para describir los alcances de la auditoría ejecutada, los hallazgos principales y el dictamen final. Aquí puedes incrustar directamente tu reproductor de video tutorial o el enlace a YouTube / Drive.</p>
+            <div class="note">
+                <strong>Nota técnica:</strong> Puedes insertar aquí tu etiqueta <code>&lt;video controls src="..."&gt;&lt;/video&gt;</code> o un <code>&lt;iframe&gt;</code> para reproducir el video.
             </div>
         </section>
     </main>
 
-    <footer class="orvexa-footer">
-        Auditoría de Sistemas
+    <footer class="site-footer">
+        Portal académico · Auditoría de Sistemas — Materias vistas con Mahecha
     </footer>
 </body>
 </html>

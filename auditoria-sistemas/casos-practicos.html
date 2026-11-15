@@ -4,66 +4,354 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Casos Prácticos | Auditoría de Sistemas</title>
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../css/carta-estelar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/auditoria.css">
+    <link rel="stylesheet" href="../css/auditoria-contenido.css">
+    <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <script src="../js/carta-estelar.js" defer></script>
+    <script src="../js/auditoria.js" defer></script>
 </head>
 <body>
-    <header class="orvexa-header">
-        <div class="orvexa-nav-inner">
-            <a href="index.html" class="orvexa-brand">
-                <span class="orvexa-brand-name">Auditoría</span>
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="../index.html" class="home-btn">← Materias</a>
+            </div>
+
+            <a href="index.html" class="brand-row">
+                <div class="brand-mark">AS</div>
+                <div class="brand-text">
+                    <div class="brand-title">AUDITORÍA DE SISTEMAS</div>
+                    <div class="brand-subtitle-main">Control, seguridad y cumplimiento</div>
+                </div>
             </a>
 
-            <nav class="orvexa-menu-links">
-                <a href="../index.html" class="orvexa-back-btn">← Materias</a>
-                <a href="index.html" class="orvexa-link">Inicio</a>
-                <a href="temas.html" class="orvexa-link">Temas</a>
-                <a href="conceptos.html" class="orvexa-link">Conceptos</a>
-                <a href="casos-practicos.html" class="orvexa-link active">Casos</a>
-                <a href="proyecto.html" class="orvexa-link">Proyecto</a>
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+        </div>
+
+        <div class="nav-wrap">
+            <nav class="navbar" aria-label="Secciones de Auditoría de Sistemas">
+                <a href="index.html">Inicio</a>
+                <a href="temas.html">Temas</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="casos-practicos.html" aria-current="page">Casos</a>
+                <a href="proyecto.html">Proyecto</a>
             </nav>
         </div>
     </header>
 
-    <main class="orvexa-main">
-        <section class="orvexa-hero">
-            <span class="orvexa-eyebrow">Aplicación Práctica</span>
-            <h1 class="orvexa-title">Casos de Estudio</h1>
-            <p class="orvexa-subtitle">Escenarios reales de evaluación de control interno, auditoría y análisis de hallazgos.</p>
-            <div class="orvexa-hero-actions">
-                <a href="proyecto.html" class="orvexa-pill-btn">Ir a Proyecto Final <span>→</span></a>
-                <a href="conceptos.html" class="orvexa-pill-btn-secondary">← Volver a Conceptos</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow revelar" style="--d: .15s">Aplicación práctica</span>
+                <h1 class="revelar" style="--d: .3s">Casos de <span>estudio</span></h1>
+                <p class="revelar" style="--d: .45s">Escenarios reales de evaluación de control interno, auditoría y análisis de hallazgos.</p>
+                <div class="hero-actions revelar" style="--d: .6s">
+                    <a class="button button-primary" href="proyecto.html">Ir a Proyecto final →</a>
+                    <a class="button" href="conceptos.html">← Volver a Conceptos</a>
+                </div>
+            </div>
+            <div class="dibujo revelar" style="--d: .5s" aria-hidden="true">
+                <svg viewBox="0 0 200 150">
+                    <path class="trazo" pathLength="400" d="M25,110 L65,40 L105,110 L145,40 L180,80 M65,40 L145,40" />
+                    <circle class="halo" cx="25" cy="110" r="7" /><circle class="astro" cx="25" cy="110" r="2.6" style="--i: 0" />
+                    <circle class="halo" cx="65" cy="40" r="7" /><circle class="astro" cx="65" cy="40" r="1.7" style="--i: 1" />
+                    <circle class="halo" cx="105" cy="110" r="7" /><circle class="astro" cx="105" cy="110" r="1.7" style="--i: 2" />
+                    <circle class="halo" cx="145" cy="40" r="7" /><circle class="astro" cx="145" cy="40" r="2.6" style="--i: 3" />
+                    <circle class="halo" cx="180" cy="80" r="7" /><circle class="astro" cx="180" cy="80" r="1.7" style="--i: 4" />
+                    <text class="nombre" x="10" y="148">CASOS · ESTUDIO</text>
+                </svg>
             </div>
         </section>
 
-        <section class="orvexa-grid">
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Caso 01</div>
-                    <h3 class="orvexa-card-title">Auditoría de Control de Accesos</h3>
-                    <p class="orvexa-card-desc">Evaluación de políticas de contraseñas, privilegios de usuarios y segregación de funciones en bases de datos empresariales.</p>
+        <div class="card-grid revelar" style="--d: .7s">
+            <a class="card" href="#buenavista">
+                <span class="card-icon">I</span>
+                <span class="card-tag">Caso 01</span>
+                <h3>Buenavista Flowers S.A.S</h3>
+                <p>Diagnóstico de una floricultora con inventario descuadrado, duplicados, facturas tardías y cambios sin responsable.</p>
+                <span class="card-link">Ver diagnóstico <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#tecnoandes">
+                <span class="card-icon">II</span>
+                <span class="card-tag">Caso 02</span>
+                <h3>TecnoAndes S.A.S</h3>
+                <p>Plan de mejoramiento con 5 hallazgos de seguridad priorizados según la Ley 1581 de 2012 e ISO/IEC 27002.</p>
+                <span class="card-link">Ver plan <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#casos-control">
+                <span class="card-icon">III</span>
+                <span class="card-tag">Caso 03</span>
+                <h3>Cinco casos de control</h3>
+                <p>Privilegios, trazabilidad, respaldos, segregación de funciones y un cuestionario que puedes responder.</p>
+                <span class="card-link">Resolver casos <b aria-hidden="true">↓</b></span>
+            </a>
+        </div>
+
+        <!-- ================= CASO 1: BUENAVISTA ================= -->
+        <section class="seccion" id="buenavista" aria-labelledby="titulo-buenavista">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Caso 01 · Diagnóstico · Unidad 2</span>
+                <h2 id="titulo-buenavista">Buenavista Flowers <em>S.A.S</em></h2>
+                <p>Floricultora exportadora de La Unión (Antioquia) con 350 empleados. Su sistema muestra inventario descuadrado, registros duplicados, facturas tardías y cambios sin responsable. Las causas todavía no están comprobadas.</p>
+            </header>
+
+            <h3 class="subtitulo aparecer">Dónde puede fallar <em>el flujo de información</em></h3>
+            <ol class="flujo aparecer">
+                <li class="flujo-paso" style="--i: 0"><h4>Ventas</h4><small>Al registrar el pedido</small><p>Pedidos duplicados, datos del cliente o cantidades equivocadas.</p></li>
+                <li class="flujo-paso" style="--i: 1"><h4>Inventario</h4><small>Al reservar y despachar</small><p>Existencias físicas distintas a las del sistema o salidas sin registrar.</p></li>
+                <li class="flujo-paso" style="--i: 2"><h4>Facturación</h4><small>Al emitir la factura</small><p>Demoras, facturas duplicadas o diferencias entre pedido, despacho y factura.</p></li>
+                <li class="flujo-paso" style="--i: 3"><h4>Contabilidad</h4><small>Al registrar y conciliar</small><p>Registros incompletos o duplicados que no cuadran con las operaciones.</p></li>
+            </ol>
+
+            <h3 class="subtitulo aparecer">Explora cada síntoma <em>hasta su evidencia</em></h3>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Síntomas observados en Buenavista Flowers">
+                    <button class="pestana" role="tab" id="si-1" aria-controls="si-panel-1" aria-selected="true"><span class="pestana-num">01</span>Inventario</button>
+                    <button class="pestana" role="tab" id="si-2" aria-controls="si-panel-2" aria-selected="false"><span class="pestana-num">02</span>Duplicados</button>
+                    <button class="pestana" role="tab" id="si-3" aria-controls="si-panel-3" aria-selected="false"><span class="pestana-num">03</span>Facturación</button>
+                    <button class="pestana" role="tab" id="si-4" aria-controls="si-panel-4" aria-selected="false"><span class="pestana-num">04</span>Trazabilidad</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="si-panel-1" aria-labelledby="si-1">
+                    <h4>Las cantidades del sistema no coinciden con las físicas</h4>
+                    <dl class="matriz">
+                        <div><dt>Hipótesis</dt><dd>Entradas, salidas o ajustes que no se registran correctamente.</dd></div>
+                        <div><dt>Riesgo</dt><dd>Vender producto que no existe o decidir con información falsa.</dd></div>
+                        <div><dt>Impacto</dt><dd>Despachos tardíos, pérdidas económicas y mala reputación.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Conteos físicos comparados con los reportes de inventario.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="si-panel-2" aria-labelledby="si-2" hidden>
+                    <h4>Aparecen registros duplicados</h4>
+                    <dl class="matriz">
+                        <div><dt>Hipótesis</dt><dd>El sistema permite guardar varias veces la misma operación.</dd></div>
+                        <div><dt>Riesgo</dt><dd>Duplicar pedidos o movimientos de inventario.</dd></div>
+                        <div><dt>Impacto</dt><dd>Reprocesos y tiempo perdido verificando y corrigiendo datos.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Consulta de duplicados y revisión de las validaciones del sistema.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="si-panel-3" aria-labelledby="si-3" hidden>
+                    <h4>Las facturas salen tarde</h4>
+                    <dl class="matriz">
+                        <div><dt>Hipótesis</dt><dd>Demoras al registrar pedidos, fallas entre módulos o pasos manuales.</dd></div>
+                        <div><dt>Riesgo</dt><dd>Operaciones pendientes que se acumulan y se estancan.</dd></div>
+                        <div><dt>Impacto</dt><dd>Retrasos administrativos e inconformidad de los clientes.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Muestra de pedidos y facturas con sus fechas de registro.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="si-panel-4" aria-labelledby="si-4" hidden>
+                    <h4>No se sabe quién modificó los datos</h4>
+                    <dl class="matriz">
+                        <div><dt>Hipótesis</dt><dd>Bitácoras desactualizadas, deshabilitadas o incompletas.</dd></div>
+                        <div><dt>Riesgo</dt><dd>No conocer el origen de los errores ni si el cambio fue autorizado.</dd></div>
+                        <div><dt>Impacto</dt><dd>Difícil investigar incidentes y asignar responsables.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Lista de usuarios y permisos, configuración de accesos y registros de auditoría.</dd></div>
+                    </dl>
                 </div>
             </div>
 
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Caso 02</div>
-                    <h3 class="orvexa-card-title">Continuidad y Respaldos</h3>
-                    <p class="orvexa-card-desc">Revisión de planes de recuperación ante desastres (DRP), copias de seguridad periódicas y redundancia de servidores.</p>
-                </div>
-            </div>
+            <h3 class="subtitulo aparecer">Acciones iniciales <em>de verificación</em></h3>
+            <ul class="acciones aparecer">
+                <li><span class="prioridad alta">Alta</span><span>Comparar el inventario físico con el del sistema.</span><span class="quien">Bodega, logística y sistemas</span></li>
+                <li><span class="prioridad alta">Alta</span><span>Revisar usuarios, permisos y registros de cambios.</span><span class="quien">Sistemas y gerencia</span></li>
+                <li><span class="prioridad alta">Alta</span><span>Comparar las fechas de pedidos y facturas.</span><span class="quien">Ventas, contabilidad y logística</span></li>
+                <li><span class="prioridad media">Media</span><span>Ubicar en qué proceso se generan los duplicados.</span><span class="quien">Ventas, contabilidad y facturación</span></li>
+            </ul>
+        </section>
 
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Caso 03</div>
-                    <h3 class="orvexa-card-title">Dictamen y Matriz de Riesgos</h3>
-                    <p class="orvexa-card-desc">Formulación formal del informe de auditoría, categorización de hallazgos y formulación de planes de acción mitigantes.</p>
-                </div>
+        <!-- ================= CASO 2: TECNOANDES ================= -->
+        <section class="seccion" id="tecnoandes" aria-labelledby="titulo-tecnoandes">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Caso 02 · Plan de mejoramiento · Unidad 1</span>
+                <h2 id="titulo-tecnoandes">TecnoAndes <em>S.A.S</em></h2>
+                <p>Comercializadora de equipos tecnológicos con 85 empleados. En tres meses tuvo cuentas compartidas, pérdida de ventas por respaldos irregulares y un archivo de clientes enviado por error. Abre cada hallazgo para ver su norma, la acción y cómo se mide.</p>
+            </header>
+
+            <div class="hoja-ruta aparecer">
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad critica">Crítica</span>
+                        <span class="hallazgo-titulo">Archivo de clientes enviado por error</span>
+                        <span><span class="plazo" style="--inicio: 5; --fin: 60"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Contención ≤ 5 días · controles 60 días</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Datos personales en manos de terceros: suplantación, fraude, sanciones y daño reputacional.</dd></div>
+                        <div><dt>Norma</dt><dd>Ley 1581 de 2012 (arts. 4, 17 y 23). Reporte a la SIC en 15 días hábiles si la empresa está en el RNBD.</dd></div>
+                        <div><dt>Acción</dt><dd>Pedir la eliminación del archivo, documentar el incidente, crear un protocolo y cifrar archivos. Referencia: ISO/IEC 27002, controles 5.24 a 5.28 y 8.12.</dd></div>
+                        <div><dt>Indicador</dt><dd>Tiempo entre detección y reporte: máximo 15 días hábiles (meta interna: 5).</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad critica">Crítica</span>
+                        <span class="hallazgo-titulo">Respaldos irregulares y sin restauración</span>
+                        <span><span class="plazo" style="--inicio: 15; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Backups 15 días · plan de recuperación 90</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Pérdida definitiva de información e interrupción de ventas e inventario.</dd></div>
+                        <div><dt>Norma</dt><dd>Ley 1581 (arts. 4 y 17), Código de Comercio art. 60 y Ley 527 de 1999 art. 12.</dd></div>
+                        <div><dt>Acción</dt><dd>Copias automáticas, pruebas de restauración, monitoreo de fallos y plan de recuperación. Referencia: ISO/IEC 27002, 8.13 y 5.30; regla 3-2-1.</dd></div>
+                        <div><dt>Indicador</dt><dd>Al menos 98 % de copias exitosas al mes y pruebas de restauración superadas.</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad alta">Alta</span>
+                        <span class="hallazgo-titulo">Usuarios y contraseñas compartidos</span>
+                        <span><span class="plazo" style="--inicio: 30; --fin: 60"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Cuentas individuales 30 días · MFA 60</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Accesos no autorizados a clientes y nómina, sin poder atribuir responsabilidades.</dd></div>
+                        <div><dt>Norma</dt><dd>Ley 1581 (arts. 4 y 17). La ley no exige “un usuario por persona”, pero es la forma razonable de cumplir el deber de seguridad.</dd></div>
+                        <div><dt>Acción</dt><dd>Eliminar cuentas compartidas, asignar usuarios individuales con permisos, MFA y revisión periódica. Referencia: ISO/IEC 27002, 5.16, 5.17, 8.5 y 8.15.</dd></div>
+                        <div><dt>Indicador</dt><dd>100 % de cuentas individuales, 0 compartidas y 100 % con MFA.</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad alta">Alta</span>
+                        <span class="hallazgo-titulo">Gobierno de datos personales por verificar</span>
+                        <span><span class="plazo" style="--inicio: 30; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Inventario 30 días · política 60 a 90</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Incumplir la Ley 1581 y no poder demostrar su cumplimiento ante la SIC.</dd></div>
+                        <div><dt>Norma</dt><dd>Ley 1581 (arts. 9, 12, 17 y 25) y Decreto 1074 de 2015 (capítulos 25 y 26).</dd></div>
+                        <div><dt>Acción</dt><dd>Inventariar las bases de datos, crear la política de tratamiento y los avisos de privacidad, y nombrar un responsable. Referencia: ISO/IEC 27002, 5.34.</dd></div>
+                        <div><dt>Indicador</dt><dd>100 % de bases de datos con autorización y finalidad registrada.</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad media">Media</span>
+                        <span class="hallazgo-titulo">Falta de capacitación y confidencialidad</span>
+                        <span><span class="plazo" style="--inicio: 60; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Capacitación 60 días · acuerdos 90</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Repetir errores humanos y no poder demostrar diligencia ante la SIC.</dd></div>
+                        <div><dt>Norma</dt><dd>Ley 1581, art. 4 literal h (confidencialidad) y art. 17 literal k (manual interno).</dd></div>
+                        <div><dt>Acción</dt><dd>Programa anual sobre datos personales, contraseñas, phishing y reporte de incidentes, más acuerdos de confidencialidad. Referencia: ISO/IEC 27002, 6.3 y 6.6.</dd></div>
+                        <div><dt>Indicador</dt><dd>Al menos 95 % del personal capacitado y 100 % de acuerdos firmados.</dd></div>
+                    </dl>
+                </details>
+                <div class="escala" aria-hidden="true"><span>Día 0</span><span>30</span><span>60</span><span>90 días hábiles</span></div>
             </div>
+        </section>
+
+        <!-- ================= CASO 3: CONTROL INTERNO ================= -->
+        <section class="seccion" id="casos-control" aria-labelledby="titulo-casos-control">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Caso 03 · Control interno · Unidad 3</span>
+                <h2 id="titulo-casos-control">Cinco casos para <em>pensar como auditor</em></h2>
+                <p>Lee cada situación, decide qué control está fallando y después revela el análisis del taller práctico.</p>
+            </header>
+            <div class="casos">
+                <article class="caso aparecer">
+                    <span class="caso-num">Caso 1 · Facturación</span>
+                    <h4>Todos son administradores</h4>
+                    <p>Los 25 empleados del sistema de facturación e inventario tienen permisos de administrador: pueden modificar facturas, eliminar productos y cambiar precios.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-1">Ver análisis</button>
+                    <div class="respuesta" id="resp-caso-1" hidden>
+                        <strong>Falla el mínimo privilegio</strong>
+                        <p>Riesgos: fraude y manipulación de datos, pérdida de información, nadie responde por los cambios y más exposición a malware. Se corrige con roles y permisos según el cargo (ISO/IEC 27002).</p>
+                    </div>
+                </article>
+                <article class="caso aparecer" style="--d: .1s">
+                    <span class="caso-num">Caso 2 · Sistema académico</span>
+                    <h4>Notas que cambian solas</h4>
+                    <p>Se modifican calificaciones, pero el sistema no guarda quién hizo el cambio, cuándo ni cuál era la nota original.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-2">Ver análisis</button>
+                    <div class="respuesta" id="resp-caso-2" hidden>
+                        <strong>No hay trazabilidad ni recuperación</strong>
+                        <p>Faltan registros de eventos e históricos. Riesgos administrativos (no hay responsable), académicos (historiales alterados) y tecnológicos (no se detectan accesos indebidos ni se recuperan los datos).</p>
+                    </div>
+                </article>
+                <article class="caso aparecer">
+                    <span class="caso-num">Caso 3 · Servidor central</span>
+                    <h4>Copias diarias que no sirven</h4>
+                    <p>TI asegura que respalda la información cada día, pero cuando el servidor falla descubren que las copias están dañadas.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-3">Ver análisis</button>
+                    <div class="respuesta" id="resp-caso-3" hidden>
+                        <strong>Falla la verificación de los respaldos</strong>
+                        <p>Hacer la copia no prueba que funcione: hay que ensayar la restauración. Consecuencias: operación detenida, pérdida de información contable, incumplimientos tributarios y posibles demandas.</p>
+                    </div>
+                </article>
+                <article class="caso aparecer" style="--d: .1s">
+                    <span class="caso-num">Caso 4 · Proveedores y pagos</span>
+                    <h4>Una sola persona lo hace todo</h4>
+                    <p>Un empleado crea proveedores, registra facturas, aprueba pagos y modifica las cuentas bancarias de los beneficiarios.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-4">Ver análisis</button>
+                    <div class="respuesta" id="resp-caso-4" hidden>
+                        <strong>Se rompe la segregación de funciones</strong>
+                        <p>Puede crear proveedores falsos, desviar pagos cambiando cuentas reales o aprobar facturas duplicadas o infladas. Solución: repartir permisos y exigir doble autorización para cambios bancarios (ISO/IEC 27002 control 5.3, COSO).</p>
+                    </div>
+                </article>
+                <article class="caso aparecer">
+                    <span class="caso-num">Caso 5 · Empresa de software</span>
+                    <h4>Diseñar el cuestionario</h4>
+                    <p>La empresa pide evaluar cómo administra usuarios, contraseñas, respaldos, actualizaciones e incidentes de seguridad.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-5">Ver análisis</button>
+                    <div class="respuesta" id="resp-caso-5" hidden>
+                        <strong>Ocho preguntas verificables</strong>
+                        <p>El taller propone un cuestionario de 8 preguntas, cada una clasificada como preventiva o correctiva, con respuestas Sí, No o N/A. Puedes responderlo justo debajo.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CUESTIONARIO ================= -->
+        <section class="seccion" id="cuestionario" aria-labelledby="titulo-cuestionario">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Herramienta · Caso 5</span>
+                <h2 id="titulo-cuestionario">Pon a prueba <em>un control interno</em></h2>
+                <p>Responde como si auditaras una empresa real. El medidor calcula qué tan sólido es su control (las respuestas N/A no cuentan). Recuerda: cada “Sí” debe poder demostrarse con evidencia.</p>
+            </header>
+            <form class="cuestionario aparecer" data-cuestionario>
+                <ol>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Usuarios <span class="prioridad preventivo">Preventivo</span></span>¿Hay un procedimiento documentado para quitar los accesos cuando alguien deja la empresa?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p1" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p1" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p1" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Usuarios <span class="prioridad preventivo">Preventivo</span></span>¿Se revisan periódicamente los privilegios para que cada usuario tenga solo lo necesario?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p2" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p2" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p2" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Contraseñas <span class="prioridad preventivo">Preventivo</span></span>¿Está activa la autenticación multifactor (MFA) en servidores y sistemas críticos?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p3" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p3" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p3" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Contraseñas <span class="prioridad preventivo">Preventivo</span></span>¿La política exige longitud y complejidad, y bloquea la cuenta tras varios intentos fallidos?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p4" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p4" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p4" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Respaldos <span class="prioridad correctivo">Correctivo</span></span>¿Se prueba periódicamente que las copias de seguridad se pueden restaurar?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p5" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p5" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p5" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Actualizaciones <span class="prioridad preventivo">Preventivo</span></span>¿Existe un entorno de pruebas para validar las actualizaciones antes de producción?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p6" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p6" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p6" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Actualizaciones <span class="prioridad correctivo">Correctivo</span></span>¿Hay un procedimiento documentado para revertir una actualización que causa fallos?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p7" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p7" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p7" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Incidentes <span class="prioridad correctivo">Correctivo</span></span>¿Existe un plan documentado para identificar, contener y solucionar incidentes de seguridad?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="p8" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p8" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p8" value="na"><span>N/A</span></label></div></fieldset></li>
+                </ol>
+                <aside class="resultado" aria-live="polite">
+                    <span class="resultado-cifra" data-cifra>—</span>
+                    <div class="medidor" aria-hidden="true"><i data-medidor></i></div>
+                    <span class="medidor-texto" data-avance>0 de 8 respondidas</span>
+                    <p class="resultado-veredicto" data-veredicto>Responde las preguntas</p>
+                    <p class="resultado-ayuda" data-ayuda>Marca Sí, No o N/A para ver qué tan sólido es el control interno.</p>
+                    <button class="button" type="reset">Reiniciar cuestionario</button>
+                </aside>
+            </form>
         </section>
     </main>
 
-    <footer class="orvexa-footer">
-        Auditoría de Sistemas
+    <footer class="site-footer">
+        Portal académico · Auditoría de Sistemas — Materias vistas con Mahecha
     </footer>
 </body>
 </html>

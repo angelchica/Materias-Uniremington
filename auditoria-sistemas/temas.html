@@ -4,66 +4,331 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Temas | Auditoría de Sistemas</title>
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../css/carta-estelar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/auditoria.css">
+    <link rel="stylesheet" href="../css/auditoria-contenido.css">
+    <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <script src="../js/carta-estelar.js" defer></script>
+    <script src="../js/auditoria.js" defer></script>
 </head>
 <body>
-    <header class="orvexa-header">
-        <div class="orvexa-nav-inner">
-            <a href="index.html" class="orvexa-brand">
-                <span class="orvexa-brand-name">Auditoría</span>
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="../index.html" class="home-btn">← Materias</a>
+            </div>
+
+            <a href="index.html" class="brand-row">
+                <div class="brand-mark">AS</div>
+                <div class="brand-text">
+                    <div class="brand-title">AUDITORÍA DE SISTEMAS</div>
+                    <div class="brand-subtitle-main">Control, seguridad y cumplimiento</div>
+                </div>
             </a>
 
-            <nav class="orvexa-menu-links">
-                <a href="../index.html" class="orvexa-back-btn">← Materias</a>
-                <a href="index.html" class="orvexa-link">Inicio</a>
-                <a href="temas.html" class="orvexa-link active">Temas</a>
-                <a href="conceptos.html" class="orvexa-link">Conceptos</a>
-                <a href="casos-practicos.html" class="orvexa-link">Casos</a>
-                <a href="proyecto.html" class="orvexa-link">Proyecto</a>
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+        </div>
+
+        <div class="nav-wrap">
+            <nav class="navbar" aria-label="Secciones de Auditoría de Sistemas">
+                <a href="index.html">Inicio</a>
+                <a href="temas.html" aria-current="page">Temas</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="casos-practicos.html">Casos</a>
+                <a href="proyecto.html">Proyecto</a>
             </nav>
         </div>
     </header>
 
-    <main class="orvexa-main">
-        <section class="orvexa-hero">
-            <span class="orvexa-eyebrow">Plan de Estudio</span>
-            <h1 class="orvexa-title">Temas de la asignatura</h1>
-            <p class="orvexa-subtitle">Unidades temáticas que conforman el desarrollo académico de Auditoría de Sistemas.</p>
-            <div class="orvexa-hero-actions">
-                <a href="conceptos.html" class="orvexa-pill-btn">Ir a Conceptos <span>→</span></a>
-                <a href="index.html" class="orvexa-pill-btn-secondary">← Volver al inicio</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow revelar" style="--d: .15s">Plan de estudio</span>
+                <h1 class="revelar" style="--d: .3s">Temas de la <span>asignatura</span></h1>
+                <p class="revelar" style="--d: .45s">Unidades temáticas que conforman el desarrollo académico de Auditoría de Sistemas.</p>
+                <div class="hero-actions revelar" style="--d: .6s">
+                    <a class="button button-primary" href="conceptos.html">Ir a Conceptos →</a>
+                    <a class="button" href="index.html">← Volver al inicio</a>
+                </div>
+            </div>
+            <div class="dibujo revelar" style="--d: .5s" aria-hidden="true">
+                <svg viewBox="0 0 200 150">
+                    <path class="trazo" pathLength="400" d="M20,115 L60,95 L95,105 L130,65 L170,55 M130,65 L120,25 L165,15" />
+                    <circle class="halo" cx="20" cy="115" r="7" /><circle class="astro" cx="20" cy="115" r="2.6" style="--i: 0" />
+                    <circle class="halo" cx="60" cy="95" r="7" /><circle class="astro" cx="60" cy="95" r="1.7" style="--i: 1" />
+                    <circle class="halo" cx="95" cy="105" r="7" /><circle class="astro" cx="95" cy="105" r="1.7" style="--i: 2" />
+                    <circle class="halo" cx="130" cy="65" r="7" /><circle class="astro" cx="130" cy="65" r="2.6" style="--i: 3" />
+                    <circle class="halo" cx="170" cy="55" r="7" /><circle class="astro" cx="170" cy="55" r="1.7" style="--i: 4" />
+                    <circle class="halo" cx="120" cy="25" r="7" /><circle class="astro" cx="120" cy="25" r="1.7" style="--i: 5" />
+                    <circle class="halo" cx="165" cy="15" r="7" /><circle class="astro" cx="165" cy="15" r="2.6" style="--i: 6" />
+                    <text class="nombre" x="10" y="148">TEMAS · UNIDADES</text>
+                </svg>
             </div>
         </section>
 
-        <section class="orvexa-grid">
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Unidad 01</div>
-                    <h3 class="orvexa-card-title">Fundamentos y Marcos TI</h3>
-                    <p class="orvexa-card-desc">Conceptos generales de auditoría, control interno, gobierno corporativo de TI y normas internacionales (COBIT, ISO 27001).</p>
-                </div>
+        <div class="card-grid revelar" style="--d: .7s">
+            <a class="card" href="#unidad-1">
+                <span class="card-icon">I</span>
+                <span class="card-tag">Unidad 01</span>
+                <h3>Fundamentos de la auditoría</h3>
+                <p>Concepto y finalidad, independencia del auditor, conocimiento previo de la empresa y proceso administrativo.</p>
+                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#unidad-2">
+                <span class="card-icon">II</span>
+                <span class="card-tag">Unidad 02</span>
+                <h3>Diagnóstico de una empresa</h3>
+                <p>Caracterizar la organización, mapear procesos y separar síntomas, hipótesis, riesgos y evidencias.</p>
+                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#unidad-3">
+                <span class="card-icon">III</span>
+                <span class="card-tag">Unidad 03</span>
+                <h3>Control interno</h3>
+                <p>Tipos de control, identidades y permisos, cambios, respaldos, registros y cuestionarios de control.</p>
+                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
+            </a>
+        </div>
+
+        <!-- ================= UNIDAD 1 ================= -->
+        <section class="seccion" id="unidad-1" aria-labelledby="titulo-u1">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Unidad 01</span>
+                <h2 id="titulo-u1">Fundamentos de la <em>auditoría</em></h2>
+                <p>Qué es auditar, quién puede hacerlo con objetividad y qué debe conocerse de la empresa antes de empezar.</p>
+            </header>
+
+            <div class="docs aparecer">
+                <details class="doc" open>
+                    <summary>
+                        <span class="doc-tipo">Clase 1 · PDF</span>
+                        <span class="doc-titulo">Conceptos generales de auditoría de sistemas</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>La auditoría <b>evalúa los procesos</b> de una organización para protegerlos y verificar que cumplan las normas legales vigentes.</li>
+                            <li>Es una <b>investigación crítica e independiente</b>: exige conocer el proceso, no tener vínculos personales, familiares, de amistad ni económicos con lo auditado y basarse en hechos y datos.</li>
+                            <li>Antes de auditar hay que <b>conocer la empresa</b>: escritura de constitución, misión, visión, organigrama, objetivos y normas que aplica.</li>
+                            <li>Todo eso se refleja en el <b>proceso administrativo</b>: planeación, organización, integración, dirección y control.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="doc">
+                    <summary>
+                        <span class="doc-tipo">Taller 1 · Word</span>
+                        <span class="doc-titulo">Fundamentos de auditoría de sistemas</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>Responde <b>10 preguntas</b> sobre el concepto, la finalidad y las características de la auditoría.</li>
+                            <li>Explica el <b>escepticismo profesional</b>: el auditor no da por cierta la información; la compara y la verifica (Normas Globales del IIA, 2024).</li>
+                            <li>Plantea un <b>conflicto de interés</b> en una floricultora y cómo resolverlo (lo encuentras en Conceptos).</li>
+                            <li>Relaciona normas clave: <b>Ley 1581 de 2012</b> (datos personales) y <b>Ley 87 de 1993</b> (control interno).</li>
+                            <li>Propone tres mejoras para una empresa sin control de accesos: inventario de bases de datos personales, accesos por roles con revisión periódica y un control interno documentado.</li>
+                        </ul>
+                        <div class="doc-acciones">
+                            <a class="button" href="https://view.genially.com/6ad95593d47bcb0c87deef9a" target="_blank" rel="noopener">Ver mapa mental en Genially ↗</a>
+                            <a class="button" href="conceptos.html#independencia">Ver el caso de independencia →</a>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="doc">
+                    <summary>
+                        <span class="doc-tipo">Taller práctico · Word</span>
+                        <span class="doc-titulo">Seguridad de la información y plan de mejoramiento</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>Analiza a <b>TecnoAndes S.A.S</b>, una comercializadora de 85 empleados con cuentas compartidas, pérdida de datos por respaldos irregulares y un archivo de clientes enviado por error.</li>
+                            <li>Relaciona cada hallazgo con la <b>Ley 1581 de 2012</b> y el <b>Decreto 1074 de 2015</b>, y usa <b>ISO/IEC 27001 y 27002:2022</b> como referencia técnica.</li>
+                            <li>Prioriza <b>5 hallazgos</b> y define para cada uno acción, responsable, plazo, evidencia e indicador.</li>
+                        </ul>
+                        <div class="doc-acciones">
+                            <a class="button" href="casos-practicos.html#tecnoandes">Ver la hoja de ruta →</a>
+                        </div>
+                    </div>
+                </details>
             </div>
 
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Unidad 02</div>
-                    <h3 class="orvexa-card-title">Planeación y Ejecución</h3>
-                    <p class="orvexa-card-desc">Metodología de auditoría, recolección de evidencia, pruebas sustantivas y de cumplimiento en sistemas computacionales.</p>
+            <h3 class="subtitulo aparecer">El proceso administrativo <em>aplicado a una auditoría</em></h3>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Etapas del proceso administrativo">
+                    <button class="pestana" role="tab" id="pa-1" aria-controls="pa-panel-1" aria-selected="true"><span class="pestana-num">01</span>Planeación</button>
+                    <button class="pestana" role="tab" id="pa-2" aria-controls="pa-panel-2" aria-selected="false"><span class="pestana-num">02</span>Organización</button>
+                    <button class="pestana" role="tab" id="pa-3" aria-controls="pa-panel-3" aria-selected="false"><span class="pestana-num">03</span>Integración</button>
+                    <button class="pestana" role="tab" id="pa-4" aria-controls="pa-panel-4" aria-selected="false"><span class="pestana-num">04</span>Dirección</button>
+                    <button class="pestana" role="tab" id="pa-5" aria-controls="pa-panel-5" aria-selected="false"><span class="pestana-num">05</span>Control</button>
                 </div>
+                <div class="pestana-panel" role="tabpanel" id="pa-panel-1" aria-labelledby="pa-1">
+                    <h4>Definir antes de actuar</h4>
+                    <p>Se decide con anticipación qué se quiere lograr y cómo. En una auditoría se fijan el objetivo, el alcance, los recursos, las actividades y el cronograma.</p>
+                    <p class="ejemplo"><strong>Ejemplo:</strong> auditar en 5 días el registro de entradas y salidas del almacén, comparando el sistema con conteos físicos.</p>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="pa-panel-2" aria-labelledby="pa-2" hidden>
+                    <h4>Repartir el trabajo</h4>
+                    <p>Se define cómo se distribuyen las tareas, quién tiene autoridad y quién responde por cada actividad.</p>
+                    <p class="ejemplo"><strong>En la auditoría:</strong> se nombra un supervisor y se reparten las áreas entre los auditores según lo que sabe cada uno.</p>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="pa-panel-3" aria-labelledby="pa-3" hidden>
+                    <h4>Reunir personas y recursos</h4>
+                    <p>Se consigue lo que la estructura necesita para funcionar: personal capacitado y recursos materiales, económicos y tecnológicos.</p>
+                    <p class="ejemplo"><strong>En la auditoría:</strong> auditores preparados, herramientas de análisis, permisos de lectura en los sistemas y presupuesto para las pruebas.</p>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="pa-panel-4" aria-labelledby="pa-4" hidden>
+                    <h4>Orientar y comunicar</h4>
+                    <p>Con liderazgo y comunicación clara, los objetivos se convierten en instrucciones que las personas entienden y cumplen.</p>
+                    <p class="ejemplo"><strong>En la auditoría:</strong> coordinar al equipo, informar los avances a la gerencia y resolver los obstáculos que aparezcan.</p>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="pa-panel-5" aria-labelledby="pa-5" hidden>
+                    <h4>Comparar y corregir</h4>
+                    <p>Se compara lo logrado con lo planeado y se corrigen las desviaciones.</p>
+                    <p class="ejemplo"><strong>En la auditoría:</strong> comprobar que el control existe, que se ejecuta (registros y pruebas de los últimos meses) y que se actúa cuando falla.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= UNIDAD 2 ================= -->
+        <section class="seccion" id="unidad-2" aria-labelledby="titulo-u2">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Unidad 02</span>
+                <h2 id="titulo-u2">Diagnóstico de una <em>empresa</em></h2>
+                <p>Cómo transformar un caso con fallas en un diagnóstico preliminar organizado, distinguiendo los hechos de las hipótesis.</p>
+            </header>
+
+            <div class="docs aparecer">
+                <details class="doc" open>
+                    <summary>
+                        <span class="doc-tipo">Clase 2 · PDF</span>
+                        <span class="doc-titulo">Diagnóstico de una empresa que requiere auditoría</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>La auditoría de sistemas es una <b>evaluación sistemática y documentada</b> de aplicaciones, bases de datos, infraestructura, usuarios y controles.</li>
+                            <li>Caso guía: una comercializadora con <b>inventario descuadrado, registros duplicados, facturación tardía y cambios sin trazabilidad</b>.</li>
+                            <li>Enseña a separar <b>síntoma, causa posible, riesgo e impacto</b>, y a comprobar hipótesis con entrevistas, inspección y conciliación.</li>
+                            <li>Define el <b>perfil del auditor</b>: competencias técnicas, profesionales e independencia (no auditar el propio trabajo).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="doc">
+                    <summary>
+                        <span class="doc-tipo">Taller · Word</span>
+                        <span class="doc-titulo">Diagnóstico de Buenavista Flowers S.A.S</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>Aplica el método a una <b>floricultora exportadora</b> de La Unión (Antioquia) con 350 empleados.</li>
+                            <li>Construye el organigrama, las responsabilidades de cada área y el <b>mapa de procesos</b> con sus puntos críticos.</li>
+                            <li>Formula <b>4 síntomas</b> con sus hipótesis, un inventario de <b>6 activos tecnológicos</b> y <b>4 acciones iniciales</b> priorizadas.</li>
+                            <li>Aclara que las conclusiones son <b>preliminares</b> hasta reunir más evidencia.</li>
+                        </ul>
+                        <div class="doc-acciones">
+                            <a class="button" href="https://view.genially.com/6ae294d68cdadf4cb42acba1" target="_blank" rel="noopener">Ver presentación en Genially ↗</a>
+                            <a class="button" href="casos-practicos.html#buenavista">Explorar el caso →</a>
+                        </div>
+                    </div>
+                </details>
             </div>
 
-            <div class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Unidad 03</div>
-                    <h3 class="orvexa-card-title">Informe y Dictamen</h3>
-                    <p class="orvexa-card-desc">Estructuración de hallazgos, redacción del dictamen de auditoría, recomendaciones y plan de seguimiento continuo.</p>
-                </div>
+            <h3 class="subtitulo aparecer">Secuencia para resolver <em>un diagnóstico</em></h3>
+            <ol class="secuencia aparecer">
+                <li><span class="paso-num">01</span>Leer el caso y delimitar los hechos.</li>
+                <li><span class="paso-num">02</span>Caracterizar la empresa y construir el organigrama.</li>
+                <li><span class="paso-num">03</span>Mapear los procesos y sus puntos de control.</li>
+                <li><span class="paso-num">04</span>Separar síntomas, hipótesis, riesgos e impactos.</li>
+                <li><span class="paso-num">05</span>Redactar los objetivos y listar los activos.</li>
+                <li><span class="paso-num">06</span>Definir el perfil del auditor y cómo proteger su independencia.</li>
+                <li><span class="paso-num">07</span>Formular conclusiones y acciones iniciales.</li>
+                <li><span class="paso-num">08</span>Integrar el documento y diseñar la presentación.</li>
+            </ol>
+        </section>
+
+        <!-- ================= UNIDAD 3 ================= -->
+        <section class="seccion" id="unidad-3" aria-labelledby="titulo-u3">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Unidad 03</span>
+                <h2 id="titulo-u3">Control <em>interno</em></h2>
+                <p>Las políticas, procedimientos y mecanismos que reducen riesgos, y cómo el auditor comprueba que de verdad funcionan.</p>
+            </header>
+
+            <div class="docs aparecer">
+                <details class="doc" open>
+                    <summary>
+                        <span class="doc-tipo">Clase 3 · PDF</span>
+                        <span class="doc-titulo">Control interno y auditoría de sistemas</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>El control interno <b>protege activos e información</b>, reduce errores, fraudes y accesos indebidos, y permite supervisar las operaciones.</li>
+                            <li>Existen <b>tres tipos de control</b>: preventivo, detectivo y correctivo.</li>
+                            <li>Recorre <b>identidades y permisos</b>, seguridad física, gestión de cambios, copias de seguridad, registros y cuestionarios de control.</li>
+                            <li>Propone <b>cinco casos</b> para analizar y aclara que ISO 690:2021 regula las citas, no los controles de seguridad.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="doc">
+                    <summary>
+                        <span class="doc-tipo">Taller teórico · Word</span>
+                        <span class="doc-titulo">Control interno en auditorías de sistemas</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>Responde <b>10 bloques de preguntas</b> apoyados en GAO, NIST y la Ley 1581 de 2012.</li>
+                            <li>Diferencia <b>diseñar un control</b> de <b>comprobar que funciona</b>: los dos son necesarios.</li>
+                            <li>Explica autenticación frente a autorización, <b>mínimo privilegio</b> y <b>segregación de funciones</b>.</li>
+                            <li>Distingue hacer una copia de seguridad de <b>probar que se puede restaurar</b>, y cómo los logs ayudan a detectar incidentes.</li>
+                        </ul>
+                        <div class="doc-acciones">
+                            <a class="button" href="conceptos.html#glosario">Ir al glosario →</a>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="doc">
+                    <summary>
+                        <span class="doc-tipo">Taller práctico · Word</span>
+                        <span class="doc-titulo">Control interno y evaluación de controles</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <ul class="puntos">
+                            <li>Resuelve <b>5 casos</b>: privilegios excesivos, falta de trazabilidad, respaldos dañados, falta de segregación y diseño de un cuestionario.</li>
+                            <li>Se apoya en <b>ISO/IEC 27002:2022, COSO y COBIT 2019</b>, citando con ISO 690:2021.</li>
+                            <li>Entrega un <b>cuestionario de 8 preguntas verificables</b>, clasificadas como preventivas o correctivas.</li>
+                        </ul>
+                        <div class="doc-acciones">
+                            <a class="button" href="casos-practicos.html#casos-control">Resolver los casos →</a>
+                        </div>
+                    </div>
+                </details>
             </div>
+
+            <p class="nota-clave aparecer"><strong>Para recordar</strong>Diseñar un control no es suficiente: también hay que comprobar que se ejecuta y que funciona.</p>
         </section>
     </main>
 
-    <footer class="orvexa-footer">
-        Auditoría de Sistemas
+    <footer class="site-footer">
+        Portal académico · Auditoría de Sistemas — Materias vistas con Mahecha
     </footer>
 </body>
 </html>

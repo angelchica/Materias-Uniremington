@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="../css/carta-estelar.css">
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/auditoria.css">
+    <link rel="stylesheet" href="../css/auditoria-contenido.css">
+    <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <link rel="stylesheet" href="../css/linea-contenido.css">
     <script src="../js/carta-estelar.js" defer></script>
+    <script src="../js/auditoria.js" defer></script>
 </head>
 <body>
     <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
@@ -71,22 +76,295 @@
         </section>
 
         <div class="card-grid revelar" style="--d: .7s">
-            <div class="card">
+            <a class="card" href="#cid">
                 <span class="card-icon">I</span>
-                <h3>Concepto A</h3>
-                <p>Espacio editable para definir el primer concepto fundamental de tu investigación o tema.</p>
-            </div>
-            <div class="card">
+                <span class="card-tag">Concepto A</span>
+                <h3>Tríada CID</h3>
+                <p>Confidencialidad, integridad y disponibilidad: los tres principios que protege la seguridad de la información.</p>
+                <span class="card-link">Ver ejemplos <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#riesgo">
                 <span class="card-icon">II</span>
-                <h3>Concepto B</h3>
-                <p>Espacio editable para describir el segundo principio técnico o metodológico clave.</p>
-            </div>
-            <div class="card">
+                <span class="card-tag">Concepto B</span>
+                <h3>Amenaza y vulnerabilidad</h3>
+                <p>Qué puede causar daño, qué debilidad aprovecha y cuándo eso se convierte en un riesgo.</p>
+                <span class="card-link">Ver amenazas <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#ia">
                 <span class="card-icon">III</span>
-                <h3>Concepto C</h3>
-                <p>Espacio editable para detallar el tercer concepto y su impacto en el entorno digital.</p>
-            </div>
+                <span class="card-tag">Concepto C</span>
+                <h3>Tipos de IA</h3>
+                <p>ANI, AGI y ASI: del asistente actual a la superinteligencia hipotética de la singularidad.</p>
+                <span class="card-link">Comparar <b aria-hidden="true">↓</b></span>
+            </a>
         </div>
+
+        <!-- ============ TRÍADA CID ============ -->
+        <section class="seccion" id="cid" aria-labelledby="titulo-cid">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">01 · Principios</span>
+                <h2 id="titulo-cid">La tríada <em>CID</em></h2>
+                <p>Confidencialidad, integridad y disponibilidad se protegen cuando los datos están guardados, cuando viajan por la red y cuando se procesan. Toca cada tarjeta para ver el ejemplo del taller y cómo se resolvió.</p>
+            </header>
+            <div class="volteos cols-3 aparecer">
+                <button class="volteo" type="button" aria-pressed="false">
+                    <span class="volteo-interior">
+                        <span class="volteo-cara"><small>Solo quien debe, puede ver</small><strong>Confidencialidad</strong><small>Toca para ver el caso ↻</small></span>
+                        <span class="volteo-cara atras"><small>Caso · banco</small><span class="volteo-texto">Los logs de una app guardan números de tarjeta completos y los consulta todo el equipo de desarrollo. <b>Medida:</b> tokenizar las tarjetas y revisar el código antes de producción.</span></span>
+                    </span>
+                </button>
+                <button class="volteo" type="button" aria-pressed="false">
+                    <span class="volteo-interior">
+                        <span class="volteo-cara"><small>Exacta, completa y auténtica</small><strong>Integridad</strong><small>Toca para ver el caso ↻</small></span>
+                        <span class="volteo-cara atras"><small>Caso · transferencia</small><span class="volteo-texto">Se descuentan $100.000 al remitente, el servidor se reinicia y nunca se abonan al destinatario. <b>Medida:</b> transacciones atómicas y cuadre diario de débitos y créditos.</span></span>
+                    </span>
+                </button>
+                <button class="volteo" type="button" aria-pressed="false">
+                    <span class="volteo-interior">
+                        <span class="volteo-cara"><small>Lista cuando se necesita</small><strong>Disponibilidad</strong><small>Toca para ver el caso ↻</small></span>
+                        <span class="volteo-cara atras"><small>Caso · acceso con SMS</small><span class="volteo-texto">Falla el proveedor de mensajes, no llegan los códigos de MFA y nadie entra a la app. <b>Medida:</b> métodos de autenticación alternativos y acuerdos de nivel de servicio.</span></span>
+                    </span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============ AMENAZA, VULNERABILIDAD, RIESGO ============ -->
+        <section class="seccion" id="riesgo" aria-labelledby="titulo-riesgo">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">02 · No confundir</span>
+                <h2 id="titulo-riesgo">Amenaza, vulnerabilidad <em>y riesgo</em></h2>
+                <p>Tres palabras que se usan como sinónimos pero no lo son. Debajo, las cuatro amenazas que analizó el taller de investigación.</p>
+            </header>
+            <dl class="matriz cols-3 aparecer">
+                <div><dt>Amenaza</dt><dd>Algo que podría causar daño: un correo fraudulento o un virus.</dd></div>
+                <div><dt>Vulnerabilidad</dt><dd>Una debilidad que alguien puede aprovechar: una contraseña fácil o un programa sin actualizar.</dd></div>
+                <div><dt>Riesgo</dt><dd>La posibilidad de que una amenaza aproveche una vulnerabilidad y cause, por ejemplo, la pérdida de información.</dd></div>
+            </dl>
+
+            <h3 class="subtitulo aparecer">Cuatro amenazas <em>de hoy</em></h3>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Amenazas comunes">
+                    <button class="pestana" role="tab" id="am-1" aria-controls="am-panel-1" aria-selected="true">Phishing</button>
+                    <button class="pestana" role="tab" id="am-2" aria-controls="am-panel-2" aria-selected="false">Malware</button>
+                    <button class="pestana" role="tab" id="am-3" aria-controls="am-panel-3" aria-selected="false">Robo de credenciales</button>
+                    <button class="pestana" role="tab" id="am-4" aria-controls="am-panel-4" aria-selected="false">Ataques web</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="am-panel-1" aria-labelledby="am-1">
+                    <dl class="matriz cols-3">
+                        <div><dt>Cómo opera</dt><dd>Correos o mensajes falsos que parecen de alguien conocido para robar contraseñas.</dd></div>
+                        <div><dt>Qué afecta</dt><dd>Cuentas de correo, contraseñas e información confidencial.</dd></div>
+                        <div><dt>Qué hacer</dt><dd>Verificar el remitente, no abrir enlaces sospechosos y reportar el mensaje.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="am-panel-2" aria-labelledby="am-2" hidden>
+                    <dl class="matriz cols-3">
+                        <div><dt>Cómo opera</dt><dd>Programas que dañan equipos, roban datos o espían. Entran por descargas o adjuntos.</dd></div>
+                        <div><dt>Qué afecta</dt><dd>Computadores, servidores y bases de datos.</dd></div>
+                        <div><dt>Qué hacer</dt><dd>Actualizar los sistemas, usar herramientas de protección y no descargar de fuentes desconocidas.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="am-panel-3" aria-labelledby="am-3" hidden>
+                    <dl class="matriz cols-3">
+                        <div><dt>Cómo opera</dt><dd>El atacante obtiene usuario y contraseña con engaños o programas maliciosos.</dd></div>
+                        <div><dt>Qué afecta</dt><dd>Correo corporativo, aplicaciones empresariales y servicios en la nube.</dd></div>
+                        <div><dt>Qué hacer</dt><dd>Contraseñas largas y únicas, y activar la autenticación multifactor (CISA).</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="am-panel-4" aria-labelledby="am-4" hidden>
+                    <dl class="matriz cols-3">
+                        <div><dt>Cómo opera</dt><dd>Aprovecha fallas de programación, configuraciones inseguras o sistemas viejos para entrar y cambiar la página.</dd></div>
+                        <div><dt>Qué afecta</dt><dd>El sitio web, la base de datos de clientes y la información comercial.</dd></div>
+                        <div><dt>Qué hacer</dt><dd>Actualizar, revisar configuraciones, limitar los permisos de administración y respaldar.</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SISTEMA OPERATIVO ============ -->
+        <section class="seccion" id="sistema-operativo" aria-labelledby="titulo-so">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">03 · Sistemas operativos</span>
+                <h2 id="titulo-so">Windows frente a <em>Linux</em></h2>
+                <p>El sistema operativo es el puente entre usuario, aplicaciones y hardware: todo lo que pasa en el equipo se le pide primero a él, y el antivirus, el cifrado y el firewall funcionan encima. Así los compara el taller.</p>
+            </header>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Aspectos de comparación">
+                    <button class="pestana" role="tab" id="so-1" aria-controls="so-panel-1" aria-selected="true">Usuarios</button>
+                    <button class="pestana" role="tab" id="so-2" aria-controls="so-panel-2" aria-selected="false">Permisos</button>
+                    <button class="pestana" role="tab" id="so-3" aria-controls="so-panel-3" aria-selected="false">Actualizaciones</button>
+                    <button class="pestana" role="tab" id="so-4" aria-controls="so-panel-4" aria-selected="false">Herramientas</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="so-panel-1" aria-labelledby="so-1">
+                    <dl class="matriz cols-2">
+                        <div><dt>Windows</dt><dd>Cuentas locales, de Microsoft y corporativas; usuarios estándar y administradores, con Control de cuentas de usuario.</dd></div>
+                        <div><dt>Linux</dt><dd>Usuarios y grupos, cada uno con un número identificador, y el superusuario <i>root</i> con control total.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="so-panel-2" aria-labelledby="so-2" hidden>
+                    <dl class="matriz cols-2">
+                        <div><dt>Windows</dt><dd>Listas de control de acceso con permisos detallados por usuario o grupo: leer, escribir, modificar o control total.</dd></div>
+                        <div><dt>Linux</dt><dd>Lectura, escritura y ejecución para dueño, grupo y otros, más módulos de seguridad que limitan incluso a <i>root</i>.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="so-panel-3" aria-labelledby="so-3" hidden>
+                    <dl class="matriz cols-2">
+                        <div><dt>Windows</dt><dd>Centralizadas en Windows Update, con parches de seguridad mensuales.</dd></div>
+                        <div><dt>Linux</dt><dd>Por el gestor de paquetes de cada distribución; la frecuencia depende de la distribución y se pueden automatizar.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="so-panel-4" aria-labelledby="so-4" hidden>
+                    <dl class="matriz cols-2">
+                        <div><dt>Windows</dt><dd>Microsoft Defender, Firewall de Windows, Secure Boot, cifrado BitLocker y protección de credenciales en memoria.</dd></div>
+                        <div><dt>Linux</dt><dd>Firewall del kernel, cifrado LUKS, módulos de seguridad y herramientas de auditoría; no trae antivirus integrado.</dd></div>
+                    </dl>
+                </div>
+            </div>
+            <p class="nota-clave aparecer"><strong>Filosofías distintas</strong>Windows piensa en usuarios no técnicos y trae protecciones activadas; Linux da más control, pero su seguridad depende de cómo se configure. Ninguno es completamente seguro.</p>
+        </section>
+
+        <!-- ============ TIPOS DE IA ============ -->
+        <section class="seccion" id="ia" aria-labelledby="titulo-ia">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">04 · Inteligencia artificial</span>
+                <h2 id="titulo-ia">ANI, AGI <em>y ASI</em></h2>
+                <p>La comparación de la clase de singularidad. Cambia de pestaña para ver cómo crece el alcance de cada tipo de IA.</p>
+            </header>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Tipos de inteligencia artificial">
+                    <button class="pestana" role="tab" id="ti-1" aria-controls="ti-panel-1" aria-selected="true"><span class="pestana-num">ANI</span>Especializada</button>
+                    <button class="pestana" role="tab" id="ti-2" aria-controls="ti-panel-2" aria-selected="false"><span class="pestana-num">AGI</span>General</button>
+                    <button class="pestana" role="tab" id="ti-3" aria-controls="ti-panel-3" aria-selected="false"><span class="pestana-num">ASI</span>Superinteligencia</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="ti-panel-1" aria-labelledby="ti-1">
+                    <h4>Muy buena en una sola cosa</h4>
+                    <dl class="matriz">
+                        <div><dt>Capacidad</dt><dd>Especializada</dd></div>
+                        <div><dt>Estado</dt><dd>Realidad actual</dd></div>
+                        <div><dt>Aprendizaje</dt><dd>Limitado</dd></div>
+                        <div><dt>Impacto</dt><dd>Sectorial</dd></div>
+                    </dl>
+                    <p class="ejemplo"><strong>Ejemplos:</strong> asistentes como ChatGPT, recomendaciones de Netflix o Spotify, reconocimiento facial y diagnóstico médico asistido.</p>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="ti-panel-2" aria-labelledby="ti-2" hidden>
+                    <h4>Aprende como una persona</h4>
+                    <dl class="matriz">
+                        <div><dt>Capacidad</dt><dd>General</dd></div>
+                        <div><dt>Estado</dt><dd>En desarrollo</dd></div>
+                        <div><dt>Aprendizaje</dt><dd>Flexible</dd></div>
+                        <div><dt>Impacto</dt><dd>Global</dd></div>
+                    </dl>
+                    <p class="ejemplo"><strong>Idea clave:</strong> podría aprender un tema nuevo y adaptarse a resolver actividades distintas. Todavía no existe.</p>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="ti-panel-3" aria-labelledby="ti-3" hidden>
+                    <h4>Supera a la humanidad</h4>
+                    <dl class="matriz">
+                        <div><dt>Capacidad</dt><dd>Superior al humano</dd></div>
+                        <div><dt>Estado</dt><dd>Hipotética</dd></div>
+                        <div><dt>Aprendizaje</dt><dd>Automejora continua</dd></div>
+                        <div><dt>Impacto</dt><dd>Transformador</dd></div>
+                    </dl>
+                    <p class="ejemplo"><strong>Idea clave:</strong> la singularidad se asocia a una AGI que, mejorándose a sí misma, evoluciona hacia una ASI.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CREDIBILIDAD ============ -->
+        <section class="seccion" id="credibilidad" aria-labelledby="titulo-cred">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">05 · Pensamiento crítico</span>
+                <h2 id="titulo-cred">¿Hecho, opinión <em>o predicción</em>?</h2>
+                <p>Sobre la singularidad circula mucho sensacionalismo. El taller teórico propone la prueba CRAAP y la lectura lateral: no quedarse con lo que se lee, sino investigar quién lo dice y contrastarlo con fuentes independientes.</p>
+            </header>
+            <div class="aspectos cols-5 aparecer">
+                <div><h4>Actualidad</h4><p>¿Cuándo se publicó? ¿Hay hallazgos más recientes?</p></div>
+                <div><h4>Relevancia</h4><p>¿Responde tu pregunta y con qué profundidad?</p></div>
+                <div><h4>Autoridad</h4><p>¿Quién es el autor y qué experiencia tiene?</p></div>
+                <div><h4>Exactitud</h4><p>¿Se apoya en evidencia comprobable y revisada?</p></div>
+                <div><h4>Propósito</h4><p>¿Busca informar, enseñar, persuadir o vender?</p></div>
+            </div>
+
+            <h3 class="subtitulo aparecer">Clasifica <em>cada afirmación</em></h3>
+            <div class="casos casos-3">
+                <article class="caso aparecer">
+                    <span class="caso-num">Afirmación 1</span>
+                    <h4>“La IA que usamos hoy es especializada.”</h4>
+                    <p>Piensa si se puede comprobar ahora con datos o registros.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="af-1">Ver respuesta</button>
+                    <div class="respuesta" id="af-1" hidden><strong>Hecho</strong><p>Es verificable en el presente y no depende de quién lo diga: la OECD (2019) describe así la IA actual.</p></div>
+                </article>
+                <article class="caso aparecer" style="--d: .1s">
+                    <span class="caso-num">Afirmación 2</span>
+                    <h4>“La singularidad es un mito.”</h4>
+                    <p>Piensa si se puede probar o si depende de argumentos y puntos de vista.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="af-2">Ver respuesta</button>
+                    <div class="respuesta" id="af-2" hidden><strong>Opinión</strong><p>Es la postura de Walsh (2017). No es verdadera ni falsa: se discute con razonamientos, como su analogía del perro que piensa rápido.</p></div>
+                </article>
+                <article class="caso aparecer" style="--d: .2s">
+                    <span class="caso-num">Afirmación 3</span>
+                    <h4>“Una IA superará a los humanos en pocas décadas.”</h4>
+                    <p>Piensa en el horizonte de tiempo: ¿habla del pasado, del presente o del futuro?</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="af-3">Ver respuesta</button>
+                    <div class="respuesta" id="af-3" hidden><strong>Predicción</strong><p>Se proyecta al futuro y solo podrá verificarse cuando llegue esa fecha. Aunque use modelos, también influye la intuición de quien la hace.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ GLOSARIO ============ -->
+        <section class="seccion" id="glosario" aria-labelledby="titulo-glosario" data-glosario>
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">06 · Glosario</span>
+                <h2 id="titulo-glosario">Términos <em>clave</em></h2>
+                <p>Definiciones breves tomadas de las clases y los talleres. Filtra por tema.</p>
+            </header>
+            <div class="filtros aparecer" role="group" aria-label="Filtrar términos">
+                <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+                <button class="filtro" type="button" data-filtro="seguridad" aria-pressed="false">Seguridad</button>
+                <button class="filtro" type="button" data-filtro="sistemas" aria-pressed="false">Sistemas operativos</button>
+                <button class="filtro" type="button" data-filtro="ia" aria-pressed="false">Inteligencia artificial</button>
+            </div>
+            <dl class="glosario aparecer">
+                <div class="termino" data-categoria="seguridad"><dt>Seguridad de la información</dt><dd>Proteger la información y los sistemas frente a accesos, usos o divulgaciones no autorizados (NIST).</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Activo de información</dt><dd>Información con valor para operar, decidir y mejorar; por eso hay que identificarla y protegerla.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Ciberseguridad</dt><dd>Protección frente a ciberamenazas como código dañino, ataques web, fraude y robo de identidad en línea.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Autenticación multifactor</dt><dd>Una segunda verificación, como un código o una app, para que una contraseña robada no baste.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Mínimo privilegio</dt><dd>Cada usuario o sistema recibe solo los permisos que necesita para su tarea.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Ransomware</dt><dd>Malware que deja los equipos inaccesibles. También puede atacar las copias de seguridad conectadas a la red.</dd></div>
+                <div class="termino" data-categoria="seguridad"><dt>Trazabilidad</dt><dd>Registros con usuario, fecha, hora, acción e IP que permiten reconstruir qué pasó en un incidente.</dd></div>
+                <div class="termino" data-categoria="sistemas"><dt>Sistema operativo</dt><dd>Software que hace de puente entre usuario, aplicaciones y hardware y reparte procesos, memoria, archivos y dispositivos.</dd></div>
+                <div class="termino" data-categoria="sistemas"><dt>Superficie de ataque</dt><dd>El conjunto de puntos débiles por los que un sistema puede ser atacado; cada vulnerabilidad suma uno.</dd></div>
+                <div class="termino" data-categoria="sistemas"><dt>Parche de seguridad</dt><dd>Actualización que corrige una vulnerabilidad antes de que un atacante la aproveche (CISA).</dd></div>
+                <div class="termino" data-categoria="sistemas"><dt>Configuración segura</dt><dd>Desactivar servicios que no se usan, mantener el firewall activo, bloquear la pantalla y no instalar programas sin autorización.</dd></div>
+                <div class="termino" data-categoria="sistemas"><dt>Cadena de suministro</dt><dd>El riesgo puede venir de una biblioteca de terceros, como pasó con XZ Utils en Linux en 2024.</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Singularidad tecnológica</dt><dd>Hipótesis de un punto en que la IA supera la inteligencia humana y se mejora a sí misma sin control previsible.</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Automejora recursiva</dt><dd>Una IA que rediseña su algoritmo y crea versiones cada vez más inteligentes (Chalmers, 2010).</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Excessive agency</dt><dd>Cuando un agente de IA tiene más permisos y autonomía de los que necesita (OWASP, 2025).</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Inyección de prompts</dt><dd>Instrucciones maliciosas que buscan cambiar el comportamiento de una IA o sacarle datos confidenciales.</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Envenenamiento de datos</dt><dd>Alterar los datos de entrenamiento para que el modelo aprenda mal o a favor del atacante.</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Deepfake</dt><dd>Video o audio falso generado con IA para suplantar a una persona.</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Supervisión humana</dt><dd>Personas que entienden el sistema, revisan sus decisiones importantes y pueden detenerlo o revertirlo.</dd></div>
+                <div class="termino" data-categoria="ia"><dt>Lectura lateral</dt><dd>Salir del texto para averiguar quién lo publica y contrastarlo con fuentes independientes.</dd></div>
+            </dl>
+            <p class="glosario-conteo" data-conteo aria-live="polite">20 de 20 términos</p>
+        </section>
+
+        <!-- ============ NORMAS ============ -->
+        <section class="seccion" id="normas" aria-labelledby="titulo-normas">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">07 · Marco de referencia</span>
+                <h2 id="titulo-normas">Normas y guías <em>que se citan</em></h2>
+                <p>Los estándares y guías en que se apoyan los talleres de la materia.</p>
+            </header>
+            <ul class="normas aparecer">
+                <li class="norma"><b>ISO/IEC 27001:2022</b><span>Sistema de gestión de seguridad. Los numerales 6.1.2 y 6.1.3 piden evaluar y tratar los riesgos.</span></li>
+                <li class="norma"><b>ISO/IEC 27002:2022</b><span>Catálogo de controles: accesos (5.15, 5.18), incidentes (5.24 a 5.29), registros (8.15 a 8.17), cambios (8.32).</span></li>
+                <li class="norma"><b>NIST CSF 2.0</b><span>Marco de ciberseguridad para identificar, evaluar y gestionar riesgos según cada organización.</span></li>
+                <li class="norma"><b>NIST AI RMF 1.0</b><span>Gestión de riesgos de la inteligencia artificial, con un perfil específico para IA generativa.</span></li>
+                <li class="norma"><b>OWASP AI Agent Security</b><span>Buenas prácticas para agentes de IA: limitar permisos y exigir aprobación humana.</span></li>
+                <li class="norma"><b>Reglamento UE 2024/1689</b><span>Normas europeas armonizadas sobre inteligencia artificial, incluida la supervisión humana.</span></li>
+                <li class="norma"><b>Guías de CISA</b><span>Recomendaciones sobre MFA, contraseñas seguras y respuesta ante ransomware.</span></li>
+                <li class="norma"><b>APA o IEEE</b><span>Normas obligatorias del curso para citar, referenciar y dar formato a los trabajos.</span></li>
+            </ul>
+        </section>
     </main>
 
     <footer class="site-footer">

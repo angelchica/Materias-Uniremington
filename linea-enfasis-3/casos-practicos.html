@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="../css/carta-estelar.css">
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/auditoria.css">
+    <link rel="stylesheet" href="../css/auditoria-contenido.css">
+    <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <link rel="stylesheet" href="../css/linea-contenido.css">
     <script src="../js/carta-estelar.js" defer></script>
+    <script src="../js/auditoria.js" defer></script>
 </head>
 <body>
     <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
@@ -71,22 +76,290 @@
         </section>
 
         <div class="card-grid revelar" style="--d: .7s">
-            <div class="card">
+            <a class="card" href="#tecnogestion">
                 <span class="card-icon">I</span>
-                <h3>Caso 1</h3>
-                <p>Análisis de escenario práctico, planteamiento del problema y solución propuesta.</p>
-            </div>
-            <div class="card">
+                <span class="card-tag">Caso 01</span>
+                <h3>TecnoGestión S.A.S</h3>
+                <p>Un agente de IA sin límites claros: riesgos, permisos, trazabilidad y respuesta según ISO/IEC 27001.</p>
+                <span class="card-link">Ver caso <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#floricultora">
                 <span class="card-icon">II</span>
-                <h3>Caso 2</h3>
-                <p>Implementación de estrategias tecnológicas para optimizar procesos y resultados.</p>
-            </div>
-            <div class="card">
+                <span class="card-tag">Caso 02</span>
+                <h3>Floricultora</h3>
+                <p>El sistema de recepción de flor y la información que más vale proteger.</p>
+                <span class="card-link">Ver caso <b aria-hidden="true">↓</b></span>
+            </a>
+            <a class="card" href="#incidentes">
                 <span class="card-icon">III</span>
-                <h3>Caso 3</h3>
-                <p>Evaluación de resultados, métricas de mejora y lecciones aprendidas del caso.</p>
-            </div>
+                <span class="card-tag">Caso 03</span>
+                <h3>Incidentes reales</h3>
+                <p>WannaCry, XZ Utils, parches ignorados y agentes con demasiado poder. ¿Qué falló?</p>
+                <span class="card-link">Analizar <b aria-hidden="true">↓</b></span>
+            </a>
         </div>
+
+        <!-- ================= CASO 1: TECNOGESTIÓN ================= -->
+        <section class="seccion" id="tecnogestion" aria-labelledby="titulo-tecnogestion">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Caso 01 · Taller práctico · ISO/IEC 27001</span>
+                <h2 id="titulo-tecnogestion">TecnoGestión <em>S.A.S</em></h2>
+                <p>Administra clientes, inventario, facturación y documentos con un sistema al que se le sumó un agente de IA que consulta, genera informes y ejecuta tareas solo. En un escenario de autonomía creciente, el agente podría hacer cosas que nadie previó.</p>
+            </header>
+
+            <ul class="alertas aparecer">
+                <li>Tiene acceso a información de varias áreas.</li>
+                <li>Sus autorizaciones no están claramente delimitadas.</li>
+                <li>Algunos de sus cambios no quedan documentados.</li>
+                <li>No hay un procedimiento para detenerlo si se comporta raro.</li>
+                <li>Nadie ha evaluado formalmente sus riesgos de seguridad.</li>
+            </ul>
+
+            <h3 class="subtitulo aparecer">Tres riesgos, <em>uno por cada principio</em></h3>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Riesgos del agente de IA">
+                    <button class="pestana" role="tab" id="rg-1" aria-controls="rg-panel-1" aria-selected="true"><span class="pestana-num">C</span>Divulgación</button>
+                    <button class="pestana" role="tab" id="rg-2" aria-controls="rg-panel-2" aria-selected="false"><span class="pestana-num">I</span>Modificación</button>
+                    <button class="pestana" role="tab" id="rg-3" aria-controls="rg-panel-3" aria-selected="false"><span class="pestana-num">D</span>Interrupción</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="rg-panel-1" aria-labelledby="rg-1">
+                    <h4>Acceso y divulgación de información confidencial</h4>
+                    <dl class="matriz cols-3">
+                        <div><dt>Qué podría pasar</dt><dd>El agente consulta datos personales o financieros que no necesita, por permisos mal dados o por interpretar mal una orden.</dd></div>
+                        <div><dt>Qué se afecta</dt><dd>La base de datos de clientes, los datos administrativos y los registros internos.</dd></div>
+                        <div><dt>Principio en juego</dt><dd>Confidencialidad. ISO/IEC 27001, numeral 6.1.2: identificar y evaluar el riesgo.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="rg-panel-2" aria-labelledby="rg-2" hidden>
+                    <h4>Modificación o eliminación incorrecta</h4>
+                    <dl class="matriz cols-3">
+                        <div><dt>Qué podría pasar</dt><dd>Cambia cantidades de inventario, altera facturas o borra información sin que un responsable lo autorice.</dd></div>
+                        <div><dt>Qué se afecta</dt><dd>Inventarios, registros de clientes, facturas y documentos administrativos.</dd></div>
+                        <div><dt>Principio en juego</dt><dd>Integridad. Los numerales 6.1.2 y 6.1.3 piden evaluar el riesgo y definir su tratamiento.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="rg-panel-3" aria-labelledby="rg-3" hidden>
+                    <h4>Interrupción de los servicios</h4>
+                    <dl class="matriz cols-3">
+                        <div><dt>Qué podría pasar</dt><dd>Como nadie sabe cómo detenerlo, el agente sigue ejecutando tareas con errores y afecta la base de datos.</dd></div>
+                        <div><dt>Qué se afecta</dt><dd>Inventario, facturación y almacenamiento de documentos; la operación se frena.</dd></div>
+                        <div><dt>Principio en juego</dt><dd>Disponibilidad. Hay que prever las consecuencias de una interrupción y reducir su impacto.</dd></div>
+                    </dl>
+                </div>
+            </div>
+
+            <h3 class="subtitulo aparecer">Responder cuando el agente <em>se sale de control</em></h3>
+            <ol class="flujo aparecer">
+                <li class="flujo-paso" style="--i: 0"><h4>Detectar y decidir</h4><small>Controles 5.24 y 5.25</small><p>El equipo técnico revisa los registros y aísla lo comprometido; la dirección decide si se detiene el agente y con qué recursos se atiende.</p></li>
+                <li class="flujo-paso" style="--i: 1"><h4>Contener</h4><small>Controles 5.26 y 5.29</small><p>En las primeras horas: aislar sistemas, suspender credenciales, restringir la red y activar los procedimientos de emergencia.</p></li>
+                <li class="flujo-paso" style="--i: 2"><h4>Conservar evidencia</h4><small>Controles 5.28 y 8.17</small><p>Usuario, fecha, hora, acción e IP con relojes sincronizados, guardados en un servidor aparte durante al menos 12 meses.</p></li>
+                <li class="flujo-paso" style="--i: 3"><h4>Recuperar</h4><small>Controles 5.29 y 8.13</small><p>Restaurar desde respaldos probados en un entorno aparte y reconectar por etapas, empezando por lo más crítico.</p></li>
+            </ol>
+
+            <h3 class="subtitulo aparecer">La propuesta: <em>cinco acciones</em></h3>
+            <div class="docs aparecer">
+                <details class="doc">
+                    <summary><span class="doc-tipo">Acción 1 · 6.1.2 y 6.1.3</span><span class="doc-titulo">Identificar y gestionar los riesgos</span><span class="doc-icono" aria-hidden="true"></span></summary>
+                    <div class="doc-cuerpo"><p>Evaluar periódicamente los riesgos del agente y llevarlos a una matriz con cada amenaza, sus consecuencias y su nivel, para decidir qué controles aplicar.</p></div>
+                </details>
+                <details class="doc">
+                    <summary><span class="doc-tipo">Acción 2 · 5.15, 5.18 y 8.2</span><span class="doc-titulo">Limitar accesos y permisos</span><span class="doc-icono" aria-hidden="true"></span></summary>
+                    <div class="doc-cuerpo"><p>Darle una cuenta propia al agente, con solo los permisos que su función requiere: si consulta inventario, que sea de solo lectura. Las operaciones críticas, como eliminar registros o ver datos personales, deben pasar por un empleado responsable. Los permisos se revisan periódicamente.</p></div>
+                </details>
+                <details class="doc">
+                    <summary><span class="doc-tipo">Acción 3 · 5.12 y 8.12</span><span class="doc-titulo">Clasificar y proteger la información</span><span class="doc-icono" aria-hidden="true"></span></summary>
+                    <div class="doc-cuerpo"><p>Clasificar los datos en cuatro niveles (pública, interna, confidencial y restringida), con reglas de acceso para cada uno, y aplicar técnicas que impidan que la información confidencial salga de la organización.</p></div>
+                </details>
+                <details class="doc">
+                    <summary><span class="doc-tipo">Acción 4 · 8.15, 8.16 y 8.17</span><span class="doc-titulo">Registrar todo lo que hace el agente</span><span class="doc-icono" aria-hidden="true"></span></summary>
+                    <div class="doc-cuerpo"><p>Guardar cada acción con identidad, fecha y hora exactas, monitorear esos registros para detectar comportamientos inusuales y generar alertas tempranas.</p></div>
+                </details>
+                <details class="doc">
+                    <summary><span class="doc-tipo">Acción 5 · 5.24 y 5.27</span><span class="doc-titulo">Formalizar la respuesta a incidentes</span><span class="doc-icono" aria-hidden="true"></span></summary>
+                    <div class="doc-cuerpo"><p>Asignar roles (la jefatura decide, sistemas ejecuta), escribir y practicar un plan de respuesta y, después de cada incidente, analizar la causa raíz, actualizar la matriz de riesgos y ajustar los controles.</p></div>
+                </details>
+            </div>
+            <p class="nota-clave aparecer"><strong>Conclusión del taller</strong>La empresa no debe depender solo de la IA para administrar su propia seguridad. La seguridad no frena la innovación: es lo que permite usar la IA con confianza, siempre con supervisión humana.</p>
+        </section>
+
+        <!-- ================= CASO 2: FLORICULTORA ================= -->
+        <section class="seccion" id="floricultora" aria-labelledby="titulo-flori">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Caso 02 · Taller de investigación</span>
+                <h2 id="titulo-flori">Una empresa <em>floricultora</em></h2>
+                <p>El taller aterriza los conceptos en una floricultora. Su sistema de recepción de flor muestra que proteger la información es mucho más que proteger el computador.</p>
+            </header>
+
+            <dl class="matriz cols-3 aparecer">
+                <div><dt>Componentes</dt><dd>Computador, red local, báscula digital, escáner, software de inventario y los operarios que los manejan.</dd></div>
+                <div><dt>Información</dt><dd>Variedad, medida, peso, color, cantidad, calidad, cortador y fecha de corte de cada lote.</dd></div>
+                <div><dt>Riesgos</dt><dd>Cantidades mal digitadas, accesos no permitidos, lecturas sin escanear, caídas de red y fallas de la báscula o el equipo.</dd></div>
+            </dl>
+
+            <h3 class="subtitulo aparecer">La información <em>que más vale</em></h3>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Información valiosa de la floricultora">
+                    <button class="pestana" role="tab" id="iv-1" aria-controls="iv-panel-1" aria-selected="true">Producción</button>
+                    <button class="pestana" role="tab" id="iv-2" aria-controls="iv-panel-2" aria-selected="false">Trabajadores</button>
+                    <button class="pestana" role="tab" id="iv-3" aria-controls="iv-panel-3" aria-selected="false">Comercial</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="iv-panel-1" aria-labelledby="iv-1">
+                    <dl class="matriz cols-3">
+                        <div><dt>Qué incluye</dt><dd>Cantidades cosechadas, variedades, inventarios y registros de calidad.</dd></div>
+                        <div><dt>Si se pierde</dt><dd>Diferencias de inventario, errores al planear la producción y despachos atrasados.</dd></div>
+                        <div><dt>Quién la protege</dt><dd>Supervisores de producción, operarios que registran los datos y el área de sistemas.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="iv-panel-2" aria-labelledby="iv-2" hidden>
+                    <dl class="matriz cols-3">
+                        <div><dt>Qué incluye</dt><dd>Datos personales, contratos, salarios y horarios.</dd></div>
+                        <div><dt>Si se divulga</dt><dd>Se afecta la privacidad de los empleados y aparecen problemas administrativos.</dd></div>
+                        <div><dt>Quién la protege</dt><dd>Gestión Humana y el personal autorizado de sistemas.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="iv-panel-3" aria-labelledby="iv-3" hidden>
+                    <dl class="matriz cols-3">
+                        <div><dt>Qué incluye</dt><dd>Clientes, precios, pedidos y facturas.</dd></div>
+                        <div><dt>Si se pierde</dt><dd>Pedidos perdidos, clientes afectados, pérdidas económicas o datos en manos de la competencia.</dd></div>
+                        <div><dt>Quién la protege</dt><dd>Área comercial, facturación, contabilidad y sistemas.</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CASO 3: INCIDENTES ================= -->
+        <section class="seccion" id="incidentes" aria-labelledby="titulo-incidentes">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Caso 03 · Incidentes para analizar</span>
+                <h2 id="titulo-incidentes">¿Qué falló <em>aquí</em>?</h2>
+                <p>Situaciones reales e hipotéticas tomadas de los talleres. Piensa la respuesta y luego revela el análisis.</p>
+            </header>
+            <div class="casos">
+                <article class="caso aparecer">
+                    <span class="caso-num">Windows · 2017</span>
+                    <h4>El parche que nadie instaló</h4>
+                    <p>Un ransomware aprovecha una falla en un protocolo de Windows. Microsoft había publicado la corrección antes del ataque.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="in-1">Ver análisis</button>
+                    <div class="respuesta" id="in-1" hidden><strong>Falta de actualización</strong><p>Solo cayeron los equipos sin el parche. Mantener los sistemas al día es una de las defensas más efectivas.</p></div>
+                </article>
+                <article class="caso aparecer" style="--d: .1s">
+                    <span class="caso-num">Linux · 2024</span>
+                    <h4>Código malicioso en una biblioteca</h4>
+                    <p>Aparece código malicioso en una biblioteca de compresión que usan muchas distribuciones. Se descubre por casualidad antes de llegar a versiones estables.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="in-2">Ver análisis</button>
+                    <div class="respuesta" id="in-2" hidden><strong>Riesgo en la cadena de suministro</strong><p>El código abierto no es inmune: el peligro puede venir de un componente de terceros, no solo del sistema propio.</p></div>
+                </article>
+                <article class="caso aparecer">
+                    <span class="caso-num">Empresa · 50 equipos</span>
+                    <h4>Actualizaciones apagadas</h4>
+                    <p>Soporte desactiva las actualizaciones automáticas porque una vez dañaron el programa contable. Un correo con un adjunto malicioso se propaga por la red.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="in-3">Ver análisis</button>
+                    <div class="respuesta" id="in-3" hidden><strong>Una decisión sin control</strong><p>La razón era entendible, pero nadie siguió los parches publicados. Un solo equipo infectado afectó a todos porque ninguno estaba protegido. Faltaron inventario, seguimiento, pruebas y un plan de reversión.</p></div>
+                </article>
+                <article class="caso aparecer" style="--d: .1s">
+                    <span class="caso-num">Floricultora · agente de IA</span>
+                    <h4>Un agente con demasiado poder</h4>
+                    <p>Un agente de IA atiende consultas de inventario, pero se conectó directo a la base de datos con permisos para consultar, modificar y eliminar sin aprobación de nadie.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="in-4">Ver análisis</button>
+                    <div class="respuesta" id="in-4" hidden><strong><i>Excessive agency</i> (OWASP)</strong><p>Puede alterar o borrar registros por una instrucción mal interpretada y exponer datos ante una orden maliciosa. Debería ser de solo lectura y pedir aprobación humana para cambios de alto impacto.</p></div>
+                </article>
+                <article class="caso aparecer">
+                    <span class="caso-num">Institución educativa</span>
+                    <h4>Notas alteradas en silencio</h4>
+                    <p>Un estudiante consigue las credenciales de un profesor y modifica sus calificaciones. Puede pasar meses sin que nadie lo note.</p>
+                    <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="in-5">Ver análisis</button>
+                    <div class="respuesta" id="in-5" hidden><strong>Se rompe la integridad</strong><p>Es el principio más delicado en este tipo de sistemas. Se protege con MFA para los docentes, un registro de cada cambio de nota y revisiones periódicas.</p></div>
+                </article>
+            </div>
+
+            <h3 class="subtitulo aparecer">Si llega un <em>ransomware</em></h3>
+            <ol class="flujo cols-5 aparecer">
+                <li class="flujo-paso" style="--i: 0"><h4>Aislar</h4><small>Primero</small><p>Desconectar el equipo de internet y de la red local para frenar la propagación.</p></li>
+                <li class="flujo-paso" style="--i: 1"><h4>Notificar</h4><small>De inmediato</small><p>Avisar a sistemas y a los responsables para medir el alcance y decidir.</p></li>
+                <li class="flujo-paso" style="--i: 2"><h4>Preservar</h4><small>Antes de formatear</small><p>Guardar alertas y registros del sistema para investigar el origen.</p></li>
+                <li class="flujo-paso" style="--i: 3"><h4>Recuperar</h4><small>En entorno limpio</small><p>Restaurar desde copias que no estén infectadas y comprobar que estén completas.</p></li>
+                <li class="flujo-paso" style="--i: 4"><h4>Prevenir</h4><small>Después</small><p>Actualizar, filtrar con firewall o VPN, usar roles, capacitar y respaldar fuera de la red.</p></li>
+            </ol>
+        </section>
+
+        <!-- ================= CASO 4: POLÍTICA DE ACCESO ================= -->
+        <section class="seccion" id="politica" aria-labelledby="titulo-politica">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Caso 04 · Política de acceso</span>
+                <h2 id="titulo-politica">Quién puede qué <em>en una universidad</em></h2>
+                <p>La política breve del taller de investigación para proteger los equipos, los programas y la información de una universidad.</p>
+            </header>
+            <div class="pestanas aparecer" data-pestanas>
+                <div class="pestanas-lista" role="tablist" aria-label="Roles de la política de acceso">
+                    <button class="pestana" role="tab" id="rl-1" aria-controls="rl-panel-1" aria-selected="true">Administrador</button>
+                    <button class="pestana" role="tab" id="rl-2" aria-controls="rl-panel-2" aria-selected="false">Docente</button>
+                    <button class="pestana" role="tab" id="rl-3" aria-controls="rl-panel-3" aria-selected="false">Estudiante</button>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="rl-panel-1" aria-labelledby="rl-1">
+                    <dl class="matriz cols-2">
+                        <div><dt>Puede</dt><dd>Crear y desactivar cuentas, instalar y configurar programas autorizados, configurar el sistema operativo y gestionar permisos.</dd></div>
+                        <div><dt>Debe cuidar</dt><dd>Usar la cuenta de administrador solo cuando la necesite y proteger siempre sus credenciales.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="rl-panel-2" aria-labelledby="rl-2" hidden>
+                    <dl class="matriz cols-2">
+                        <div><dt>Puede</dt><dd>Usar programas y material académico, guardar, compartir y organizar archivos y manejar herramientas autorizadas.</dd></div>
+                        <div><dt>No puede</dt><dd>Cambiar la configuración del sistema, crear cuentas ni instalar o reconfigurar programas.</dd></div>
+                    </dl>
+                </div>
+                <div class="pestana-panel" role="tabpanel" id="rl-panel-3" aria-labelledby="rl-3" hidden>
+                    <dl class="matriz cols-2">
+                        <div><dt>Puede</dt><dd>Entrar con su propia cuenta, usar los programas permitidos y guardar sus trabajos en las carpetas autorizadas.</dd></div>
+                        <div><dt>No puede</dt><dd>Instalar programas, ver archivos privados de otros ni cambiar el sistema o su seguridad.</dd></div>
+                    </dl>
+                </div>
+            </div>
+            <ol class="secuencia cols-3 aparecer" style="margin-top: 34px">
+                <li><span class="paso-num">Regla 1</span>Cada persona usa su propia cuenta: nada de compartir usuarios ni contraseñas.</li>
+                <li><span class="paso-num">Regla 2</span>Las cuentas de administrador llevan autenticación multifactor.</li>
+                <li><span class="paso-num">Regla 3</span>Contraseñas largas y seguras, sin repetir las anteriores.</li>
+                <li><span class="paso-num">Regla 4</span>Cada usuario tiene solo los permisos que de verdad necesita.</li>
+                <li><span class="paso-num">Regla 5</span>Siempre cerrar la sesión al terminar.</li>
+                <li><span class="paso-num">Regla 6</span>El administrador revisa y retira los accesos de quien ya no los necesita.</li>
+            </ol>
+        </section>
+
+        <!-- ================= CHECKLIST ================= -->
+        <section class="seccion" id="checklist" aria-labelledby="titulo-checklist">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Herramienta · Plan de protección</span>
+                <h2 id="titulo-checklist">¿Qué tan protegido <em>está tu equipo</em>?</h2>
+                <p>Las ocho medidas del plan básico de protección del taller de investigación, en su orden de prioridad. Respóndelas pensando en tu computador o en el de tu empresa. Las respuestas N/A no cuentan.</p>
+            </header>
+            <form class="cuestionario aparecer" data-cuestionario="equipo">
+                <ol>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">01 · Actualizaciones</span>¿El sistema operativo está al día y el historial no muestra actualizaciones de seguridad pendientes?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c1" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c1" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c1" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">02 · Malware</span>¿El antivirus tiene la protección en tiempo real activa y actualizada, y el firewall está encendido?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c2" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c2" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c2" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">03 · Cuentas</span>¿Cada persona usa su propia cuenta, sin permisos de administrador que no necesite?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c3" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c3" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c3" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">04 · Autenticación</span>¿Las contraseñas son largas y únicas, y las cuentas administrativas usan MFA?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c4" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c4" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c4" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">05 · Configuración</span>¿Están desactivados los servicios que no se usan y activo el bloqueo de pantalla?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c5" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c5" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c5" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">06 · Copias de seguridad</span>¿Hay copias en la nube y en un disco externo desconectado, y se prueba que se pueden restaurar?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c6" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c6" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c6" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">07 · Redes</span>¿Te conectas solo a redes confiables y evitas compartir información sensible en redes públicas?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c7" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c7" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c7" value="na"><span>N/A</span></label></div></fieldset></li>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">08 · Capacitación</span>¿Los usuarios saben reconocer correos fraudulentos y cómo reportarlos?</legend>
+                        <div class="opciones"><label class="opcion"><input type="radio" name="c8" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="c8" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="c8" value="na"><span>N/A</span></label></div></fieldset></li>
+                </ol>
+                <aside class="resultado" aria-live="polite">
+                    <span class="resultado-cifra" data-cifra>—</span>
+                    <div class="medidor" aria-hidden="true"><i data-medidor></i></div>
+                    <span class="medidor-texto" data-avance>0 de 8 respondidas</span>
+                    <p class="resultado-veredicto" data-veredicto>Responde las preguntas</p>
+                    <p class="resultado-ayuda" data-ayuda>Marca Sí, No o N/A para ver qué tan protegido está el equipo.</p>
+                    <button class="button" type="reset">Reiniciar</button>
+                </aside>
+            </form>
+        </section>
     </main>
 
     <footer class="site-footer">

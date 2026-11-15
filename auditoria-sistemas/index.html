@@ -3,79 +3,170 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Auditoría de Sistemas — Orvexa Studio</title>
+    <title>Auditoría de Sistemas — Portal Académico</title>
+    <meta name="theme-color" content="#060a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../css/carta-estelar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/auditoria.css">
+    <link rel="stylesheet" href="../css/auditoria-contenido.css">
+    <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <script src="../js/carta-estelar.js" defer></script>
+    <script src="../js/auditoria.js" defer></script>
 </head>
 <body>
-    <header class="orvexa-header">
-        <div class="orvexa-nav-inner">
-            <a href="index.html" class="orvexa-brand">
-                <span class="orvexa-brand-name">Auditoría</span>
+    <!-- Fondo: retícula de coordenadas + red de constelaciones (js/carta-estelar.js) -->
+    <div class="reticula" aria-hidden="true"></div>
+    <canvas id="constelacion" aria-hidden="true"></canvas>
+
+    <header class="site-header revelar">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="../index.html" class="home-btn">← Materias</a>
+            </div>
+
+            <a href="index.html" class="brand-row">
+                <div class="brand-mark">AS</div>
+                <div class="brand-text">
+                    <div class="brand-title">AUDITORÍA DE SISTEMAS</div>
+                    <div class="brand-subtitle-main">Control, seguridad y cumplimiento</div>
+                </div>
             </a>
 
-            <nav class="orvexa-menu-links">
-                <a href="../index.html" class="orvexa-back-btn">← Materias</a>
-                <a href="index.html" class="orvexa-link active">Inicio</a>
-                <a href="temas.html" class="orvexa-link">Temas</a>
-                <a href="conceptos.html" class="orvexa-link">Conceptos</a>
-                <a href="casos-practicos.html" class="orvexa-link">Casos</a>
-                <a href="proyecto.html" class="orvexa-link">Proyecto</a>
+            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+        </div>
+
+        <div class="nav-wrap">
+            <nav class="navbar" aria-label="Secciones de Auditoría de Sistemas">
+                <a href="index.html" aria-current="page">Inicio</a>
+                <a href="temas.html">Temas</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="casos-practicos.html">Casos</a>
+                <a href="proyecto.html">Proyecto</a>
             </nav>
         </div>
     </header>
 
-    <main class="orvexa-main">
-        <section class="orvexa-hero">
-            <span class="orvexa-eyebrow">Control · Seguridad · Cumplimiento</span>
-            <h1 class="orvexa-title">Evalúa, protege y asegura los sistemas de información.</h1>
-            <p class="orvexa-subtitle">Gobierno de tecnología, gestión integral de riesgos y estándares internacionales de control interno.</p>
-            
-            <a href="temas.html" class="orvexa-pill-btn">
-                Explorar Temas <span>→</span>
-            </a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow revelar" style="--d: .15s">Control · Seguridad · Cumplimiento</span>
+                <h1 class="revelar" style="--d: .3s">Evalúa, protege y asegura <span>los sistemas de información.</span></h1>
+                <p class="revelar" style="--d: .45s">Gobierno de tecnología, gestión integral de riesgos y estándares internacionales de control interno.</p>
+                <div class="hero-actions revelar" style="--d: .6s">
+                    <a class="button button-primary" href="temas.html">Explorar temas →</a>
+                </div>
+            </div>
+            <div class="dibujo revelar" style="--d: .5s" aria-hidden="true">
+                <svg viewBox="0 0 200 150">
+                    <path class="trazo" pathLength="400" d="M100,15 L160,35 L155,90 L100,130 L45,90 L40,35 L100,15 L100,75 L155,90" />
+                    <circle class="halo" cx="100" cy="15" r="7" /><circle class="astro" cx="100" cy="15" r="2.6" style="--i: 0" />
+                    <circle class="halo" cx="160" cy="35" r="7" /><circle class="astro" cx="160" cy="35" r="1.7" style="--i: 1" />
+                    <circle class="halo" cx="155" cy="90" r="7" /><circle class="astro" cx="155" cy="90" r="1.7" style="--i: 2" />
+                    <circle class="halo" cx="100" cy="130" r="7" /><circle class="astro" cx="100" cy="130" r="2.6" style="--i: 3" />
+                    <circle class="halo" cx="45" cy="90" r="7" /><circle class="astro" cx="45" cy="90" r="1.7" style="--i: 4" />
+                    <circle class="halo" cx="40" cy="35" r="7" /><circle class="astro" cx="40" cy="35" r="1.7" style="--i: 5" />
+                    <circle class="halo" cx="100" cy="75" r="7" /><circle class="astro" cx="100" cy="75" r="2.6" style="--i: 6" />
+                    <text class="nombre" x="10" y="148">AUDITORIA · SISTEMAS</text>
+                </svg>
+            </div>
         </section>
 
-        <section class="orvexa-grid">
-            <a href="temas.html" class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Módulo 01</div>
-                    <h3 class="orvexa-card-title">Temas Estructurados</h3>
-                    <p class="orvexa-card-desc">Fases de la auditoría informática, pruebas de cumplimiento, control interno y marcos metodológicos.</p>
-                </div>
-                <div class="orvexa-card-arrow">Ver contenido →</div>
+        <div class="card-grid card-grid-4 revelar" style="--d: .7s">
+            <a class="card" href="temas.html">
+                <span class="card-icon">I</span>
+                <span class="card-tag">Módulo 01</span>
+                <h3>Temas Estructurados</h3>
+                <p>Tres unidades: fundamentos, diagnóstico de una empresa y control interno, con el resumen de cada clase y taller.</p>
+                <span class="card-link">Ver contenido <b aria-hidden="true">→</b></span>
             </a>
+            <a class="card" href="conceptos.html">
+                <span class="card-icon">II</span>
+                <span class="card-tag">Módulo 02</span>
+                <h3>Conceptos Clave</h3>
+                <p>Síntoma, causa, riesgo e impacto; tipos de control, permisos, evidencia y las normas que se aplican.</p>
+                <span class="card-link">Ver conceptos <b aria-hidden="true">→</b></span>
+            </a>
+            <a class="card" href="casos-practicos.html">
+                <span class="card-icon">III</span>
+                <span class="card-tag">Módulo 03</span>
+                <h3>Casos Prácticos</h3>
+                <p>Buenavista Flowers, TecnoAndes y cinco casos de control interno, con un cuestionario para responder.</p>
+                <span class="card-link">Ver casos <b aria-hidden="true">→</b></span>
+            </a>
+            <a class="card" href="proyecto.html">
+                <span class="card-icon">IV</span>
+                <span class="card-tag">Módulo 04</span>
+                <h3>Proyecto Final</h3>
+                <p>Informe final de auditoría, video tutorial demostrativo y plan de mejora continua para TI.</p>
+                <span class="card-link">Ver proyecto <b aria-hidden="true">→</b></span>
+            </a>
+        </div>
 
-            <a href="conceptos.html" class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Módulo 02</div>
-                    <h3 class="orvexa-card-title">Conceptos Clave</h3>
-                    <p class="orvexa-card-desc">Papeles de trabajo, evidencia digital, matriz de riesgos y criterios de seguridad de la información.</p>
-                </div>
-                <div class="orvexa-card-arrow">Ver conceptos →</div>
-            </a>
-
-            <a href="casos-practicos.html" class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Módulo 03</div>
-                    <h3 class="orvexa-card-title">Casos Prácticos</h3>
-                    <p class="orvexa-card-desc">Evaluación en escenarios reales, identificación de vulnerabilidades, hallazgos y dictámenes técnicos.</p>
-                </div>
-                <div class="orvexa-card-arrow">Ver casos →</div>
-            </a>
-
-            <a href="proyecto.html" class="orvexa-card">
-                <div>
-                    <div class="orvexa-card-num">Módulo 04</div>
-                    <h3 class="orvexa-card-title">Proyecto Final</h3>
-                    <p class="orvexa-card-desc">Informe final de auditoría, video tutorial demostrativo y plan de mejora continua para TI.</p>
-                </div>
-                <div class="orvexa-card-arrow">Ver proyecto →</div>
-            </a>
+        <section class="cifras aparecer" aria-label="La materia en cifras">
+            <div class="cifra"><b data-contador="3">3</b><span>Unidades</span></div>
+            <div class="cifra"><b data-contador="3">3</b><span>Clases guía</span></div>
+            <div class="cifra"><b data-contador="5">5</b><span>Talleres resueltos</span></div>
+            <div class="cifra"><b data-contador="2">2</b><span>Empresas analizadas</span></div>
         </section>
+
+        <section class="seccion" id="proposito" aria-labelledby="titulo-proposito">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">01 · Propósito del curso</span>
+                <h2 id="titulo-proposito">¿Para qué estudiamos <em>auditoría de sistemas</em>?</h2>
+                <p>Para entender cómo se audita una organización, incluida su área informática, y poder dar opiniones objetivas sobre qué tan confiables son sus procesos. Así lo plantea la primera clase del docente Oscar Fernando Mahecha.</p>
+            </header>
+            <ol class="objetivos">
+                <li class="aparecer"><b>Analizar</b> los conceptos base de la auditoría y por qué la estructura administrativa de la empresa importa al momento de auditar.</li>
+                <li class="aparecer" style="--d: .12s"><b>Identificar</b> cómo se desarrolla un proceso de auditoría y qué tipos de controles, públicos y privados, ayudan a cumplir las metas.</li>
+                <li class="aparecer" style="--d: .24s"><b>Aplicar</b> la auditoría a la planeación, organización, integración, dirección y control del área informática.</li>
+            </ol>
+        </section>
+
+        <section class="seccion" id="ruta" aria-labelledby="titulo-ruta">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">02 · Ruta de la materia</span>
+                <h2 id="titulo-ruta">Tres unidades, <em>un mismo método</em></h2>
+                <p>Cada unidad combina una clase guía con talleres resueltos. Toca una parada para ir a su resumen.</p>
+            </header>
+            <ol class="ruta aparecer">
+                <li>
+                    <a href="temas.html#unidad-1">
+                        <span class="seccion-num">Unidad 01</span>
+                        <h3>Fundamentos</h3>
+                        <p>Qué es auditar, por qué el auditor debe ser independiente y cómo se relaciona con el proceso administrativo.</p>
+                        <span class="ruta-docs">Clase 1 · Taller 1 · Plan de mejoramiento</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="temas.html#unidad-2">
+                        <span class="seccion-num">Unidad 02</span>
+                        <h3>Diagnóstico</h3>
+                        <p>Cómo convertir un caso empresarial con fallas en un diagnóstico preliminar, sin presentar sospechas como hechos.</p>
+                        <span class="ruta-docs">Clase 2 · Taller de diagnóstico</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="temas.html#unidad-3">
+                        <span class="seccion-num">Unidad 03</span>
+                        <h3>Control interno</h3>
+                        <p>Qué controles protegen la información y cómo comprobar, con evidencia, que de verdad funcionan.</p>
+                        <span class="ruta-docs">Clase 3 · Taller teórico · Taller práctico</span>
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <figure class="cita aparecer">
+            <blockquote>Una auditoría no consiste en adivinar la causa ni en culpar a una persona: consiste en evaluar con criterios y evidencia.</blockquote>
+            <figcaption>Idea clave · Clase 2, diagnóstico de una empresa</figcaption>
+        </figure>
     </main>
 
-    <footer class="orvexa-footer">
-        Auditoría de Sistemas
+    <footer class="site-footer">
+        Portal académico · Auditoría de Sistemas — Materias vistas con Mahecha
     </footer>
 </body>
 </html>
