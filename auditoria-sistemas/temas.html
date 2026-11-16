@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Temas | Auditoría de Sistemas</title>
     <meta name="theme-color" content="#060a1a">
+    <!-- Favicon Sistema Solar -->
+    <link rel="icon" type="image/svg+xml" href="../logos/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../logos/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logos/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../logos/favicon-192x192.png">
+    <link rel="shortcut icon" href="../logos/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -13,6 +19,7 @@
     <link rel="stylesheet" href="../css/auditoria.css">
     <link rel="stylesheet" href="../css/auditoria-contenido.css">
     <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <link rel="stylesheet" href="../css/linea-contenido.css">
     <script src="../js/carta-estelar.js" defer></script>
     <script src="../js/auditoria.js" defer></script>
 </head>
@@ -35,7 +42,7 @@
                 </div>
             </a>
 
-            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+            <span class="coordenadas" data-reloj aria-hidden="true">15 NOV 2026 · 07:56:00 PM</span>
         </div>
 
         <div class="nav-wrap">
@@ -76,89 +83,83 @@
         </section>
 
         <div class="card-grid revelar" style="--d: .7s">
-            <a class="card" href="#unidad-1">
+            <a class="card" href="#unidad-1" data-abrir-unidad="unidad-1">
                 <span class="card-icon">I</span>
                 <span class="card-tag">Unidad 01</span>
                 <h3>Fundamentos de la auditoría</h3>
                 <p>Concepto y finalidad, independencia del auditor, conocimiento previo de la empresa y proceso administrativo.</p>
-                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
+                <span class="card-link">Ver unidad <b aria-hidden="true">↗</b></span>
             </a>
-            <a class="card" href="#unidad-2">
+            <a class="card" href="#unidad-2" data-abrir-unidad="unidad-2">
                 <span class="card-icon">II</span>
                 <span class="card-tag">Unidad 02</span>
                 <h3>Diagnóstico de una empresa</h3>
                 <p>Caracterizar la organización, mapear procesos y separar síntomas, hipótesis, riesgos y evidencias.</p>
-                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
+                <span class="card-link">Ver unidad <b aria-hidden="true">↗</b></span>
             </a>
-            <a class="card" href="#unidad-3">
+            <a class="card" href="#unidad-3" data-abrir-unidad="unidad-3">
                 <span class="card-icon">III</span>
                 <span class="card-tag">Unidad 03</span>
                 <h3>Control interno</h3>
                 <p>Tipos de control, identidades y permisos, cambios, respaldos, registros y cuestionarios de control.</p>
-                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
+                <span class="card-link">Ver unidad <b aria-hidden="true">↗</b></span>
             </a>
         </div>
 
         <!-- ================= UNIDAD 1 ================= -->
-        <section class="seccion" id="unidad-1" aria-labelledby="titulo-u1">
+        <section class="seccion" id="unidad-1" data-modal-unidad aria-labelledby="titulo-u1">
             <header class="seccion-cabeza aparecer">
                 <span class="seccion-num">Unidad 01</span>
                 <h2 id="titulo-u1">Fundamentos de la <em>auditoría</em></h2>
-                <p>Qué es auditar, quién puede hacerlo con objetividad y qué debe conocerse de la empresa antes de empezar.</p>
+                <p>Qué es auditar, quién puede hacerlo con objetividad, qué debe conocerse de la empresa antes de empezar y cómo se articula con el proceso administrativo.</p>
             </header>
+
+            <!-- Cuadrito destacado para el Mapa Mental de la Unidad 1 en Genially -->
+            <div class="cuadro-diapositivas aparecer">
+                <div class="cuadro-diapo-info">
+                    <span class="cuadro-diapo-tag">✦ Material interactivo · Unidad 01</span>
+                    <h4>Mapa mental de la Unidad 1 en Genially</h4>
+                    <p>Explora el mapa mental interactivo sobre los fundamentos de la auditoría de sistemas, la independencia del auditor y las cinco etapas del proceso administrativo.</p>
+                </div>
+                <a class="cuadro-diapo-btn" href="https://view.genially.com/6ad95593d47bcb0c87deef9a" target="_blank" rel="noopener">
+                    Ver mapa mental en Genially <b aria-hidden="true">↗</b>
+                </a>
+            </div>
 
             <div class="docs aparecer">
                 <details class="doc" open>
                     <summary>
-                        <span class="doc-tipo">Clase 1 · PDF</span>
+                        <span class="doc-tipo">Clase 1 · Presentación PDF</span>
                         <span class="doc-titulo">Conceptos generales de auditoría de sistemas</span>
                         <span class="doc-icono" aria-hidden="true"></span>
                     </summary>
                     <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>La auditoría <b>evalúa los procesos</b> de una organización para protegerlos y verificar que cumplan las normas legales vigentes.</li>
-                            <li>Es una <b>investigación crítica e independiente</b>: exige conocer el proceso, no tener vínculos personales, familiares, de amistad ni económicos con lo auditado y basarse en hechos y datos.</li>
-                            <li>Antes de auditar hay que <b>conocer la empresa</b>: escritura de constitución, misión, visión, organigrama, objetivos y normas que aplica.</li>
-                            <li>Todo eso se refleja en el <b>proceso administrativo</b>: planeación, organización, integración, dirección y control.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller 1 · Word</span>
-                        <span class="doc-titulo">Fundamentos de auditoría de sistemas</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>Responde <b>10 preguntas</b> sobre el concepto, la finalidad y las características de la auditoría.</li>
-                            <li>Explica el <b>escepticismo profesional</b>: el auditor no da por cierta la información; la compara y la verifica (Normas Globales del IIA, 2024).</li>
-                            <li>Plantea un <b>conflicto de interés</b> en una floricultora y cómo resolverlo (lo encuentras en Conceptos).</li>
-                            <li>Relaciona normas clave: <b>Ley 1581 de 2012</b> (datos personales) y <b>Ley 87 de 1993</b> (control interno).</li>
-                            <li>Propone tres mejoras para una empresa sin control de accesos: inventario de bases de datos personales, accesos por roles con revisión periódica y un control interno documentado.</li>
-                        </ul>
-                        <div class="doc-acciones">
-                            <a class="button" href="https://view.genially.com/6ad95593d47bcb0c87deef9a" target="_blank" rel="noopener">Ver mapa mental en Genially ↗</a>
-                            <a class="button" href="conceptos.html#independencia">Ver el caso de independencia →</a>
+                        <div class="doc-bloque">
+                            <h4>Objetivo general y objetivos específicos</h4>
+                            <ul class="puntos">
+                                <li><b>Objetivo general:</b> aplicar los conceptos básicos de cómo se realiza un proceso de auditoría para analizar y evaluar las áreas de la organización —incluida el área informática— y ofrecer opiniones objetivas sobre la confiabilidad de los procesos auditados.</li>
+                                <li><b>Analizar</b> conceptos fundamentales de la auditoría de sistemas y la importancia de la estructura administrativa.</li>
+                                <li><b>Identificar</b> cómo se desarrolla una auditoría y las tipologías de controles públicos y privados diseñados para cumplir las metas organizacionales.</li>
+                                <li><b>Aplicar</b> la auditoría a la planeación, organización, integración, dirección y control de los componentes del área informática.</li>
+                            </ul>
                         </div>
-                    </div>
-                </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller práctico · Word</span>
-                        <span class="doc-titulo">Seguridad de la información y plan de mejoramiento</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>Analiza a <b>TecnoAndes S.A.S</b>, una comercializadora de 85 empleados con cuentas compartidas, pérdida de datos por respaldos irregulares y un archivo de clientes enviado por error.</li>
-                            <li>Relaciona cada hallazgo con la <b>Ley 1581 de 2012</b> y el <b>Decreto 1074 de 2015</b>, y usa <b>ISO/IEC 27001 y 27002:2022</b> como referencia técnica.</li>
-                            <li>Prioriza <b>5 hallazgos</b> y define para cada uno acción, responsable, plazo, evidencia e indicador.</li>
-                        </ul>
-                        <div class="doc-acciones">
-                            <a class="button" href="casos-practicos.html#tecnoandes">Ver la hoja de ruta →</a>
+                        <div class="doc-bloque">
+                            <h4>¿Qué es una auditoría?</h4>
+                            <ul class="puntos">
+                                <li>Tiene como fin <b>evaluar los procesos de una organización</b> buscando protegerlos y verificar que las actividades se desarrollen bajo reglamentaciones legales vigentes, asegurando la eficacia empresarial.</li>
+                                <li>Es una <b>investigación crítica e independiente</b> que exige conocimiento claro del proceso que se va a auditar.</li>
+                                <li>Exige <b>independencia personal, familiar, de amistad y económica</b> frente al objeto auditado.</li>
+                                <li>Todo debe estar basado en <b>hechos, transacciones, gestiones, datos y factores</b> verificables dentro de la organización.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-bloque">
+                            <h4>¿Qué se debe tener en cuenta antes de auditar?</h4>
+                            <ul class="puntos">
+                                <li>Conocer la <b>escritura de constitución</b>, la <b>misión</b>, la <b>visión</b> y el <b>organigrama</b> de la empresa.</li>
+                                <li>Ubicar en cuál área está el proceso a auditar y saber qué hacen las diversas áreas de la organización.</li>
+                                <li>Realizar una observación a profundidad de la estructura organizacional del área de trabajo.</li>
+                                <li>Conocer los <b>objetivos corporativos</b> de la compañía y la <b>normatividad legal</b> (normas y leyes aplicadas).</li>
+                            </ul>
                         </div>
                     </div>
                 </details>
@@ -202,52 +203,63 @@
         </section>
 
         <!-- ================= UNIDAD 2 ================= -->
-        <section class="seccion" id="unidad-2" aria-labelledby="titulo-u2">
+        <section class="seccion" id="unidad-2" data-modal-unidad aria-labelledby="titulo-u2">
             <header class="seccion-cabeza aparecer">
                 <span class="seccion-num">Unidad 02</span>
                 <h2 id="titulo-u2">Diagnóstico de una <em>empresa</em></h2>
-                <p>Cómo transformar un caso con fallas en un diagnóstico preliminar organizado, distinguiendo los hechos de las hipótesis.</p>
+                <p>Cómo transformar un caso empresarial con fallas en un diagnóstico preliminar organizado, distinguiendo los hechos reportados de las hipótesis por verificar.</p>
             </header>
+
+            <!-- Cuadrito destacado para la Presentación en Genially de la Unidad 2 -->
+            <div class="cuadro-diapositivas aparecer">
+                <div class="cuadro-diapo-info">
+                    <span class="cuadro-diapo-tag">✦ Material interactivo · Unidad 02</span>
+                    <h4>Presentación interactiva en Genially — Diagnóstico de auditoría</h4>
+                    <p>Explora las diapositivas interactivas sobre el diagnóstico preliminar de Buenavista Flowers S.A.S., su mapa de procesos, matriz de síntomas e inventario de activos.</p>
+                </div>
+                <a class="cuadro-diapo-btn" href="https://view.genially.com/6ae294d68cdadf4cb42acba1" target="_blank" rel="noopener">
+                    Ver presentación en Genially <b aria-hidden="true">↗</b>
+                </a>
+            </div>
 
             <div class="docs aparecer">
                 <details class="doc" open>
                     <summary>
-                        <span class="doc-tipo">Clase 2 · PDF</span>
-                        <span class="doc-titulo">Diagnóstico de una empresa que requiere auditoría</span>
+                        <span class="doc-tipo">Clase 2 · Guía de clase PDF</span>
+                        <span class="doc-titulo">Diagnóstico de una empresa que requiere auditoría de sistemas</span>
                         <span class="doc-icono" aria-hidden="true"></span>
                     </summary>
                     <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>La auditoría de sistemas es una <b>evaluación sistemática y documentada</b> de aplicaciones, bases de datos, infraestructura, usuarios y controles.</li>
-                            <li>Caso guía: una comercializadora con <b>inventario descuadrado, registros duplicados, facturación tardía y cambios sin trazabilidad</b>.</li>
-                            <li>Enseña a separar <b>síntoma, causa posible, riesgo e impacto</b>, y a comprobar hipótesis con entrevistas, inspección y conciliación.</li>
-                            <li>Define el <b>perfil del auditor</b>: competencias técnicas, profesionales e independencia (no auditar el propio trabajo).</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller · Word</span>
-                        <span class="doc-titulo">Diagnóstico de Buenavista Flowers S.A.S</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>Aplica el método a una <b>floricultora exportadora</b> de La Unión (Antioquia) con 350 empleados.</li>
-                            <li>Construye el organigrama, las responsabilidades de cada área y el <b>mapa de procesos</b> con sus puntos críticos.</li>
-                            <li>Formula <b>4 síntomas</b> con sus hipótesis, un inventario de <b>6 activos tecnológicos</b> y <b>4 acciones iniciales</b> priorizadas.</li>
-                            <li>Aclara que las conclusiones son <b>preliminares</b> hasta reunir más evidencia.</li>
-                        </ul>
-                        <div class="doc-acciones">
-                            <a class="button" href="https://view.genially.com/6ae294d68cdadf4cb42acba1" target="_blank" rel="noopener">Ver presentación en Genially ↗</a>
-                            <a class="button" href="casos-practicos.html#buenavista">Explorar el caso →</a>
+                        <div class="doc-bloque">
+                            <h4>¿Qué es una auditoría de sistemas?</h4>
+                            <ul class="puntos">
+                                <li><b>¿Qué revisa?</b> Aplicaciones, bases de datos, infraestructura, usuarios, procedimientos, controles y registros.</li>
+                                <li><b>¿Para qué?</b> Identificar riesgos, comprobar controles, detectar debilidades y recomendar mejoras.</li>
+                                <li><b>¿Qué produce?</b> Hallazgos sustentados en evidencia, conclusiones y recomendaciones priorizadas.</li>
+                                <li><b>Idea clave:</b> una auditoría no consiste en adivinar la causa ni en culpar a una persona; consiste en evaluar con criterios y evidencia.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-bloque">
+                            <h4>Caracterización, organigrama y mapa de procesos</h4>
+                            <ul class="puntos">
+                                <li><b>Caracterizar la empresa:</b> identidad (actividad, productos, clientes y tamaño), dirección estratégica (misión, visión y objetivos) y contexto tecnológico.</li>
+                                <li><b>Organigrama y segregación:</b> separar funciones incompatibles; quien registra una operación no debería ser la única persona que la aprueba y revisa.</li>
+                                <li><b>Mapa de procesos:</b> seguir el flujo <i>Venta → Validación → Inventario → Facturación → Contabilidad</i> identificando puntos críticos, trazabilidad (usuario, fecha, hora, dato anterior y cambio) y conciliación.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-bloque">
+                            <h4>Activos tecnológicos, controles y evidencia</h4>
+                            <ul class="puntos">
+                                <li><b>Siete activos por inventariar:</b> aplicación comercial, base de datos, módulo de inventario, facturación, equipos y red, usuarios y bitácoras, y copias de seguridad (definiendo función, responsable, información, criticidad y control por revisar).</li>
+                                <li><b>Seis líneas de control por investigar:</b> acceso, integridad de datos, gestión de cambios, trazabilidad, continuidad y conciliación.</li>
+                                <li><b>Cómo comprobar hipótesis con evidencia:</b> entrevistas con responsables, inspección de configuraciones/permisos y pruebas de conciliación sobre muestras reales.</li>
+                            </ul>
                         </div>
                     </div>
                 </details>
             </div>
 
-            <h3 class="subtitulo aparecer">Secuencia para resolver <em>un diagnóstico</em></h3>
+            <h3 class="subtitulo aparecer">Secuencia recomendada en 8 pasos <em>para resolver un diagnóstico</em></h3>
             <ol class="secuencia aparecer">
                 <li><span class="paso-num">01</span>Leer el caso y delimitar los hechos.</li>
                 <li><span class="paso-num">02</span>Caracterizar la empresa y construir el organigrama.</li>
@@ -261,69 +273,49 @@
         </section>
 
         <!-- ================= UNIDAD 3 ================= -->
-        <section class="seccion" id="unidad-3" aria-labelledby="titulo-u3">
+        <section class="seccion" id="unidad-3" data-modal-unidad aria-labelledby="titulo-u3">
             <header class="seccion-cabeza aparecer">
                 <span class="seccion-num">Unidad 03</span>
                 <h2 id="titulo-u3">Control <em>interno</em></h2>
-                <p>Las políticas, procedimientos y mecanismos que reducen riesgos, y cómo el auditor comprueba que de verdad funcionan.</p>
+                <p>Las políticas, procedimientos y mecanismos que reducen riesgos y protegen los activos tecnológicos, y cómo el auditor informático comprueba con evidencia que operan de forma efectiva.</p>
             </header>
 
             <div class="docs aparecer">
                 <details class="doc" open>
                     <summary>
-                        <span class="doc-tipo">Clase 3 · PDF</span>
+                        <span class="doc-tipo">Clase 3 · Presentación PDF</span>
                         <span class="doc-titulo">Control interno y auditoría de sistemas</span>
                         <span class="doc-icono" aria-hidden="true"></span>
                     </summary>
                     <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>El control interno <b>protege activos e información</b>, reduce errores, fraudes y accesos indebidos, y permite supervisar las operaciones.</li>
-                            <li>Existen <b>tres tipos de control</b>: preventivo, detectivo y correctivo.</li>
-                            <li>Recorre <b>identidades y permisos</b>, seguridad física, gestión de cambios, copias de seguridad, registros y cuestionarios de control.</li>
-                            <li>Propone <b>cinco casos</b> para analizar y aclara que ISO 690:2021 regula las citas, no los controles de seguridad.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller teórico · Word</span>
-                        <span class="doc-titulo">Control interno en auditorías de sistemas</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>Responde <b>10 bloques de preguntas</b> apoyados en GAO, NIST y la Ley 1581 de 2012.</li>
-                            <li>Diferencia <b>diseñar un control</b> de <b>comprobar que funciona</b>: los dos son necesarios.</li>
-                            <li>Explica autenticación frente a autorización, <b>mínimo privilegio</b> y <b>segregación de funciones</b>.</li>
-                            <li>Distingue hacer una copia de seguridad de <b>probar que se puede restaurar</b>, y cómo los logs ayudan a detectar incidentes.</li>
-                        </ul>
-                        <div class="doc-acciones">
-                            <a class="button" href="conceptos.html#glosario">Ir al glosario →</a>
+                        <div class="doc-bloque">
+                            <h4>Propósito, estructura y tipos de control interno</h4>
+                            <ul class="puntos">
+                                <li><b>¿Para qué sirve?</b> Protege los activos y la información, reduce errores, fraudes y accesos indebidos, favorece el cumplimiento de normas y objetivos, y permite supervisar las operaciones.</li>
+                                <li><b>¿Cómo se estructura?</b> Estructura organizacional y responsabilidades, políticas y procedimientos documentados, controles tecnológicos y administrativos, y seguimiento, verificación y mejora.</li>
+                                <li><b>Tres tipos de control:</b> <b>Preventivo</b> (evita que ocurra un error o incidente), <b>Detectivo</b> (identifica eventos o desviaciones) y <b>Correctivo</b> (restaura o corrige la situación).</li>
+                            </ul>
                         </div>
-                    </div>
-                </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller práctico · Word</span>
-                        <span class="doc-titulo">Control interno y evaluación de controles</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <ul class="puntos">
-                            <li>Resuelve <b>5 casos</b>: privilegios excesivos, falta de trazabilidad, respaldos dañados, falta de segregación y diseño de un cuestionario.</li>
-                            <li>Se apoya en <b>ISO/IEC 27002:2022, COSO y COBIT 2019</b>, citando con ISO 690:2021.</li>
-                            <li>Entrega un <b>cuestionario de 8 preguntas verificables</b>, clasificadas como preventivas o correctivas.</li>
-                        </ul>
-                        <div class="doc-acciones">
-                            <a class="button" href="casos-practicos.html#casos-control">Resolver los casos →</a>
+                        <div class="doc-bloque">
+                            <h4>Funciones del auditor informático y evidencias habituales</h4>
+                            <ul class="puntos">
+                                <li><b>Funciones principales:</b> evaluar controles, verificar trazabilidad (quién hizo una operación, cuándo y qué modificó), examinar autorizaciones, identificar riesgos y hallazgos, y validar con evidencia contrastando entrevistas con registros y pruebas.</li>
+                                <li><b>Evidencias habituales:</b> matriz de usuarios y permisos, logs y reportes de actividad, tickets de cambios autorizados, registros de respaldos y pruebas de restauración, y políticas y actas de revisión.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-bloque">
+                            <h4>Identidades, infraestructura, cambios y monitoreo</h4>
+                            <ul class="puntos">
+                                <li><b>Identidades y accesos:</b> distinguir <b>autenticación</b> (quién es el usuario: clave, MFA, biometría) de <b>autorización</b> (qué puede hacer: consultar, registrar, aprobar, administrar), aplicando <b>mínimo privilegio</b> y <b>segregación de funciones</b>.</li>
+                                <li><b>Infraestructura y gestión de cambios:</b> seguridad física (acceso a centros de datos, cámaras, protección eléctrica y contra incendios), configuración segura (deshabilitar servicios innecesarios, cambiar claves por defecto, parches y firewall) y gestión de cambios (solicitar, autorizar, evaluar impacto, probar antes de producción, documentar y prever reversión).</li>
+                                <li><b>Respaldos, logs y cuestionarios de control:</b> copias protegidas y separadas con pruebas periódicas de restauración; logs protegidos contra alteración; y cuestionarios con preguntas claras y verificables (Sí / No / No aplica) validadas con evidencia.</li>
+                            </ul>
                         </div>
                     </div>
                 </details>
             </div>
 
-            <p class="nota-clave aparecer"><strong>Para recordar</strong>Diseñar un control no es suficiente: también hay que comprobar que se ejecuta y que funciona.</p>
+            <p class="nota-clave aparecer"><strong>Para recordar</strong>Diseñar un control no es suficiente: una respuesta “Sí” en un cuestionario no prueba por sí sola que el control sea efectivo; debe comprobarse con evidencia que realmente se ejecuta y funciona.</p>
         </section>
     </main>
 

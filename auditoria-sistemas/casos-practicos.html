@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Casos Prácticos | Auditoría de Sistemas</title>
     <meta name="theme-color" content="#060a1a">
+    <!-- Favicon Sistema Solar -->
+    <link rel="icon" type="image/svg+xml" href="../logos/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../logos/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logos/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../logos/favicon-192x192.png">
+    <link rel="shortcut icon" href="../logos/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -13,6 +19,7 @@
     <link rel="stylesheet" href="../css/auditoria.css">
     <link rel="stylesheet" href="../css/auditoria-contenido.css">
     <link rel="stylesheet" href="../css/auditoria-casos.css">
+    <link rel="stylesheet" href="../css/linea-contenido.css">
     <script src="../js/carta-estelar.js" defer></script>
     <script src="../js/auditoria.js" defer></script>
 </head>
@@ -35,7 +42,7 @@
                 </div>
             </a>
 
-            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+            <span class="coordenadas" data-reloj aria-hidden="true">15 NOV 2026 · 07:56:00 PM</span>
         </div>
 
         <div class="nav-wrap">
@@ -74,46 +81,234 @@
         </section>
 
         <div class="card-grid revelar" style="--d: .7s">
-            <a class="card" href="#buenavista">
+            <a class="card" href="#unidad-1" data-abrir-unidad="unidad-1">
                 <span class="card-icon">I</span>
-                <span class="card-tag">Caso 01</span>
-                <h3>Buenavista Flowers S.A.S</h3>
-                <p>Diagnóstico de una floricultora con inventario descuadrado, duplicados, facturas tardías y cambios sin responsable.</p>
-                <span class="card-link">Ver diagnóstico <b aria-hidden="true">↓</b></span>
+                <span class="card-tag">Unidad 01 · Talleres y Casos</span>
+                <h3>Fundamentos y Plan de Mejoramiento</h3>
+                <p>Taller 1 de fundamentos de auditoría (10 preguntas), mapa mental en Genially y Taller práctico de TecnoAndes S.A.S. con 5 hallazgos priorizados bajo la Ley 1581 e ISO/IEC 27002.</p>
+                <span class="card-link">Ver talleres Unidad 01 <b aria-hidden="true">↗</b></span>
             </a>
-            <a class="card" href="#tecnoandes">
+            <a class="card" href="#unidad-2" data-abrir-unidad="unidad-2">
                 <span class="card-icon">II</span>
-                <span class="card-tag">Caso 02</span>
-                <h3>TecnoAndes S.A.S</h3>
-                <p>Plan de mejoramiento con 5 hallazgos de seguridad priorizados según la Ley 1581 de 2012 e ISO/IEC 27002.</p>
-                <span class="card-link">Ver plan <b aria-hidden="true">↓</b></span>
+                <span class="card-tag">Unidad 02 · Taller y Caso</span>
+                <h3>Diagnóstico de Buenavista Flowers S.A.S.</h3>
+                <p>Taller teórico-práctico en 8 actividades: caracterización, organigrama, mapa de procesos, matriz de 4 síntomas, inventario de 6 activos, perfil auditor y presentación en Genially.</p>
+                <span class="card-link">Ver taller Unidad 02 <b aria-hidden="true">↗</b></span>
             </a>
-            <a class="card" href="#casos-control">
+            <a class="card" href="#unidad-3" data-abrir-unidad="unidad-3">
                 <span class="card-icon">III</span>
-                <span class="card-tag">Caso 03</span>
-                <h3>Cinco casos de control</h3>
-                <p>Privilegios, trazabilidad, respaldos, segregación de funciones y un cuestionario que puedes responder.</p>
-                <span class="card-link">Resolver casos <b aria-hidden="true">↓</b></span>
+                <span class="card-tag">Unidad 03 · Talleres y Casos</span>
+                <h3>Control Interno y Evaluación de Controles</h3>
+                <p>Taller teórico de control interno (10 bloques conceptuales), Taller práctico con 5 casos empresariales (ISO 690:2021) y cuestionario interactivo de 8 preguntas verificables.</p>
+                <span class="card-link">Ver talleres Unidad 03 <b aria-hidden="true">↗</b></span>
             </a>
         </div>
 
-        <!-- ================= CASO 1: BUENAVISTA ================= -->
-        <section class="seccion" id="buenavista" aria-labelledby="titulo-buenavista">
+        <!-- =======================================================
+             UNIDAD 01: TALLERES DE FUNDAMENTOS Y TECNOANDES S.A.S.
+        ======================================================== -->
+        <section class="seccion" id="unidad-1" data-modal-unidad aria-labelledby="titulo-taller-u1">
             <header class="seccion-cabeza aparecer">
-                <span class="seccion-num">Caso 01 · Diagnóstico · Unidad 2</span>
-                <h2 id="titulo-buenavista">Buenavista Flowers <em>S.A.S</em></h2>
-                <p>Floricultora exportadora de La Unión (Antioquia) con 350 empleados. Su sistema muestra inventario descuadrado, registros duplicados, facturas tardías y cambios sin responsable. Las causas todavía no están comprobadas.</p>
+                <span class="seccion-num">Unidad 01 · Aplicación práctica</span>
+                <h2 id="titulo-taller-u1">Talleres de <em>Fundamentos y Plan de Mejoramiento</em></h2>
+                <p>Dos talleres desarrollados en la Unidad 1 por Angel Yecid Chica Marulanda y Sebastián Jaramillo López: cuestionario de investigación sobre fundamentos de auditoría y plan de mejoramiento normativo para Comercializadora TecnoAndes S.A.S.</p>
             </header>
 
-            <h3 class="subtitulo aparecer">Dónde puede fallar <em>el flujo de información</em></h3>
+            <!-- Cuadrito destacado para el Mapa Mental en Genially de la Unidad 1 -->
+            <div class="cuadro-diapositivas aparecer">
+                <div class="cuadro-diapo-info">
+                    <span class="cuadro-diapo-tag">✦ Material interactivo · Unidad 01</span>
+                    <h4>Mapa mental en Genially — Fundamentos de Auditoría</h4>
+                    <p>En este mapa mental interactivo se sintetizan el concepto y finalidad de la auditoría, los principios de independencia y las etapas del proceso administrativo del Taller 1. Haz clic para verlo.</p>
+                </div>
+                <a class="cuadro-diapo-btn" href="https://view.genially.com/6ad95593d47bcb0c87deef9a" target="_blank" rel="noopener">
+                    Ver mapa mental en Genially <b aria-hidden="true">↗</b>
+                </a>
+            </div>
+
+            <div class="docs aparecer">
+                <!-- TALLER 1 UNIDAD 1 -->
+                <details class="doc" open>
+                    <summary>
+                        <span class="doc-tipo">Taller 1 · Investigación · Unidad 01</span>
+                        <span class="doc-titulo">Fundamentos de auditoría de sistemas (10 preguntas)</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <p class="doc-intro">Diez preguntas desarrolladas con apoyo en el Instituto de Auditores Internos (IIA, 2024), DAFP (2020), ISACA (2017), Auditool, OpenStax (Bright &amp; Cortés, 2019), MinTIC y las leyes 1581 de 2012 y 87 de 1993.</p>
+                        <ol class="preguntas">
+                            <li><b>Concepto y finalidad de la auditoría.</b> Revisión sistemática para comprobar si los procesos y recursos se manejan adecuadamente, prevenir fallos y verificar el cumplimiento legal (IIA Colombia; Uniandes). Ejemplo: auditoría semanal del inventario de cuarto frío en una empresa floricultora comparando el sistema con las flores físicas.</li>
+                            <li><b>Investigación crítica e independiente.</b> El auditor aplica el <i>escepticismo profesional</i> (The IIA, 2024): no da por cierta la información entregada por el área auditada, sino que la contrasta con pruebas suficientes y objetivas. Una auditoría sin independencia genera sesgo, pérdida de confianza, sanciones y daño reputacional (DAFP, 2020).</li>
+                            <li><b>Independencia personal, familiar, de amistad y económica.</b> El auditor no debe auditar a familiares, dejarse guiar por beneficios propios, encubrir a amigos ni recibir dinero o regalos (Rodríguez; Khayal, 2025). Caso hipotético: si el responsable del cuarto frío con descuadres es amigo cercano del auditor, este debe registrar el hallazgo con evidencia, informar el conflicto a su superior y pedir que otro auditor asuma la revisión.</li>
+                            <li><b>Conocimiento previo de la organización.</b> Antes de auditar hay que conocer la escritura de constitución (naturaleza jurídica y objeto social), misión y visión (propósito estratégico), organigrama (autoridad y distribución de funciones) y objetivos corporativos para delimitar con criterio el alcance de la auditoría (DAFP, 2020; The IIA, 2024).</li>
+                            <li><b>Identificación del área y del proceso por auditar.</b> Revisar la estructura organizacional, consultar manuales y entrevistar responsables priorizando procesos de alto riesgo (ISACA, 2017; Auditool, 2023). Ejemplo: para auditar las copias de seguridad en una floricultora, se ubica el área de Sistemas, se identifica al administrador del servidor y se realizan pruebas reales de restauración.</li>
+                            <li><b>Normatividad legal en los procesos de auditoría.</b> Las leyes son el criterio obligatorio frente al cual se compara la empresa. Destaca la <b>Ley Estatutaria 1581 de 2012</b> (protección de datos personales vigilada por la SIC): el auditor verifica la autorización de los titulares, la finalidad del tratamiento y las medidas de acceso restringido.</li>
+                            <li><b>Planeación dentro del proceso administrativo.</b> Definir con anticipación objetivo, alcance, recursos, actividades y cronograma (INCP, 2016; Auditool, 2023). Ejemplo: plan de 5 días para auditar entradas y salidas de almacén comparando registros del sistema con conteos físicos.</li>
+                            <li><b>Organización e integración.</b> <i>Organizar</i> es distribuir el trabajo, la autoridad y las responsabilidades; <i>integrar</i> es reunir a las personas capacitadas y los recursos materiales, económicos y tecnológicos para que esa estructura funcione (Bright &amp; Cortés, 2019; The IIA, 2024).</li>
+                            <li><b>Dirección y control en el proceso administrativo.</b> La dirección orienta y comunica mediante liderazgo; el control compara lo ejecutado con lo planeado y corrige desviaciones. Con referencia en la <b>Ley 87 de 1993</b>, el auditor verifica tres niveles: que el control exista en políticas, que se ejecute en la práctica y que se actúe cuando ocurre un fallo.</li>
+                            <li><b>Caso práctico integrador.</b> Ante una empresa sin control de accesos ni responsabilidades documentadas, se aplica la Guía 15 de MinTIC y se proponen tres mejoras: 1) Inventario de bases de datos personales y política bajo la Ley 1581 de 2012; 2) Control de acceso por roles con revisión periódica y bitácoras; y 3) Sistema de control interno documentado con manuales de funciones y matriz de responsabilidades (Ley 87 de 1993).</li>
+                        </ol>
+                        <div class="doc-acciones">
+                            <a class="button" href="https://view.genially.com/6ad95593d47bcb0c87deef9a" target="_blank" rel="noopener">Ver mapa mental en Genially ↗</a>
+                            <a class="button" href="conceptos.html#independencia">Ver el caso de independencia →</a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- TALLER 2 UNIDAD 1: TECNOANDES -->
+                <details class="doc">
+                    <summary>
+                        <span class="doc-tipo">Taller 2 · Práctico · Unidad 01</span>
+                        <span class="doc-titulo">Auditoría de seguridad de la información y plan de mejoramiento — TecnoAndes S.A.S.</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <p class="doc-intro">Comercializadora TecnoAndes S.A.S. (85 empleados) presentó en los últimos tres meses cuentas y contraseñas compartidas, pérdida de registros de ventas e inventario por respaldos irregulares sin procedimiento de restauración, y el envío por error de un archivo de clientes a un destinatario externo.</p>
+                        <ul class="puntos">
+                            <li><b>Marco legal vs. técnico:</b> distingue las obligaciones jurídicas en Colombia (<b>Ley 1581 de 2012</b>, <b>Decreto 1074 de 2015</b>, <b>Circular Externa 001 de 2016 SIC</b>, <b>Código de Comercio art. 60</b>, <b>Ley 527 de 1999</b> y <b>Ley 1273 de 2009</b>) de las buenas prácticas técnicas (<b>ISO/IEC 27001:2022</b> e <b>ISO/IEC 27002:2022</b>).</li>
+                            <li><b>Priorización de 5 hallazgos:</b> 1) Envío erróneo de archivo sin protocolo de incidentes (Crítica, ≤ 5 días hábiles); 2) Sin backups regulares ni restauración funcional (Crítica, 15 días); 3) Credenciales compartidas sin trazabilidad (Alta, 30 días); 4) Gobierno de datos personales por verificar (Alta, 30 a 90 días); y 5) Capacitación y acuerdos de confidencialidad (Media, 60 a 90 días).</li>
+                        </ul>
+                        <div class="doc-acciones">
+                            <a class="button" href="#tecnoandes">Explorar la hoja de ruta interactiva de TecnoAndes ↓</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Hoja de ruta interactiva de TecnoAndes S.A.S. -->
+            <h3 class="subtitulo aparecer" id="tecnoandes">Hoja de ruta · Plan de mejoramiento <em>de TecnoAndes S.A.S.</em></h3>
+            <p class="parrafo-guia aparecer">Abre cada uno de los cinco hallazgos priorizados para consultar su riesgo, la norma legal aplicable, la acción técnica bajo ISO/IEC 27002:2022, los responsables y el indicador de cumplimiento.</p>
+
+            <div class="hoja-ruta aparecer">
+                <details class="hallazgo" open>
+                    <summary>
+                        <span class="prioridad critica">Crítica</span>
+                        <span class="hallazgo-titulo">1. Archivo de clientes enviado por error sin protocolo de incidentes</span>
+                        <span><span class="plazo" style="--inicio: 5; --fin: 60"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Contención ≤ 5 días · controles 60 días</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Datos personales expuestos a terceros: suplantación, fraude, sanciones de la SIC y daño reputacional.</dd></div>
+                        <div><dt>Norma legal</dt><dd>Ley 1581 de 2012 (arts. 4 f-g-h, 17 k-n y 23). Reporte al RNBD de la SIC dentro de 15 días hábiles desde su detección.</dd></div>
+                        <div><dt>Acción y control ISO</dt><dd>Solicitar eliminación al destinatario, documentar el incidente, crear protocolo y cifrar archivos. ISO/IEC 27002: 5.24 a 5.28, 5.14 y 8.12.</dd></div>
+                        <div><dt>Responsable e indicador</dt><dd>Jefe de TI, asesor jurídico y gerente. Meta: detección a reporte ≤ 15 días hábiles (meta interna ≤ 5 días) y 100 % con ficha.</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad critica">Crítica</span>
+                        <span class="hallazgo-titulo">2. Pérdida de registros; respaldos irregulares y sin restauración</span>
+                        <span><span class="plazo" style="--inicio: 15; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Backups 15 días · DRP 90 días</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Pérdida definitiva de información e interrupción operativa de ventas e inventario.</dd></div>
+                        <div><dt>Norma legal</dt><dd>Ley 1581 (art. 4 g y art. 17 d: evitar pérdida), Código de Comercio art. 60 y Ley 527 de 1999 art. 12.</dd></div>
+                        <div><dt>Acción y control ISO</dt><dd>Backups automáticos, pruebas de restauración y plan DRP. ISO/IEC 27002: controles 8.13 y 5.30; regla 3-2-1.</dd></div>
+                        <div><dt>Responsable e indicador</dt><dd>Jefe de TI, gerente general y contador. Meta: ≥ 98 % de backups mensuales exitosos y pruebas de restauración superadas.</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad alta">Alta</span>
+                        <span class="hallazgo-titulo">3. Credenciales compartidas sin trazabilidad individual</span>
+                        <span><span class="plazo" style="--inicio: 30; --fin: 60"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Cuentas individuales 30 días · MFA 60</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Acceso no autorizado o fraudulento a clientes, ventas y nómina sin poder atribuir responsabilidades.</dd></div>
+                        <div><dt>Norma legal</dt><dd>Ley 1581 (art. 4 g-h y art. 17 d). Asignar un usuario por persona es la medida razonable para cumplir el deber de seguridad.</dd></div>
+                        <div><dt>Acción y control ISO</dt><dd>Eliminar cuentas compartidas, asignar usuarios individuales por rol, activar MFA y registrar eventos. ISO/IEC 27002: 5.16, 5.17, 8.5 y 8.15.</dd></div>
+                        <div><dt>Responsable e indicador</dt><dd>Jefe de TI, gerente y RR. HH. Meta: 100 % cuentas individuales, 0 % compartidas y 100 % MFA.</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad alta">Alta</span>
+                        <span class="hallazgo-titulo">4. Gobierno de datos personales no evidenciado (brecha por verificar)</span>
+                        <span><span class="plazo" style="--inicio: 30; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Inventario 30 días · política 60 a 90</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Incumplimiento estructural de la Ley 1581 e imposibilidad de demostrar responsabilidad ante la SIC.</dd></div>
+                        <div><dt>Norma legal</dt><dd>Ley 1581 (arts. 9, 12, 17 a-b-k y 25) y Decreto 1074 de 2015 (Capítulos 25 y 26, umbral de 100.000 UVT para RNBD).</dd></div>
+                        <div><dt>Acción y control ISO</dt><dd>Inventariar bases de datos, adoptar política de tratamiento y avisos de privacidad, y designar oficial de datos. ISO/IEC 27002: 5.34.</dd></div>
+                        <div><dt>Responsable e indicador</dt><dd>Gerente, oficial de protección de datos y jurídico. Meta: 100 % de bases con autorización y finalidad registrada.</dd></div>
+                    </dl>
+                </details>
+                <details class="hallazgo">
+                    <summary>
+                        <span class="prioridad media">Media</span>
+                        <span class="hallazgo-titulo">5. Cultura de seguridad: capacitación y confidencialidad</span>
+                        <span><span class="plazo" style="--inicio: 60; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Capacitación 60 días · acuerdos 90</span></span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <dl class="matriz">
+                        <div><dt>Riesgo</dt><dd>Repetición de errores humanos (compartir claves, envíos erróneos) y falta de diligencia demostrada.</dd></div>
+                        <div><dt>Norma legal</dt><dd>Ley 1581 de 2012, art. 4 literal h (confidencialidad) y art. 17 literal k (manual interno de políticas).</dd></div>
+                        <div><dt>Acción y control ISO</dt><dd>Programa anual de capacitación (datos personales, claves, phishing, incidentes) y acuerdos firmados. ISO/IEC 27002: 6.3 y 6.6.</dd></div>
+                        <div><dt>Responsable e indicador</dt><dd>Recursos Humanos y responsable de datos. Meta: ≥ 95 % del personal capacitado y 100 % de acuerdos firmados.</dd></div>
+                    </dl>
+                </details>
+                <div class="escala" aria-hidden="true"><span>Día 0</span><span>30</span><span>60</span><span>90 días hábiles</span></div>
+            </div>
+        </section>
+
+        <!-- =======================================================
+             UNIDAD 02: TALLER DE DIAGNÓSTICO (BUENAVISTA FLOWERS S.A.S.)
+        ======================================================== -->
+        <section class="seccion" id="unidad-2" data-modal-unidad aria-labelledby="titulo-taller-u2">
+            <header class="seccion-cabeza aparecer">
+                <span class="seccion-num">Unidad 02 · Aplicación práctica</span>
+                <h2 id="titulo-taller-u2">Diagnóstico preliminar de <em>Buenavista Flowers S.A.S.</em></h2>
+                <p>Taller teórico-práctico desarrollado por Angel Yecid Chica Marulanda y Sebastián Jaramillo López: ocho actividades para estructurar el diagnóstico inicial de auditoría de sistemas de una empresa floricultora exportadora.</p>
+            </header>
+
+            <!-- Cuadrito destacado para la Presentación en Genially de la Unidad 2 -->
+            <div class="cuadro-diapositivas aparecer">
+                <div class="cuadro-diapo-info">
+                    <span class="cuadro-diapo-tag">✦ Presentación interactiva · Unidad 02</span>
+                    <h4>Diapositivas de sustentación en Genially — Buenavista Flowers S.A.S.</h4>
+                    <p>Explora la presentación interactiva con la caracterización empresarial, el organigrama, el mapa de procesos, la matriz de síntomas e hipótesis y el plan inicial de verificación.</p>
+                </div>
+                <a class="cuadro-diapo-btn" href="https://view.genially.com/6ae294d68cdadf4cb42acba1" target="_blank" rel="noopener">
+                    Ver presentación en Genially <b aria-hidden="true">↗</b>
+                </a>
+            </div>
+
+            <div class="docs aparecer">
+                <details class="doc" open>
+                    <summary>
+                        <span class="doc-tipo">Taller de diagnóstico · Unidad 02</span>
+                        <span class="doc-titulo">Diagnóstico de una empresa que requiere auditoría — Buenavista Flowers S.A.S. (8 actividades)</span>
+                        <span class="doc-icono" aria-hidden="true"></span>
+                    </summary>
+                    <div class="doc-cuerpo">
+                        <p class="doc-intro">Resolución completa del caso de estudio aplicando la guía metodológica de diagnóstico, el Manual de Auditoría Interna (Alcaldía de Medellín, 2023), la Guía DAFP (2020) e ISO 19011.</p>
+                        <ol class="preguntas">
+                            <li><b>Actividad 1 · Caracterización de la empresa.</b> <b>Buenavista Flowers S.A.S.</b> es una empresa productora y exportadora de flores (pompón, cremón, lirios, matsumotos) con sede en La Unión (Antioquia) y 350 empleados activos. Cuenta con 9 áreas (Cultivo y producción, Propagación y plantas madres, MIPE, Poscosecha, Cuarto frío, Despachos y logística, Compras, Contabilidad y administración, y Sistemas). Define misión, visión y 3 objetivos estratégicos apoyados en su sistema de información.</li>
+                            <li><b>Actividad 2 · Organigrama y responsabilidades frente al sistema.</b> Relaciona las 9 áreas bajo la Gerencia detallando qué hace cada una en el sistema: Producción registra siembra, corte y fumigación; Poscosecha/Cuarto frío registra inspección fitosanitaria y almacenamiento; Logística genera etiquetas y despachos; Compras registra órdenes y proveedores; Bodega controla entradas y salidas de insumos; Ventas registra pedidos; Contabilidad emite facturas y concilia; y Sistemas administra equipos, redes, permisos y bitácoras.</li>
+                            <li><b>Actividad 3 · Mapa inicial de procesos y 6 puntos críticos.</b> Traza el flujo desde el pedido hasta el registro contable e identifica 6 puntos de riesgo: 1) Ventas (pedidos duplicados o cantidades erradas); 2) Validación e inventario (diferencias físicas vs. sistema); 3) Facturación (demoras o facturas duplicadas); 4) Contabilidad (registros incompletos o descuadres); 5) Compras y bodega (entradas sin registrar o duplicadas); y 6) Modificaciones en el sistema (cambios sin autorización ni rastro de quién los hizo).</li>
+                            <li><b>Actividad 4 · Planteamiento y análisis del problema.</b> Separa 4 síntomas observados de sus hipótesis de causa, riesgos, impactos y evidencias de verificación, redactando el problema central sin dar por probadas las causas antes de auditar.</li>
+                            <li><b>Actividad 5 · Objetivos de la auditoría.</b> Objetivo general: evaluar los controles del sistema en ventas, inventarios, compras, facturación y contabilidad. Tres objetivos específicos: 1) Revisar los controles de los procesos; 2) Verificar la integridad y trazabilidad de los datos; y 3) Evaluar la gestión de accesos, roles, permisos y bitácoras.</li>
+                            <li><b>Actividad 6 · Inventario preliminar de 6 activos tecnológicos.</b> 1) Aplicación comercial (Alta — Ventas); 2) Módulo de inventario (Alta — Bodega y logística); 3) Base de datos (Alta — Sistemas); 4) Computadores (Media — Sistemas y áreas); 5) Bitácoras de auditoría (Alta — Sistemas); y 6) Módulo de facturación (Alta — Contabilidad y facturación).</li>
+                            <li><b>Actividad 7 · Perfil e independencia del equipo auditor.</b> Conocimientos en sistemas, bases de datos, control de acceso y procesos de negocio; habilidades de entrevistas, pensamiento crítico y documentación de evidencias; y salvaguardas de independencia (no asignar como auditor a quien administra o desarrolló el sistema evaluado).</li>
+                            <li><b>Actividad 8 · Conclusiones preliminares y 4 acciones iniciales priorizadas.</b> Formula tres conclusiones preliminares (sobre confiabilidad, posibles inconsistencias de inventario y falta de trazabilidad) y cuatro acciones iniciales de verificación indicando prioridad, área responsable y evidencia esperada.</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Desglose interactivo de Buenavista Flowers -->
+            <h3 class="subtitulo aparecer" id="buenavista">Dónde puede fallar <em>el flujo de información en Buenavista Flowers</em></h3>
             <ol class="flujo aparecer">
-                <li class="flujo-paso" style="--i: 0"><h4>Ventas</h4><small>Al registrar el pedido</small><p>Pedidos duplicados, datos del cliente o cantidades equivocadas.</p></li>
+                <li class="flujo-paso" style="--i: 0"><h4>Ventas</h4><small>Al registrar el pedido</small><p>Pedidos duplicados, datos incorrectos del cliente o cantidades equivocadas.</p></li>
                 <li class="flujo-paso" style="--i: 1"><h4>Inventario</h4><small>Al reservar y despachar</small><p>Existencias físicas distintas a las del sistema o salidas sin registrar.</p></li>
                 <li class="flujo-paso" style="--i: 2"><h4>Facturación</h4><small>Al emitir la factura</small><p>Demoras, facturas duplicadas o diferencias entre pedido, despacho y factura.</p></li>
                 <li class="flujo-paso" style="--i: 3"><h4>Contabilidad</h4><small>Al registrar y conciliar</small><p>Registros incompletos o duplicados que no cuadran con las operaciones.</p></li>
             </ol>
 
-            <h3 class="subtitulo aparecer">Explora cada síntoma <em>hasta su evidencia</em></h3>
+            <h3 class="subtitulo aparecer">Explora cada síntoma <em>hasta su evidencia de verificación</em></h3>
             <div class="pestanas aparecer" data-pestanas>
                 <div class="pestanas-lista" role="tablist" aria-label="Síntomas observados en Buenavista Flowers">
                     <button class="pestana" role="tab" id="si-1" aria-controls="si-panel-1" aria-selected="true"><span class="pestana-num">01</span>Inventario</button>
@@ -124,218 +319,185 @@
                 <div class="pestana-panel" role="tabpanel" id="si-panel-1" aria-labelledby="si-1">
                     <h4>Las cantidades del sistema no coinciden con las físicas</h4>
                     <dl class="matriz">
-                        <div><dt>Hipótesis</dt><dd>Entradas, salidas o ajustes que no se registran correctamente.</dd></div>
-                        <div><dt>Riesgo</dt><dd>Vender producto que no existe o decidir con información falsa.</dd></div>
-                        <div><dt>Impacto</dt><dd>Despachos tardíos, pérdidas económicas y mala reputación.</dd></div>
-                        <div><dt>Evidencia</dt><dd>Conteos físicos comparados con los reportes de inventario.</dd></div>
+                        <div><dt>Hipótesis</dt><dd>Los movimientos de entrada, salida y ajustes podrían no estarse registrando correctamente.</dd></div>
+                        <div><dt>Riesgo</dt><dd>Vender productos no disponibles o tomar decisiones con información falsa.</dd></div>
+                        <div><dt>Impacto</dt><dd>Retrasos en despachos, pérdidas económicas y mala reputación ante los clientes.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Conteos físicos comparados con reportes de inventario e historial de entradas y salidas.</dd></div>
                     </dl>
                 </div>
                 <div class="pestana-panel" role="tabpanel" id="si-panel-2" aria-labelledby="si-2" hidden>
-                    <h4>Aparecen registros duplicados</h4>
+                    <h4>Se observan registros duplicados en el sistema</h4>
                     <dl class="matriz">
-                        <div><dt>Hipótesis</dt><dd>El sistema permite guardar varias veces la misma operación.</dd></div>
-                        <div><dt>Riesgo</dt><dd>Duplicar pedidos o movimientos de inventario.</dd></div>
-                        <div><dt>Impacto</dt><dd>Reprocesos y tiempo perdido verificando y corrigiendo datos.</dd></div>
-                        <div><dt>Evidencia</dt><dd>Consulta de duplicados y revisión de las validaciones del sistema.</dd></div>
+                        <div><dt>Hipótesis</dt><dd>El sistema permite guardar varias veces una misma operación o realiza descuentos repetidos.</dd></div>
+                        <div><dt>Riesgo</dt><dd>Duplicar movimientos de inventario, pedidos o registros contables.</dd></div>
+                        <div><dt>Impacto</dt><dd>Reprocesos operativos y pérdida de tiempo en la verificación y corrección de datos.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Consulta de registros duplicados en base de datos y prueba de validaciones de entrada.</dd></div>
                     </dl>
                 </div>
                 <div class="pestana-panel" role="tabpanel" id="si-panel-3" aria-labelledby="si-3" hidden>
-                    <h4>Las facturas salen tarde</h4>
+                    <h4>Atraso en la emisión de las facturas</h4>
                     <dl class="matriz">
-                        <div><dt>Hipótesis</dt><dd>Demoras al registrar pedidos, fallas entre módulos o pasos manuales.</dd></div>
-                        <div><dt>Riesgo</dt><dd>Operaciones pendientes que se acumulan y se estancan.</dd></div>
-                        <div><dt>Impacto</dt><dd>Retrasos administrativos e inconformidad de los clientes.</dd></div>
-                        <div><dt>Evidencia</dt><dd>Muestra de pedidos y facturas con sus fechas de registro.</dd></div>
+                        <div><dt>Hipótesis</dt><dd>Demoras al registrar pedidos, fallas de integración entre módulos o pasos manuales intermedios.</dd></div>
+                        <div><dt>Riesgo</dt><dd>Dejar operaciones pendientes y estancadas o facturar fuera de los tiempos requeridos.</dd></div>
+                        <div><dt>Impacto</dt><dd>Dificultad en el seguimiento comercial, retrasos administrativos e inconformidad del cliente.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Muestra de fechas y horas de pedidos frente a facturas emitidas y registro de errores.</dd></div>
                     </dl>
                 </div>
                 <div class="pestana-panel" role="tabpanel" id="si-panel-4" aria-labelledby="si-4" hidden>
-                    <h4>No se sabe quién modificó los datos</h4>
+                    <h4>No se identifica quién realizó modificaciones</h4>
                     <dl class="matriz">
-                        <div><dt>Hipótesis</dt><dd>Bitácoras desactualizadas, deshabilitadas o incompletas.</dd></div>
-                        <div><dt>Riesgo</dt><dd>No conocer el origen de los errores ni si el cambio fue autorizado.</dd></div>
-                        <div><dt>Impacto</dt><dd>Difícil investigar incidentes y asignar responsables.</dd></div>
-                        <div><dt>Evidencia</dt><dd>Lista de usuarios y permisos, configuración de accesos y registros de auditoría.</dd></div>
+                        <div><dt>Hipótesis</dt><dd>Las bitácoras de auditoría están desactualizadas, deshabilitadas o no registran todos los cambios.</dd></div>
+                        <div><dt>Riesgo</dt><dd>No determinar el origen de los errores ni comprobar si los cambios fueron autorizados.</dd></div>
+                        <div><dt>Impacto</dt><dd>Imposibilidad de investigar incidentes, asignar responsabilidades y confiar en los datos.</dd></div>
+                        <div><dt>Evidencia</dt><dd>Bitácoras del sistema, historial de cambios, matriz de permisos y registros de acceso.</dd></div>
                     </dl>
                 </div>
             </div>
 
-            <h3 class="subtitulo aparecer">Acciones iniciales <em>de verificación</em></h3>
+            <h3 class="subtitulo aparecer">Cuatro acciones iniciales <em>de verificación (Actividad 8)</em></h3>
             <ul class="acciones aparecer">
-                <li><span class="prioridad alta">Alta</span><span>Comparar el inventario físico con el del sistema.</span><span class="quien">Bodega, logística y sistemas</span></li>
-                <li><span class="prioridad alta">Alta</span><span>Revisar usuarios, permisos y registros de cambios.</span><span class="quien">Sistemas y gerencia</span></li>
-                <li><span class="prioridad alta">Alta</span><span>Comparar las fechas de pedidos y facturas.</span><span class="quien">Ventas, contabilidad y logística</span></li>
-                <li><span class="prioridad media">Media</span><span>Ubicar en qué proceso se generan los duplicados.</span><span class="quien">Ventas, contabilidad y facturación</span></li>
+                <li><span class="prioridad alta">Alta</span><span>Comparar las cantidades del inventario físico con las registradas en el sistema.</span><span class="quien">Bodega, logística y sistemas</span></li>
+                <li><span class="prioridad alta">Alta</span><span>Verificar usuarios, permisos y bitácoras de modificaciones para identificar responsables.</span><span class="quien">Sistemas y gerencia</span></li>
+                <li><span class="prioridad alta">Alta</span><span>Analizar el proceso de facturación comparando las fechas de los pedidos y las facturas.</span><span class="quien">Ventas, contabilidad y logística</span></li>
+                <li><span class="prioridad media">Media</span><span>Revisar los registros duplicados para ubicar en qué etapa del proceso se generan.</span><span class="quien">Ventas, contabilidad y facturación</span></li>
             </ul>
         </section>
 
-        <!-- ================= CASO 2: TECNOANDES ================= -->
-        <section class="seccion" id="tecnoandes" aria-labelledby="titulo-tecnoandes">
+        <!-- =======================================================
+             UNIDAD 03: TALLERES DE CONTROL INTERNO Y EVALUACIÓN
+        ======================================================== -->
+        <section class="seccion" id="unidad-3" data-modal-unidad aria-labelledby="titulo-taller-u3">
             <header class="seccion-cabeza aparecer">
-                <span class="seccion-num">Caso 02 · Plan de mejoramiento · Unidad 1</span>
-                <h2 id="titulo-tecnoandes">TecnoAndes <em>S.A.S</em></h2>
-                <p>Comercializadora de equipos tecnológicos con 85 empleados. En tres meses tuvo cuentas compartidas, pérdida de ventas por respaldos irregulares y un archivo de clientes enviado por error. Abre cada hallazgo para ver su norma, la acción y cómo se mide.</p>
+                <span class="seccion-num">Unidad 03 · Aplicación práctica</span>
+                <h2 id="titulo-taller-u3">Talleres y casos de <em>Control Interno y Evaluación</em></h2>
+                <p>Dos talleres desarrollados en la Unidad 3 por Angel Yecid Chica Marulanda y Sebastián Jaramillo López: taller teórico sobre mecanismos de control interno y taller práctico con cinco casos empresariales y cuestionario verificable.</p>
             </header>
 
-            <div class="hoja-ruta aparecer">
-                <details class="hallazgo">
+            <div class="docs aparecer">
+                <!-- TALLER 1 DE UNIDAD 3: TEÓRICO CONTROL INTERNO -->
+                <details class="doc" open>
                     <summary>
-                        <span class="prioridad critica">Crítica</span>
-                        <span class="hallazgo-titulo">Archivo de clientes enviado por error</span>
-                        <span><span class="plazo" style="--inicio: 5; --fin: 60"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Contención ≤ 5 días · controles 60 días</span></span>
+                        <span class="doc-tipo">Taller 1 · Teórico · Unidad 03</span>
+                        <span class="doc-titulo">Control interno en auditorías de sistemas (10 bloques conceptuales)</span>
                         <span class="doc-icono" aria-hidden="true"></span>
                     </summary>
-                    <dl class="matriz">
-                        <div><dt>Riesgo</dt><dd>Datos personales en manos de terceros: suplantación, fraude, sanciones y daño reputacional.</dd></div>
-                        <div><dt>Norma</dt><dd>Ley 1581 de 2012 (arts. 4, 17 y 23). Reporte a la SIC en 15 días hábiles si la empresa está en el RNBD.</dd></div>
-                        <div><dt>Acción</dt><dd>Pedir la eliminación del archivo, documentar el incidente, crear un protocolo y cifrar archivos. Referencia: ISO/IEC 27002, controles 5.24 a 5.28 y 8.12.</dd></div>
-                        <div><dt>Indicador</dt><dd>Tiempo entre detección y reporte: máximo 15 días hábiles (meta interna: 5).</dd></div>
-                    </dl>
+                    <div class="doc-cuerpo">
+                        <p class="doc-intro">Diez bloques de preguntas conceptuales fundamentados en la Oficina de Responsabilidad Gubernamental de EE. UU. (GAO 2001, 2009 FISCAM, 2014, 2024), publicaciones especiales del NIST (SP 800-30, 800-34, 800-40, 800-53, 800-53A, 800-61, 800-92, 800-123, 800-128), OWASP y la Ley 1581 de 2012.</p>
+                        <ol class="preguntas">
+                            <li><b>Control interno y controles preventivos vs. correctivos.</b> El control interno integra estructura organizacional, normas y procedimientos para proteger los recursos y cumplir los objetivos (GAO, 2014). Los controles <i>preventivos</i> evitan que ocurra el incidente (MFA, permisos por rol, firewalls, validaciones; NIST SP 800-53); los <i>correctivos</i> actúan después para contener el daño y restaurar la operación desde copias de seguridad (NIST SP 800-61).</li>
+                            <li><b>Diseñar un control vs. comprobar que funciona con evidencia.</b> Diseñar un control es definir qué actividad reduce el riesgo, quién la hace y cada cuánto; comprobar que funciona es validar con evidencia que sí se ejecuta en la práctica (GAO, 2014). NIST SP 800-53A establece tres métodos de evaluación: examinar (políticas, logs, configuraciones), entrevistar al personal y probar los mecanismos.</li>
+                            <li><b>Funciones del auditor informático, independencia y trazabilidad.</b> El auditor planea la revisión, identifica riesgos, evalúa controles, recopila evidencia y recomienda mejoras (GAO FISCAM, 2009). Requiere independencia y objetividad (no auditar sistemas que él mismo administra; GAO, 2024) y se apoya en la trazabilidad para saber quién ejecutó cada acción, cuándo y con qué resultado.</li>
+                            <li><b>Autenticación vs. autorización y riesgos de dar administrador a todos.</b> La <i>autenticación</i> verifica quién es el usuario (contraseña, token, biometría); la <i>autorización</i> define qué puede hacer tras ingresar (NIST SP 800-53; OWASP). Dar permisos de administrador a todos permite instalar software malicioso, desactivar defensas y borrar el rastro de cambios, por lo que debe aplicarse el mínimo privilegio y separar cuentas estándar de administrativas (GAO, 2009).</li>
+                            <li><b>Segregación de funciones y privilegios administrativos.</b> Repartir las tareas de autorizar, ejecutar, registrar y revisar entre personas distintas evita que un solo empleado tenga el control total de un proceso crítico (como desarrollar un cambio y pasarlo a producción, o crear un proveedor y aprobar su pago; GAO, 2014; NIST SP 800-53).</li>
+                            <li><b>Seguridad física de centros de datos y configuración segura.</b> Protección física mediante control de acceso biométrico o por tarjeta, bitácora de visitantes, cámaras, detección y extinción de incendios, UPS, generadores y cableado protegido (NIST SP 800-53). Configuración segura mediante inventario de equipos, parches probados antes de producción (NIST SP 800-40) y desactivación de servicios y contraseñas por defecto (NIST SP 800-123).</li>
+                            <li><b>Gestión de cambios y hacer respaldos vs. probar su restauración.</b> Todo cambio de hardware o software debe solicitarse, aprobarse, probarse en un entorno aislado y documentarse (GAO, 2009; NIST SP 800-128). En cuanto a las copias de seguridad, guardarlas fuera del sitio original no basta: es indispensable realizar pruebas periódicas de restauración para comprobar que los archivos estén completos y se recuperen a tiempo (NIST SP 800-34).</li>
+                            <li><b>Registros de eventos (logs) e incidentes de seguridad.</b> Los logs deben registrar fecha y hora con relojes sincronizados, usuario, acción, recurso afectado y resultado (éxito o fallo), y protegerse contra alteración (NIST SP 800-92). El monitoreo de anomalías (como múltiples intentos fallidos seguidos de uno exitoso o accesos en horarios inusuales) permite detectar y contener incidentes de seguridad (NIST SP 800-61).</li>
+                            <li><b>Protección de datos, copias de seguridad y continuidad del negocio.</b> La continuidad parte de un análisis de impacto (BIA) que define cuánto tiempo y cuántos datos puede tolerar perder la organización (NIST SP 800-34). Su incumplimiento acarrea parálisis operativa, pérdidas contractuales y sanciones de la SIC bajo la Ley 1581 de 2012 (NIST SP 800-30).</li>
+                            <li><b>Cuestionarios de control interno e interpretación de respuestas.</b> Instrumento con preguntas claras, específicas y verificables asociadas a un objetivo de control (GAO, 2001). Un “Sí” solo indica que el auditado afirma tener el control, pero exige validación documental y técnica; un “No” revela una brecha por evaluar; y un “N/A” debe justificarse (GAO, 2024; NIST SP 800-53A).</li>
+                        </ol>
+                    </div>
                 </details>
-                <details class="hallazgo">
+
+                <!-- TALLER 2 DE UNIDAD 3: PRÁCTICO 5 CASOS E ISO 690 -->
+                <details class="doc">
                     <summary>
-                        <span class="prioridad critica">Crítica</span>
-                        <span class="hallazgo-titulo">Respaldos irregulares y sin restauración</span>
-                        <span><span class="plazo" style="--inicio: 15; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Backups 15 días · plan de recuperación 90</span></span>
+                        <span class="doc-tipo">Taller 2 · Práctico · Unidad 03</span>
+                        <span class="doc-titulo">Control interno y evaluación de controles (5 casos e ISO 690:2021)</span>
                         <span class="doc-icono" aria-hidden="true"></span>
                     </summary>
-                    <dl class="matriz">
-                        <div><dt>Riesgo</dt><dd>Pérdida definitiva de información e interrupción de ventas e inventario.</dd></div>
-                        <div><dt>Norma</dt><dd>Ley 1581 (arts. 4 y 17), Código de Comercio art. 60 y Ley 527 de 1999 art. 12.</dd></div>
-                        <div><dt>Acción</dt><dd>Copias automáticas, pruebas de restauración, monitoreo de fallos y plan de recuperación. Referencia: ISO/IEC 27002, 8.13 y 5.30; regla 3-2-1.</dd></div>
-                        <div><dt>Indicador</dt><dd>Al menos 98 % de copias exitosas al mes y pruebas de restauración superadas.</dd></div>
-                    </dl>
+                    <div class="doc-cuerpo">
+                        <p class="doc-intro">Resolución de cinco escenarios empresariales sustentados en ISO/IEC 27002:2022, COSO (2013), COBIT 2019 y Piattini &amp; Del Peso (2015), aplicando citación y referenciación bajo la norma ISO 690:2021.</p>
+                        <ol class="preguntas">
+                            <li><b>Caso 1 · Privilegios excesivos en facturación (25 administradores).</b> Identifica cuatro riesgos graves (fraude y manipulación de precios/facturas, pérdida de información e inconsistencias de inventario, falta de responsabilidad individual y mayor exposición a malware) por incumplir el principio de mínimo privilegio y el control de acceso basado en roles de ISO/IEC 27002:2022.</li>
+                            <li><b>Caso 2 · Ausencia de trazabilidad en calificaciones académicas.</b> Señala dos debilidades estructurales (ausencia de logs de eventos y falta de históricos o copias de recuperación) y analiza sus riesgos administrativos (imposibilidad de identificar culpables o atender reclamos), académicos (alteración de promedios e historiales) y tecnológicos (pérdida de integridad y confianza en la base de datos).</li>
+                            <li><b>Caso 3 · Copias de seguridad diarias dañadas en servidor central.</b> Explica que el control que falla es la verificación y prueba de restauración de los respaldos: hacer copias diarias sin probar que pueden recuperarse provoca interrupción total del negocio, pérdida de información contable e incumplimientos tributarios y legales.</li>
+                            <li><b>Caso 4 · Falta de segregación de funciones (SoD) en proveedores y pagos.</b> Un solo empleado crea proveedores, registra facturas, aprueba pagos y modifica cuentas bancarias, rompiendo el control 5.3 de ISO/IEC 27002:2022 y el marco COSO (2013). Esto facilita crear proveedores ficticios, desviar pagos alterando cuentas bancarias reales o aprobar facturas duplicadas/infladas sin revisión cruzada (Piattini y Del Peso, 2015).</li>
+                            <li><b>Caso 5 · Diseño de cuestionario de control interno para empresa de software.</b> Construye un instrumento de 8 preguntas verificables (Sí / No / N/A) distribuidas en gestión de usuarios, contraseñas, respaldos, actualizaciones e incidentes, clasificando cada pregunta como control preventivo o correctivo.</li>
+                        </ol>
+                        <div class="doc-acciones">
+                            <a class="button" href="#casos-control">Interactuar con los 5 casos ↓</a>
+                            <a class="button" href="#cuestionario">Responder el cuestionario de 8 preguntas ↓</a>
+                        </div>
+                    </div>
                 </details>
-                <details class="hallazgo">
-                    <summary>
-                        <span class="prioridad alta">Alta</span>
-                        <span class="hallazgo-titulo">Usuarios y contraseñas compartidos</span>
-                        <span><span class="plazo" style="--inicio: 30; --fin: 60"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Cuentas individuales 30 días · MFA 60</span></span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <dl class="matriz">
-                        <div><dt>Riesgo</dt><dd>Accesos no autorizados a clientes y nómina, sin poder atribuir responsabilidades.</dd></div>
-                        <div><dt>Norma</dt><dd>Ley 1581 (arts. 4 y 17). La ley no exige “un usuario por persona”, pero es la forma razonable de cumplir el deber de seguridad.</dd></div>
-                        <div><dt>Acción</dt><dd>Eliminar cuentas compartidas, asignar usuarios individuales con permisos, MFA y revisión periódica. Referencia: ISO/IEC 27002, 5.16, 5.17, 8.5 y 8.15.</dd></div>
-                        <div><dt>Indicador</dt><dd>100 % de cuentas individuales, 0 compartidas y 100 % con MFA.</dd></div>
-                    </dl>
-                </details>
-                <details class="hallazgo">
-                    <summary>
-                        <span class="prioridad alta">Alta</span>
-                        <span class="hallazgo-titulo">Gobierno de datos personales por verificar</span>
-                        <span><span class="plazo" style="--inicio: 30; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Inventario 30 días · política 60 a 90</span></span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <dl class="matriz">
-                        <div><dt>Riesgo</dt><dd>Incumplir la Ley 1581 y no poder demostrar su cumplimiento ante la SIC.</dd></div>
-                        <div><dt>Norma</dt><dd>Ley 1581 (arts. 9, 12, 17 y 25) y Decreto 1074 de 2015 (capítulos 25 y 26).</dd></div>
-                        <div><dt>Acción</dt><dd>Inventariar las bases de datos, crear la política de tratamiento y los avisos de privacidad, y nombrar un responsable. Referencia: ISO/IEC 27002, 5.34.</dd></div>
-                        <div><dt>Indicador</dt><dd>100 % de bases de datos con autorización y finalidad registrada.</dd></div>
-                    </dl>
-                </details>
-                <details class="hallazgo">
-                    <summary>
-                        <span class="prioridad media">Media</span>
-                        <span class="hallazgo-titulo">Falta de capacitación y confidencialidad</span>
-                        <span><span class="plazo" style="--inicio: 60; --fin: 90"><span class="plazo-fin"></span><span class="plazo-inicio"></span></span><span class="plazo-texto">Capacitación 60 días · acuerdos 90</span></span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <dl class="matriz">
-                        <div><dt>Riesgo</dt><dd>Repetir errores humanos y no poder demostrar diligencia ante la SIC.</dd></div>
-                        <div><dt>Norma</dt><dd>Ley 1581, art. 4 literal h (confidencialidad) y art. 17 literal k (manual interno).</dd></div>
-                        <div><dt>Acción</dt><dd>Programa anual sobre datos personales, contraseñas, phishing y reporte de incidentes, más acuerdos de confidencialidad. Referencia: ISO/IEC 27002, 6.3 y 6.6.</dd></div>
-                        <div><dt>Indicador</dt><dd>Al menos 95 % del personal capacitado y 100 % de acuerdos firmados.</dd></div>
-                    </dl>
-                </details>
-                <div class="escala" aria-hidden="true"><span>Día 0</span><span>30</span><span>60</span><span>90 días hábiles</span></div>
             </div>
-        </section>
 
-        <!-- ================= CASO 3: CONTROL INTERNO ================= -->
-        <section class="seccion" id="casos-control" aria-labelledby="titulo-casos-control">
-            <header class="seccion-cabeza aparecer">
-                <span class="seccion-num">Caso 03 · Control interno · Unidad 3</span>
-                <h2 id="titulo-casos-control">Cinco casos para <em>pensar como auditor</em></h2>
-                <p>Lee cada situación, decide qué control está fallando y después revela el análisis del taller práctico.</p>
-            </header>
+            <!-- Tarjetas interactivas de los 5 casos de control interno -->
+            <h3 class="subtitulo aparecer" id="casos-control">Cinco casos prácticos <em>para pensar como auditor</em></h3>
+            <p class="parrafo-guia aparecer">Analiza cada situación del taller práctico, identifica qué principio de control interno se incumple y revela el dictamen de auditoría.</p>
             <div class="casos">
                 <article class="caso aparecer">
-                    <span class="caso-num">Caso 1 · Facturación</span>
-                    <h4>Todos son administradores</h4>
-                    <p>Los 25 empleados del sistema de facturación e inventario tienen permisos de administrador: pueden modificar facturas, eliminar productos y cambiar precios.</p>
+                    <span class="caso-num">Caso 1 · Facturación e inventario</span>
+                    <h4>25 empleados con cuenta de administrador</h4>
+                    <p>Todos los empleados del sistema comercial tienen permisos de administrador y pueden modificar facturas, eliminar productos y cambiar precios sin autorización.</p>
                     <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-1">Ver análisis</button>
                     <div class="respuesta" id="resp-caso-1" hidden>
-                        <strong>Falla el mínimo privilegio</strong>
-                        <p>Riesgos: fraude y manipulación de datos, pérdida de información, nadie responde por los cambios y más exposición a malware. Se corrige con roles y permisos según el cargo (ISO/IEC 27002).</p>
+                        <strong>Se vulnera el principio de mínimo privilegio</strong>
+                        <p>Riesgos: 1) Fraude y manipulación de datos; 2) Pérdida de información; 3) Falta de atribución de responsabilidad; y 4) Exposición a malware. Se corrige asignando roles y permisos según el perfil del cargo (ISO/IEC 27002:2022).</p>
                     </div>
                 </article>
                 <article class="caso aparecer" style="--d: .1s">
                     <span class="caso-num">Caso 2 · Sistema académico</span>
-                    <h4>Notas que cambian solas</h4>
-                    <p>Se modifican calificaciones, pero el sistema no guarda quién hizo el cambio, cuándo ni cuál era la nota original.</p>
+                    <h4>Calificaciones alteradas sin registro histórico</h4>
+                    <p>Se detectan cambios en las notas de varios estudiantes, pero el sistema no guarda quién hizo la modificación, cuándo ocurrió ni cuál era la calificación original.</p>
                     <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-2">Ver análisis</button>
                     <div class="respuesta" id="resp-caso-2" hidden>
-                        <strong>No hay trazabilidad ni recuperación</strong>
-                        <p>Faltan registros de eventos e históricos. Riesgos administrativos (no hay responsable), académicos (historiales alterados) y tecnológicos (no se detectan accesos indebidos ni se recuperan los datos).</p>
+                        <strong>Ausencia de trazabilidad y recuperación</strong>
+                        <p>Faltan bitácoras de eventos e históricos de respaldo. Genera riesgos administrativos (sin responsable ante reclamos), académicos (promedios adulterados) y tecnológicos (pérdida de confiabilidad e integridad).</p>
                     </div>
                 </article>
                 <article class="caso aparecer">
                     <span class="caso-num">Caso 3 · Servidor central</span>
-                    <h4>Copias diarias que no sirven</h4>
-                    <p>TI asegura que respalda la información cada día, pero cuando el servidor falla descubren que las copias están dañadas.</p>
+                    <h4>Copias diarias que resultan estar dañadas</h4>
+                    <p>El área de TI asegura realizar copias de seguridad todos los días, pero al fallar el servidor central descubren que los archivos de respaldo están corruptos y no se pueden restaurar.</p>
                     <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-3">Ver análisis</button>
                     <div class="respuesta" id="resp-caso-3" hidden>
-                        <strong>Falla la verificación de los respaldos</strong>
-                        <p>Hacer la copia no prueba que funcione: hay que ensayar la restauración. Consecuencias: operación detenida, pérdida de información contable, incumplimientos tributarios y posibles demandas.</p>
+                        <strong>Falla la verificación y prueba de restauración</strong>
+                        <p>Ejecutar el backup no garantiza que sirva: es obligatorio realizar pruebas periódicas de recuperación. Consecuencias: parálisis operativa, pérdida contable e incumplimientos tributarios y contractuales.</p>
                     </div>
                 </article>
                 <article class="caso aparecer" style="--d: .1s">
-                    <span class="caso-num">Caso 4 · Proveedores y pagos</span>
-                    <h4>Una sola persona lo hace todo</h4>
-                    <p>Un empleado crea proveedores, registra facturas, aprueba pagos y modifica las cuentas bancarias de los beneficiarios.</p>
+                    <span class="caso-num">Caso 4 · Proveedores y tesorería</span>
+                    <h4>Un mismo empleado concentra las cuatro llaves del pago</h4>
+                    <p>Una sola persona tiene autorización para crear proveedores, registrar facturas, aprobar pagos y modificar las cuentas bancarias de los beneficiarios.</p>
                     <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-4">Ver análisis</button>
                     <div class="respuesta" id="resp-caso-4" hidden>
-                        <strong>Se rompe la segregación de funciones</strong>
-                        <p>Puede crear proveedores falsos, desviar pagos cambiando cuentas reales o aprobar facturas duplicadas o infladas. Solución: repartir permisos y exigir doble autorización para cambios bancarios (ISO/IEC 27002 control 5.3, COSO).</p>
+                        <strong>Se rompe la segregación de funciones (SoD)</strong>
+                        <p>Incumple el control 5.3 de ISO/IEC 27002:2022 y COSO (2013). Facilita tres fraudes: crear proveedores ficticios, cambiar temporalmente cuentas bancarias reales para desviar fondos y aprobar facturas duplicadas o infladas.</p>
                     </div>
                 </article>
                 <article class="caso aparecer">
-                    <span class="caso-num">Caso 5 · Empresa de software</span>
-                    <h4>Diseñar el cuestionario</h4>
-                    <p>La empresa pide evaluar cómo administra usuarios, contraseñas, respaldos, actualizaciones e incidentes de seguridad.</p>
+                    <span class="caso-num">Caso 5 · Empresa de desarrollo de software</span>
+                    <h4>Diseño del instrumento de evaluación</h4>
+                    <p>Se requiere evaluar de forma objetiva y verificable cómo la empresa administra usuarios, contraseñas, respaldos, actualizaciones e incidentes de seguridad.</p>
                     <button class="boton-revelar" type="button" data-revelar aria-expanded="false" aria-controls="resp-caso-5">Ver análisis</button>
                     <div class="respuesta" id="resp-caso-5" hidden>
-                        <strong>Ocho preguntas verificables</strong>
-                        <p>El taller propone un cuestionario de 8 preguntas, cada una clasificada como preventiva o correctiva, con respuestas Sí, No o N/A. Puedes responderlo justo debajo.</p>
+                        <strong>Cuestionario de 8 preguntas verificables</strong>
+                        <p>El taller diseña 8 preguntas cerradas (Sí / No / N/A) clasificadas en controles preventivos y correctivos, cuyas respuestas deben validarse con evidencia documental y técnica.</p>
                     </div>
                 </article>
             </div>
-        </section>
 
-        <!-- ================= CUESTIONARIO ================= -->
-        <section class="seccion" id="cuestionario" aria-labelledby="titulo-cuestionario">
-            <header class="seccion-cabeza aparecer">
-                <span class="seccion-num">Herramienta · Caso 5</span>
-                <h2 id="titulo-cuestionario">Pon a prueba <em>un control interno</em></h2>
-                <p>Responde como si auditaras una empresa real. El medidor calcula qué tan sólido es su control (las respuestas N/A no cuentan). Recuerda: cada “Sí” debe poder demostrarse con evidencia.</p>
-            </header>
+            <!-- Cuestionario interactivo del Caso 5 -->
+            <h3 class="subtitulo aparecer" id="cuestionario">Herramienta · Cuestionario de control interno <em>(Caso 5)</em></h3>
+            <p class="parrafo-guia aparecer">Responde las ocho preguntas del Caso 5 como si auditaras una empresa real. Recuerda que cada “Sí” exige comprobarse con evidencia.</p>
             <form class="cuestionario aparecer" data-cuestionario>
                 <ol>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Usuarios <span class="prioridad preventivo">Preventivo</span></span>¿Hay un procedimiento documentado para quitar los accesos cuando alguien deja la empresa?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">01 · Gestión de usuarios <span class="prioridad preventivo">Preventivo</span></span>¿Existe un procedimiento documentado para desactivar o revocar los permisos de acceso de los empleados cuando finaliza su relación laboral?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p1" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p1" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p1" value="na"><span>N/A</span></label></div></fieldset></li>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Usuarios <span class="prioridad preventivo">Preventivo</span></span>¿Se revisan periódicamente los privilegios para que cada usuario tenga solo lo necesario?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">02 · Gestión de usuarios <span class="prioridad preventivo">Preventivo</span></span>¿Se realizan revisiones periódicas de los privilegios asignados a los usuarios activos para garantizar que tengan únicamente los permisos necesarios?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p2" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p2" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p2" value="na"><span>N/A</span></label></div></fieldset></li>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Contraseñas <span class="prioridad preventivo">Preventivo</span></span>¿Está activa la autenticación multifactor (MFA) en servidores y sistemas críticos?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">03 · Contraseñas <span class="prioridad preventivo">Preventivo</span></span>¿Está configurada la autenticación multifactor (MFA) para acceder a los servidores y sistemas críticos de la organización?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p3" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p3" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p3" value="na"><span>N/A</span></label></div></fieldset></li>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Contraseñas <span class="prioridad preventivo">Preventivo</span></span>¿La política exige longitud y complejidad, y bloquea la cuenta tras varios intentos fallidos?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">04 · Contraseñas <span class="prioridad preventivo">Preventivo</span></span>¿Existen políticas de contraseñas que exijan una longitud y complejidad adecuadas y bloqueen temporalmente las cuentas después de varios intentos fallidos?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p4" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p4" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p4" value="na"><span>N/A</span></label></div></fieldset></li>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Respaldos <span class="prioridad correctivo">Correctivo</span></span>¿Se prueba periódicamente que las copias de seguridad se pueden restaurar?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">05 · Respaldos <span class="prioridad correctivo">Correctivo</span></span>¿Se realizan pruebas periódicas de restauración de las copias de seguridad para comprobar que la información pueda recuperarse correctamente?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p5" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p5" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p5" value="na"><span>N/A</span></label></div></fieldset></li>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Actualizaciones <span class="prioridad preventivo">Preventivo</span></span>¿Existe un entorno de pruebas para validar las actualizaciones antes de producción?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">06 · Actualizaciones <span class="prioridad preventivo">Preventivo</span></span>¿Dispone la organización de un entorno de pruebas para validar las actualizaciones de seguridad antes de instalarlas en los sistemas de producción?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p6" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p6" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p6" value="na"><span>N/A</span></label></div></fieldset></li>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Actualizaciones <span class="prioridad correctivo">Correctivo</span></span>¿Hay un procedimiento documentado para revertir una actualización que causa fallos?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">07 · Actualizaciones <span class="prioridad correctivo">Correctivo</span></span>¿Existe un procedimiento documentado para revertir una actualización cuando esta genera fallos en los sistemas o servicios?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p7" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p7" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p7" value="na"><span>N/A</span></label></div></fieldset></li>
-                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">Incidentes <span class="prioridad correctivo">Correctivo</span></span>¿Existe un plan documentado para identificar, contener y solucionar incidentes de seguridad?</legend>
+                    <li><fieldset class="pregunta"><legend><span class="cuestionario-area">08 · Incidentes <span class="prioridad correctivo">Correctivo</span></span>¿Cuenta la empresa con un plan documentado de respuesta a incidentes de seguridad que establezca acciones para identificar, contener y solucionar los incidentes?</legend>
                         <div class="opciones"><label class="opcion"><input type="radio" name="p8" value="si"><span>Sí</span></label><label class="opcion"><input type="radio" name="p8" value="no"><span>No</span></label><label class="opcion"><input type="radio" name="p8" value="na"><span>N/A</span></label></div></fieldset></li>
                 </ol>
                 <aside class="resultado" aria-live="polite">

@@ -36,13 +36,22 @@
             '<circle cx="930" cy="500" r="5" fill="rgba(230,193,122,.7)"/></svg>';
     }
 
-    /* ---------- 2. Reloj de coordenadas (decorativo) ---------- */
+    /* ---------- 2. Reloj con fecha y hora actual en tiempo real ---------- */
     const reloj = document.querySelector('[data-reloj]');
     if (reloj) {
+        const meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
         const dosDigitos = (n) => String(n).padStart(2, '0');
         const actualizarReloj = () => {
             const ahora = new Date();
-            reloj.textContent = `AR ${dosDigitos(ahora.getHours())}h ${dosDigitos(ahora.getMinutes())}m ${dosDigitos(ahora.getSeconds())}s · DEC +04° 36′`;
+            const dia = dosDigitos(ahora.getDate());
+            const mes = meses[ahora.getMonth()];
+            const anio = ahora.getFullYear();
+            const horas24 = ahora.getHours();
+            const periodo = horas24 >= 12 ? 'PM' : 'AM';
+            const horas12 = dosDigitos(horas24 % 12 || 12);
+            const minutos = dosDigitos(ahora.getMinutes());
+            const segundos = dosDigitos(ahora.getSeconds());
+            reloj.textContent = `${dia} ${mes} ${anio} · ${horas12}:${minutos}:${segundos} ${periodo}`;
         };
         actualizarReloj();
         setInterval(actualizarReloj, 1000);

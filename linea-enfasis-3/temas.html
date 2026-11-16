@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Temas | Líneas de Énfasis 3 — Portal de Innovación y Desarrollo</title>
     <meta name="theme-color" content="#060a1a">
+    <!-- Favicon Sistema Solar -->
+    <link rel="icon" type="image/svg+xml" href="../logos/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../logos/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logos/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../logos/favicon-192x192.png">
+    <link rel="shortcut icon" href="../logos/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -36,7 +42,7 @@
                 </div>
             </a>
 
-            <span class="coordenadas" data-reloj aria-hidden="true">AR 00h 00m 00s · DEC +04° 36′</span>
+            <span class="coordenadas" data-reloj aria-hidden="true">15 NOV 2026 · 07:56:00 PM</span>
         </div>
 
         <div class="nav-wrap">
@@ -45,7 +51,7 @@
                 <a href="index.html">Inicio</a>
                 <a href="temas.html" aria-current="page">Temas</a>
                 <a href="conceptos.html">Conceptos</a>
-                <a href="casos-practicos.html">Casos prácticos</a>
+                <a href="casos-practicos.html">Casos</a>
                 <a href="proyecto.html">Proyecto</a>
             </nav>
         </div>
@@ -78,37 +84,42 @@
             </div>
         </section>
 
-        <div class="card-grid revelar" style="--d: .7s">
-            <a class="card" href="#unidad-1">
+        <div class="card-grid card-grid-2 revelar" style="--d: .7s">
+            <a class="card" href="#unidad-1" data-abrir-unidad="unidad-1">
                 <span class="card-icon">I</span>
                 <span class="card-tag">Unidad 01</span>
-                <h3>Seguridad y sistemas operativos</h3>
-                <p>Información como activo, tríada CID, nube, amenazas, parches, accesos y respuesta ante ransomware.</p>
-                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
+                <h3>Seguridad de la información y sistemas operativos</h3>
+                <p>Conceptos base (seguridad, información, sistema y operativo), la información como activo, evolución hacia la nube, ciberseguridad en el mercado 3.0 y diapositivas interactivas.</p>
+                <span class="card-link">Ver Unidad 01 <b aria-hidden="true">↗</b></span>
             </a>
-            <a class="card" href="#unidad-2">
+            <a class="card" href="#unidad-2" data-abrir-unidad="unidad-2">
                 <span class="card-icon">II</span>
                 <span class="card-tag">Unidad 02</span>
                 <h3>Singularidad tecnológica</h3>
-                <p>Tipos de IA, la hipótesis de la singularidad, riesgos de los agentes y supervisión humana.</p>
-                <span class="card-link">Ver unidad <b aria-hidden="true">↓</b></span>
-            </a>
-            <a class="card" href="#parches">
-                <span class="card-icon">III</span>
-                <span class="card-tag">Guía</span>
-                <h3>Gestión de parches</h3>
-                <p>El procedimiento en cinco pasos para mantener los equipos al día y qué hacer con los que no se pueden actualizar.</p>
-                <span class="card-link">Ver guía <b aria-hidden="true">↓</b></span>
+                <p>Inteligencia artificial (ANI, AGI y ASI), hipótesis de la singularidad, riesgos de ciberseguridad ligados a la IA, control, supervisión humana y gestión responsable.</p>
+                <span class="card-link">Ver Unidad 02 <b aria-hidden="true">↗</b></span>
             </a>
         </div>
 
         <!-- ================= UNIDAD 1 ================= -->
-        <section class="seccion" id="unidad-1" aria-labelledby="titulo-u1">
+        <section class="seccion" id="unidad-1" data-modal-unidad aria-labelledby="titulo-u1">
             <header class="seccion-cabeza aparecer">
                 <span class="seccion-num">Unidad 01</span>
                 <h2 id="titulo-u1">Seguridad de la información <em>y sistemas operativos</em></h2>
-                <p>La base del curso: qué significa proteger la información, por qué el sistema operativo es la pieza central de esa protección y qué hacer cuando algo falla.</p>
+                <p>La base del curso: qué significa proteger la información, por qué se considera uno de los principales activos de las organizaciones y cómo el sistema operativo es la pieza central de su protección.</p>
             </header>
+
+            <!-- Cuadrito destacado para las diapositivas de la Unidad 1 en Genially -->
+            <div class="cuadro-diapositivas aparecer">
+                <div class="cuadro-diapo-info">
+                    <span class="cuadro-diapo-tag">✦ Material interactivo · Unidad 01</span>
+                    <h4>Diapositivas de la Unidad 1 en Genially</h4>
+                    <p>Explora la presentación interactiva elaborada para esta unidad sobre seguridad de la información, activos organizacionales, amenazas y protección de sistemas operativos.</p>
+                </div>
+                <a class="cuadro-diapo-btn" href="https://view.genially.com/609710fcde75770d03ec9608" target="_blank" rel="noopener">
+                    Ver diapositivas en Genially <b aria-hidden="true">↗</b>
+                </a>
+            </div>
 
             <div class="docs aparecer">
                 <details class="doc" open>
@@ -119,179 +130,93 @@
                     </summary>
                     <div class="doc-cuerpo">
                         <div class="doc-bloque">
+                            <h4>Propósito general de la unidad</h4>
+                            <ul class="puntos">
+                                <li><b>Conocer</b> las amenazas más comunes que afectan a los diversos sistemas operativos.</li>
+                                <li><b>Aprender</b> la forma en cómo operan los sistemas operativos y los criterios de seguridad que deben aplicarse.</li>
+                                <li><b>Comprender</b> las técnicas para asegurar un sistema operativo y resguardar la información que administra.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-bloque">
                             <h4>Cuatro palabras que arman el tema</h4>
                             <ul class="puntos">
-                                <li><b>Seguridad</b> viene del latín <i>securitas</i>, “estar sin cuidado”. Es mantener los riesgos dentro de niveles aceptables y resguardar la vida, la libertad y el patrimonio.</li>
-                                <li><b>Información</b> es un conjunto organizado de datos del que alguien extrae conocimiento; por eso funciona como un mensaje que se comunica y se comparte.</li>
-                                <li><b>Sistema</b> es un conjunto ordenado de componentes relacionados, donde cada parte se vincula con las demás, de forma material o conceptual.</li>
-                                <li><b>Operativo</b> es lo que se pone en marcha para lograr un objetivo: lo que obra, hace efecto o está listo para usarse.</li>
+                                <li><b>Seguridad</b> viene del latín <i>securitas</i>, que traduce “estar sin cuidado” o sentirse a salvo. Consiste en contener los riesgos dentro de niveles aceptables y resguardar la libertad, la vida y el patrimonio.</li>
+                                <li><b>Información</b> es un conjunto organizado de datos relevantes del cual uno o más sujetos extraen conocimiento; son conocimientos comunicados, compartidos o transmitidos que constituyen un mensaje.</li>
+                                <li><b>Sistema</b> es un conjunto ordenado de componentes relacionados entre sí, donde cada elemento se vincula con los demás tanto de forma material como conceptual.</li>
+                                <li><b>Operativo</b> es el dispositivo o plan que se lleva a cabo para desarrollar una acción y conseguir un objetivo: aquello que obra, hace su efecto o está preparado para ser utilizado.</li>
                             </ul>
                         </div>
                         <div class="doc-bloque">
-                            <h4>La información como activo</h4>
+                            <h4>La información como activo (UOC)</h4>
                             <ul class="puntos">
-                                <li>Hoy la información es uno de los <b>principales activos</b> de las compañías, y protegerla exige invertir recursos.</li>
-                                <li>Las formas de protegerla <b>han cambiado con el tiempo</b>: la digitalización trajo amenazas que antes no existían.</li>
-                                <li>Muchas empresas pasaron de gestionarlo todo internamente a <b>contratar servicios en la nube</b>.</li>
-                                <li>Como toda la organización trabaja con información, su seguridad requiere una <b>gestión coordinada y transversal</b>.</li>
+                                <li>Hoy en día la información es uno de los <b>principales activos</b> de las compañías, y la necesidad de protegerla exige invertir recursos de forma continua.</li>
+                                <li>Las tareas y medidas de protección <b>han variado en el tiempo</b>: la digitalización y la evolución tecnológica trajeron amenazas jamás imaginadas.</li>
+                                <li>Los nuevos modelos de gestión impulsan a las empresas a pasar de gestionarlo todo de forma interna a <b>contratar servicios en la nube</b>.</li>
+                                <li>Dado que todas las áreas trabajan con información, su seguridad exige una <b>gestión coordinada y de carácter transversal</b> en toda la organización.</li>
                             </ul>
                         </div>
                         <div class="doc-bloque">
-                            <h4>La seguridad en la actualidad</h4>
-                            <p>La globalización, la velocidad de las transacciones y la movilidad dejaron obsoletas muchas reglas del negocio: aparece el “prosumidor”, las iniciativas <i>crowd</i> y una nueva preocupación por la privacidad. Esas mismas ventajas del mercado digital las aprovechan quienes “no juegan limpio”, así que la <b>ciberseguridad</b> se vuelve clave para el desarrollo económico: proteger frente a código dañino, ataques a páginas web, fraude y robo de identidad.</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller de investigación · Word</span>
-                        <span class="doc-titulo">Seguridad de la información y sistemas operativos</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <p class="doc-intro">Diez puntos resueltos con apoyo en NIST, CISA, la UOC y Microsoft, casi todos aterrizados en una empresa floricultora.</p>
-                        <ol class="preguntas">
-                            <li><b>Seguridad, información y sistema.</b> La seguridad protege los recursos para que la información no se pierda, se modifique ni se revele. Un dato suelto (“20 % más de rosas rojas”) solo se vuelve información útil cuando se organiza en un reporte. Y un sistema no es solo la máquina: el de recepción de flor incluye báscula, red, software, escáner y operarios. Proteger la información no es solo proteger el computador.</li>
-                            <li><b>La información como activo.</b> Tiene valor porque permite conocer los procesos, decidir y mejorar. Si se pierde o se registra mal, se frena la operación y la empresa pierde dinero. Se identificaron tres tipos valiosos: producción, datos de trabajadores e información comercial, cada uno con sus responsables.</li>
-                            <li><b>Principios CID.</b> Confidencialidad, integridad y disponibilidad, con un ejemplo bancario de cada una y sus medidas: tokenizar tarjetas, usar transacciones atómicas y tener métodos de autenticación alternativos. En una institución educativa el principio más delicado sería la integridad de las notas.</li>
-                            <li><b>Nube y nuevos riesgos.</b> Beneficios: acceso remoto y ahorro de recursos. Riesgos: accesos no autorizados, pérdida de información y dependencia del proveedor. Antes de contratar hay que revisar control de acceso, copias, cifrado, soporte, privacidad y gestión de riesgos.</li>
-                            <li><b>Amenazas actuales.</b> Distingue amenaza, vulnerabilidad y riesgo, y analiza phishing, malware, robo de credenciales y ataques a sitios web: cómo operan, qué activo afectan y cómo prevenirlos.</li>
-                            <li><b>El sistema operativo y su superficie de ataque.</b> El SO es el puente entre usuario, aplicaciones y hardware: gestiona procesos, memoria, archivos, dispositivos y usuarios. Todo pasa por él, por eso es crítico. Compara Windows y Linux y recuerda que ninguno es invulnerable (WannaCry en 2017, XZ Utils en 2024).</li>
-                            <li><b>Vulnerabilidades y parches.</b> Con el caso de 50 equipos sin actualizaciones automáticas propone un procedimiento de parcheo y controles temporales para los equipos que no pueden actualizarse de inmediato.</li>
-                            <li><b>Control de acceso y privilegios.</b> Cuentas individuales, contraseñas robustas, MFA y mínimo privilegio. Redacta una política para una universidad con tres roles (administrador, docente y estudiante) y seis reglas.</li>
-                            <li><b>Respaldo y respuesta ante ransomware.</b> Plan en cinco momentos: aislar, notificar, preservar evidencia, recuperar desde copias limpias y prevenir. Los respaldos se prueban y se guardan fuera de la red, porque el ransomware también ataca las copias conectadas.</li>
-                            <li><b>Plan básico de protección del SO.</b> Ocho medidas en orden de prioridad, cada una con su forma de verificación, y una revisión mensual registrada en una lista de chequeo.</li>
-                        </ol>
-                        <div class="doc-acciones">
-                            <a class="button" href="https://view.genially.com/609710fcde75770d03ec9608" target="_blank" rel="noopener">Ver presentación en Genially ↗</a>
-                            <a class="button" href="casos-practicos.html#checklist">Probar el plan de protección →</a>
+                            <h4>La seguridad de la información en la actualidad (Mercado 3.0)</h4>
+                            <p>La globalización, la velocidad de las transacciones y la movilidad dejaron obsoletas muchas reglas clásicas del negocio: emerge la figura del “prosumidor”, se consolidan las iniciativas <i>crowd</i> y surge una nueva conciencia sobre la privacidad. Esas mismas ventajas del mercado digital son explotadas por quienes “no juegan limpio”, haciendo de la <b>ciberseguridad</b> un elemento clave para el desarrollo económico y de Internet frente a código dañino, ataques a páginas web, fraude y robo de identidad en línea.</p>
                         </div>
                     </div>
                 </details>
             </div>
-
-            <h3 class="subtitulo aparecer" id="parches">Cómo mantener un equipo <em>al día</em></h3>
-            <p class="parrafo-guia aparecer">El taller parte de un error común: soporte desactiva las actualizaciones porque una vez dañaron un programa contable, nadie instala el parche y un correo malicioso aprovecha la falla para moverse por la red. Este es el procedimiento que propone.</p>
-            <ol class="secuencia cols-5 aparecer">
-                <li><span class="paso-num">01</span><b>Inventario.</b> Registrar cada equipo con su sistema operativo y versión.</li>
-                <li><span class="paso-num">02</span><b>Seguimiento.</b> Revisar las publicaciones de parches (Windows publica el segundo martes de cada mes).</li>
-                <li><span class="paso-num">03</span><b>Prioridad.</b> Fijar plazos según qué tan crítico es lo que corrige cada parche.</li>
-                <li><span class="paso-num">04</span><b>Pruebas.</b> Instalar primero en un equipo de pruebas y verificar que nada se dañe.</li>
-                <li><span class="paso-num">05</span><b>Reversión y registro.</b> Tener cómo deshacer el cambio, confirmar la instalación y documentarla.</li>
-            </ol>
-            <p class="nota-clave aparecer"><strong>Si un equipo no se puede actualizar ya</strong>Por software antiguo, por ser crítico o por estar sin soporte (como Windows 10 desde 2025): aislarlo en la red, desactivar el servicio vulnerable, bloquear puertos en el firewall, limitar quién lo usa y reforzar el monitoreo.</p>
         </section>
 
         <!-- ================= UNIDAD 2 ================= -->
-        <section class="seccion" id="unidad-2" aria-labelledby="titulo-u2">
+        <section class="seccion" id="unidad-2" data-modal-unidad aria-labelledby="titulo-u2">
             <header class="seccion-cabeza aparecer">
                 <span class="seccion-num">Unidad 02</span>
                 <h2 id="titulo-u2">Singularidad <em>tecnológica</em></h2>
-                <p>Inteligencia artificial, ciberseguridad y gestión de riesgos: qué es la singularidad, qué tan cerca está y cómo mantener el control humano sobre sistemas cada vez más autónomos.</p>
+                <p>Inteligencia artificial, ciberseguridad y gestión de riesgos: qué plantea la hipótesis de la singularidad, cómo se clasifican los sistemas de IA y cómo mantener el control humano.</p>
             </header>
 
             <div class="docs aparecer">
                 <details class="doc" open>
                     <summary>
-                        <span class="doc-tipo">Clase · PDF</span>
-                        <span class="doc-titulo">Conceptos de singularidad tecnológica</span>
+                        <span class="doc-tipo">Clase 2 · Presentación PDF</span>
+                        <span class="doc-titulo">Conceptos de singularidad tecnológica, IA y gestión de riesgos</span>
                         <span class="doc-icono" aria-hidden="true"></span>
                     </summary>
                     <div class="doc-cuerpo">
                         <div class="doc-bloque">
-                            <h4>La hipótesis</h4>
-                            <p>La singularidad tecnológica plantea un punto futuro en el que la IA <b>alcanza o supera la capacidad cognitiva humana</b> y empieza a mejorar su propio diseño de forma autónoma, produciendo avances muy rápidos y difíciles de predecir. Se asocia al crecimiento exponencial del cómputo, a sistemas que aprenden sin intervención constante y a cambios profundos en educación, medicina, industria, transporte, economía y trabajo.</p>
+                            <h4>¿Qué es la singularidad tecnológica?</h4>
+                            <p>La singularidad tecnológica es una hipótesis que plantea un punto futuro en el cual la inteligencia artificial <b>alcanzará o superará las capacidades cognitivas humanas</b> y comenzará a mejorar su propio diseño de manera autónoma, produciendo avances tecnológicos extremadamente rápidos y difíciles de predecir. Se asocia al crecimiento exponencial de la capacidad computacional, a sistemas capaces de aprender sin intervención constante y a transformaciones profundas en educación, medicina, industria, transporte, economía y trabajo.</p>
                         </div>
                         <div class="doc-bloque">
                             <h4>Tres niveles de inteligencia artificial</h4>
                             <ul class="puntos">
-                                <li><b>ANI, IA especializada:</b> la que existe hoy. Hace una tarea con gran precisión, pero no transfiere ese conocimiento a otros campos (asistentes como ChatGPT, recomendaciones de Netflix o Spotify, reconocimiento facial, diagnóstico médico asistido).</li>
-                                <li><b>AGI, IA general:</b> entendería, aprendería y resolvería problemas en distintos contextos como un ser humano. Aún no existe.</li>
-                                <li><b>ASI, superinteligencia:</b> sistema hipotético que superaría a las personas en creatividad, razonamiento y decisiones. La singularidad suele asociarse a una AGI que evoluciona hacia una ASI.</li>
+                                <li><b>IA Especializada (ANI — Inteligencia Artificial Estrecha o Específica):</b> es la que existe actualmente. Está diseñada para realizar una tarea concreta con alta eficiencia y precisión, pero no puede transferir ese conocimiento a otros campos (ejemplos: ChatGPT y asistentes virtuales, recomendaciones de Netflix o Spotify, reconocimiento facial y diagnóstico médico asistido por IA).</li>
+                                <li><b>IA General (AGI — Inteligencia Artificial General):</b> sería capaz de comprender, aprender y resolver problemas en distintos contextos de manera similar a un ser humano. Actualmente no existe y se encuentra en etapa de investigación y desarrollo.</li>
+                                <li><b>Superinteligencia (ASI — Superinteligencia Artificial):</b> sistema hipotético que superaría a los seres humanos en creatividad, razonamiento, toma de decisiones y resolución de problemas complejos. La singularidad suele asociarse a una AGI que evoluciona hacia una ASI.</li>
                             </ul>
                         </div>
                         <div class="doc-bloque">
-                            <h4>Riesgos y controles</h4>
+                            <h4>Riesgos de ciberseguridad relacionados con la IA</h4>
                             <ul class="puntos">
-                                <li><b>Riesgos de ciberseguridad ligados a la IA:</b> phishing muy personalizado, deepfakes para suplantar identidades, ataques automatizados a gran escala, envenenamiento de datos de entrenamiento, robo de modelos, manipulación de decisiones automatizadas y desinformación masiva.</li>
-                                <li><b>Para un uso responsable:</b> gobierno corporativo de la IA, supervisión humana en decisiones críticas, auditorías periódicas de algoritmos, políticas de ciberseguridad y datos, monitoreo de los modelos, capacitación ética y técnica, y cumplimiento de normas internacionales.</li>
+                                <li>Creación automática de campañas de <b>phishing altamente personalizadas</b>.</li>
+                                <li>Generación de <b>deepfakes</b> (audio y video) para suplantación de identidad.</li>
+                                <li><b>Automatización masiva</b> de ataques informáticos.</li>
+                                <li><b>Envenenamiento de datos</b> de entrenamiento (<i>data poisoning</i>).</li>
+                                <li><b>Robo de modelos</b> y algoritmos propietarios.</li>
+                                <li>Manipulación de sistemas de <b>decisión automatizada</b> y generación de <b>desinformación a gran escala</b>.</li>
+                            </ul>
+                        </div>
+                        <div class="doc-bloque">
+                            <h4>Control, supervisión y gestión de riesgos</h4>
+                            <ul class="puntos">
+                                <li>Implementar marcos de <b>gobierno corporativo de IA</b> y cumplimiento de normativas internacionales.</li>
+                                <li>Garantizar la <b>supervisión humana en decisiones críticas</b> y realizar auditorías periódicas de algoritmos.</li>
+                                <li>Definir <b>políticas de ciberseguridad y protección de datos</b>, junto con monitoreo continuo del desempeño de los modelos.</li>
+                                <li>Impulsar la <b>capacitación ética y técnica</b> de los usuarios dentro de la organización.</li>
                             </ul>
                         </div>
                     </div>
                 </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller teórico · Semana 2</span>
-                        <span class="doc-titulo">Singularidad tecnológica, IA y ciberseguridad</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <p class="doc-intro">Diez preguntas de investigación que contrastan autores (Vinge, Bostrom, Chalmers, Walsh) con guías técnicas (NIST, OWASP, CERT-EU, NCSC).</p>
-                        <ol class="preguntas">
-                            <li><b>¿Qué es la singularidad?</b> La posibilidad de que la IA supere la capacidad humana e impulse cambios imposibles de prever (Vinge, 1993; Bostrom, 2014). Dos rasgos: una IA superior a la humana y una aceleración tecnológica difícil de controlar. Sigue siendo una hipótesis.</li>
-                            <li><b>ANI, AGI y superinteligencia.</b> Se diferencian por el alcance: tareas concretas, capacidad de aprender cualquier problema como una persona, o superar a la humanidad en casi todo (OECD, 2019).</li>
-                            <li><b>¿Por qué es una hipótesis?</b> Vinge la ve viable por el avance del hardware y la competencia entre países. Walsh (2017) responde con la analogía del “perro que piensa rápido”: acelerar un cerebro no lo hace más inteligente, solo más veloz.</li>
-                            <li><b>IA que mejora sus capacidades.</b> Chalmers (2010) describe la automejora recursiva: una IA que rediseña su propio algoritmo y crea versiones más inteligentes. Tiene límites técnicos, rendimientos decrecientes, recursos físicos y escasez de datos.</li>
-                            <li><b>Riesgos actuales.</b> Phishing y suplantación de voz o video con IA generativa (CERT-EU, 2025), exposición de datos confidenciales que los empleados escriben en herramientas de IA y errores al automatizar procesos.</li>
-                            <li><b>Agentes conectados sin controles.</b> Un agente no solo responde: ejecuta, modifica y se comunica con otros sistemas. OWASP llama <i>excessive agency</i> a tener más permisos y autonomía de los necesarios. Recomienda limitarlos y exigir aprobación humana en operaciones de alto impacto.</li>
-                            <li><b>Mínimo privilegio.</b> Cada usuario o sistema recibe solo lo necesario: un agente de inventario consulta existencias, pero no elimina registros ni ve la nómina.</li>
-                            <li><b>Supervisión humana.</b> Personal que entienda los límites del sistema, registros que permitan saber qué datos se usaron en cada decisión, botones de parada o anulación, restricciones que impidan acciones riesgosas y planes para volver a versiones anteriores.</li>
-                            <li><b>Gestión responsable.</b> Con el marco NIST AI RMF las acciones se organizan antes, durante y después del uso del sistema.</li>
-                            <li><b>Afirmaciones con fundamento.</b> La prueba CRAAP, la lectura lateral y la diferencia entre hecho, opinión y predicción. Un estudio halló que cerca del 60 % de las noticias sobre IA en medios británicos estaban impulsadas por la propia industria.</li>
-                        </ol>
-                        <div class="doc-acciones">
-                            <a class="button" href="conceptos.html#credibilidad">Practicar hecho, opinión o predicción →</a>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="doc">
-                    <summary>
-                        <span class="doc-tipo">Taller práctico · ISO 27001</span>
-                        <span class="doc-titulo">Seguridad de la información frente a la singularidad</span>
-                        <span class="doc-icono" aria-hidden="true"></span>
-                    </summary>
-                    <div class="doc-cuerpo">
-                        <p class="doc-intro">La empresa TecnoGestión S.A.S incorpora un agente de IA que consulta datos, genera informes y ejecuta tareas solo. Tiene acceso a varias áreas, permisos sin delimitar, cambios sin documentar, ningún procedimiento para detenerlo y ninguna evaluación formal de riesgos.</p>
-                        <ol class="preguntas">
-                            <li><b>Riesgos.</b> Divulgación de datos confidenciales (confidencialidad), cambios o borrados indebidos (integridad) e interrupción de servicios (disponibilidad). Se gestionan según ISO/IEC 27001, numerales 6.1.2 y 6.1.3.</li>
-                            <li><b>Accesos.</b> Mínimo privilegio (control 5.15), una cuenta propia para el agente y aprobación humana para las operaciones críticas.</li>
-                            <li><b>Trazabilidad.</b> Registros con relojes sincronizados (8.15 y 8.17), gestión de cambios (8.32) y copias de seguridad (8.13).</li>
-                            <li><b>Respuesta.</b> Cuatro pasos: detectar y decidir, contener, conservar evidencia y recuperar la operación de forma controlada (controles 5.24 a 5.29).</li>
-                            <li><b>Propuesta.</b> Cinco acciones: gestionar riesgos, limitar permisos, clasificar la información, registrar al agente y formalizar la respuesta a incidentes, siempre con supervisión humana.</li>
-                        </ol>
-                        <div class="doc-acciones">
-                            <a class="button" href="casos-practicos.html#tecnogestion">Ver el caso completo →</a>
-                        </div>
-                    </div>
-                </details>
             </div>
 
-            <h3 class="subtitulo aparecer">Gestionar la IA <em>en tres momentos</em></h3>
-            <div class="pestanas aparecer" data-pestanas>
-                <div class="pestanas-lista" role="tablist" aria-label="Momentos de la gestión de riesgos de IA">
-                    <button class="pestana" role="tab" id="ia-1" aria-controls="ia-panel-1" aria-selected="true"><span class="pestana-num">01</span>Antes del uso</button>
-                    <button class="pestana" role="tab" id="ia-2" aria-controls="ia-panel-2" aria-selected="false"><span class="pestana-num">02</span>Durante el uso</button>
-                    <button class="pestana" role="tab" id="ia-3" aria-controls="ia-panel-3" aria-selected="false"><span class="pestana-num">03</span>Después del uso</button>
-                </div>
-                <div class="pestana-panel" role="tabpanel" id="ia-panel-1" aria-labelledby="ia-1">
-                    <h4>Planear y documentar</h4>
-                    <p>Mapear el contexto, evaluar impactos y dejar por escrito el propósito del sistema, sus beneficios, los límites éticos y legales y dónde se va a desplegar. Además, auditar a los proveedores de modelos o software y aislar lo que venga de terceros antes de integrarlo.</p>
-                    <p class="ejemplo"><strong>Qué evita:</strong> decisiones desviadas, usar el modelo fuera del contexto para el que se diseñó y ataques por modelos maliciosos o datos contaminados.</p>
-                </div>
-                <div class="pestana-panel" role="tabpanel" id="ia-panel-2" aria-labelledby="ia-2" hidden>
-                    <h4>Probar y proteger</h4>
-                    <p>Someter el sistema a pruebas adversarias antes de producción, filtrar y sanear lo que entra y lo que sale, y aplicar el principio de mínimo privilegio.</p>
-                    <p class="ejemplo"><strong>Qué evita:</strong> la inyección de prompts, la extracción de datos confidenciales y la manipulación del comportamiento del sistema.</p>
-                </div>
-                <div class="pestana-panel" role="tabpanel" id="ia-panel-3" aria-labelledby="ia-3" hidden>
-                    <h4>Responder y corregir</h4>
-                    <p>Tener planes de respuesta a incidentes, un mecanismo para apagar el sistema de inmediato, procesos de anulación con revisión humana y restauraciones desde respaldos fuera de línea.</p>
-                    <p class="ejemplo"><strong>Qué logra:</strong> limitar el daño operativo y reputacional, proteger los derechos de las personas afectadas y responder por los fallos.</p>
-                </div>
-            </div>
+            <p class="nota-clave aparecer"><strong>Conclusión de la clase</strong>La singularidad tecnológica representa uno de los escenarios más debatidos del siglo XXI. Aunque la IA ofrece enormes beneficios para la productividad y la innovación, el desarrollo responsable dependerá de una adecuada gestión de riesgos y una supervisión humana permanente.</p>
         </section>
     </main>
 

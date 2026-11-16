@@ -669,3 +669,263 @@ html:not(.con-js) .ruta::before,
         padding: 22px 20px;
     }
 }
+
+/* ===================================================
+   VISOR EMERGENTE (PANTALLA SUPERIOR) DE UNIDADES
+=================================================== */
+
+body.visor-abierto {
+    overflow: hidden;
+}
+
+/* Oculta las unidades de la parte inferior cuando se muestran en ventana superior */
+main > [data-modal-unidad] {
+    display: none;
+}
+
+.visor-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 28px 20px;
+    opacity: 0;
+    transition: opacity 0.28s var(--curva);
+}
+
+.visor-modal[hidden] {
+    display: none;
+}
+
+.visor-modal.activo {
+    opacity: 1;
+}
+
+.visor-fondo {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 6, 16, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.visor-ventana {
+    position: relative;
+    z-index: 1;
+    width: min(1080px, 100%);
+    max-height: min(88vh, 920px);
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(ellipse 110% 70% at 50% 0%, #111c48 0%, var(--tinta) 65%);
+    background-color: var(--tinta);
+    border: 1px solid rgba(230, 193, 122, 0.32);
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.78),
+        0 0 0 1px rgba(241, 234, 217, 0.05) inset;
+    transform: translateY(22px) scale(0.98);
+    transition: transform 0.36s var(--curva);
+    overflow: hidden;
+}
+
+.visor-modal.activo .visor-ventana {
+    transform: none;
+}
+
+/* Esquinas doradas estilo Carta Estelar */
+.visor-ventana::before,
+.visor-ventana::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: solid var(--oro);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.visor-ventana::before {
+    top: 8px;
+    left: 8px;
+    border-width: 1px 0 0 1px;
+}
+
+.visor-ventana::after {
+    bottom: 8px;
+    right: 8px;
+    border-width: 0 1px 1px 0;
+}
+
+.visor-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 26px;
+    border-bottom: 1px solid var(--linea);
+    background: rgba(6, 10, 26, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-shrink: 0;
+}
+
+.visor-migas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.visor-icono {
+    color: var(--oro);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.visor-etiqueta {
+    font-family: var(--fuente-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--marfil);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.visor-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.visor-nav-btn {
+    padding: 7px 13px;
+    font-family: var(--fuente-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--niebla);
+    background: transparent;
+    border: 1px solid var(--linea);
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.visor-nav-btn:hover {
+    color: var(--marfil);
+    border-color: var(--oro-tenue);
+}
+
+.visor-nav-btn.activo {
+    color: var(--tinta);
+    background: var(--oro);
+    border-color: var(--oro);
+}
+
+.visor-cerrar {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    font-family: var(--fuente-mono);
+    color: var(--marfil);
+    background: transparent;
+    border: 1px solid rgba(230, 193, 122, 0.35);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.25s, background 0.25s, border-color 0.25s;
+}
+
+.visor-cerrar:hover,
+.visor-cerrar:focus-visible {
+    background: var(--oro);
+    color: var(--tinta);
+    border-color: var(--oro);
+    outline: none;
+}
+
+.visor-cerrar b {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.visor-cuerpo {
+    padding: 42px 48px 54px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--oro-tenue) transparent;
+}
+
+.visor-cuerpo:focus {
+    outline: none;
+}
+
+.visor-cuerpo .seccion {
+    padding: 0;
+    scroll-margin-top: 24px;
+}
+
+.visor-cuerpo .subtitulo {
+    scroll-margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+    .visor-modal {
+        padding: 14px 10px;
+    }
+
+    .visor-ventana {
+        max-height: 92vh;
+    }
+
+    .visor-barra {
+        flex-wrap: wrap;
+        padding: 14px 18px;
+    }
+
+    .visor-migas {
+        flex: 1;
+    }
+
+    .visor-nav {
+        order: 3;
+        width: 100%;
+        padding-top: 8px;
+        border-top: 1px solid var(--linea);
+    }
+
+    .visor-cerrar kbd {
+        display: none;
+    }
+
+    .visor-cuerpo {
+        padding: 28px 22px 38px;
+    }
+}
+
+@media (max-width: 520px) {
+    .visor-modal {
+        padding: 0;
+    }
+
+    .visor-ventana {
+        width: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .visor-cerrar span {
+        display: none;
+    }
+
+    .visor-cuerpo {
+        padding: 24px 16px 34px;
+    }
+}

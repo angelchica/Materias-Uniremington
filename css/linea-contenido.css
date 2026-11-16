@@ -116,6 +116,98 @@
     font-weight: 300;
 }
 
+/* ---------- Cuadrito destacado para diapositivas (Genially) ---------- */
+
+.cuadro-diapositivas {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 28px 0 36px;
+    padding: 24px 28px;
+    border: 1px solid rgba(230, 193, 122, 0.45);
+    background: linear-gradient(135deg, rgba(230, 193, 122, 0.1) 0%, rgba(16, 26, 68, 0.55) 100%);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+}
+
+.cuadro-diapositivas::before,
+.cuadro-diapositivas::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: solid var(--oro);
+    pointer-events: none;
+}
+
+.cuadro-diapositivas::before {
+    top: 6px;
+    left: 6px;
+    border-width: 1px 0 0 1px;
+}
+
+.cuadro-diapositivas::after {
+    bottom: 6px;
+    right: 6px;
+    border-width: 0 1px 1px 0;
+}
+
+.cuadro-diapo-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cuadro-diapo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-family: var(--fuente-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+.cuadro-diapo-info h4 {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 500;
+    color: var(--marfil);
+    margin-bottom: 6px;
+}
+
+.cuadro-diapo-info p {
+    color: var(--niebla);
+    font-weight: 300;
+    font-size: 0.96rem;
+    max-width: 640px;
+}
+
+.cuadro-diapo-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    font-family: var(--fuente-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--tinta);
+    background: var(--oro);
+    border: 1px solid var(--oro);
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.cuadro-diapo-btn:hover,
+.cuadro-diapo-btn:focus-visible {
+    background: transparent;
+    color: var(--oro);
+    transform: translateY(-2px);
+}
+
 /* ---------- Señales de alerta del caso ---------- */
 
 .alertas {
@@ -207,6 +299,17 @@
 
     .alertas {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cuadro-diapositivas {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 20px;
+    }
+
+    .cuadro-diapo-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 

@@ -188,6 +188,162 @@
         calcular();
     }
 
+    /* ---------- 8. Visor emergente (modal) de unidades ---------- */
+    function activarModalUnidades() {
+        const secciones = [...document.querySelectorAll('[data-modal-unidad]')];
+        if (!secciones.length) return;
+
+        const visor = document.createElement('div');
+        visor.className = 'visor-modal';
+        visor.id = 'visor-unidad';
+        visor.setAttribute('role', 'dialog');
+        visor.setAttribute('aria-modal', 'true');
+        visor.setAttribute('aria-label', 'Contenido detallado de la unidad');
+        visor.hidden = true;
+
+        visor.innerHTML = `
+            <div class="visor-fondo" data-cerrar-visor></div>
+            <div class="visor-ventana" role="document">
+                <header class="visor-barra">
+                    <div class="visor-migas">
+                        <span class="visor-icono" aria-hidden="true">✦</span>
+                        <span class="visor-etiqueta" data-visor-etiqueta>Unidad</span>
+                    </div>
+                    <div class="visor-nav" data-visor-nav role="navigation" aria-label="Cambiar de unidad"></div>
+                    <button type="button" class="visor-cerrar" data-cerrar-visor aria-label="Cerrar ventana emergente">
+                        <b aria-hidden="true">✕</b>
+                    </button>
+                </header>
+                <div class="visor-cuerpo" data-visor-cuerpo tabindex="-1"></div>
+            </div>
+        `;
+
+        document.body.appendChild(visor);
+
+        const cuerpo = visor.querySelector('[data-visor-cuerpo]');
+        const etiqueta = visor.querySelector('[data-visor-etiqueta]');
+        const nav = visor.querySelector('[data-visor-nav]');
+        const botonCerrar = visor.querySelector('.visor-cerrar');
+        let ultimoDisparador = null;
+
+        // Mover cada sección de unidad dentro del visor emergente y crear botones de cambio rápido
+        const botonesNav = secciones.map((seccion, idx) => {
+            seccion.querySelectorAll('.aparecer').forEach((el) => el.classList.add('visible'));
+            seccion.hidden = true;
+            cuerpo.appendChild(seccion);
+
+            const numTexto = seccion.querySelector('.seccion-num')?.textContent.trim() || `Unidad 0${idx + 1}`;
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'visor-nav-btn';
+            btn.dataset.destino = seccion.id;
+            btn.textContent = numTexto;
+            btn.addEventListener('click', () => abrirUnidad(seccion.id));
+            nav.appendChild(btn);
+            return btn;
+        });
+
+        const abrirUnidad = (idObjetivo, disparador = null) => {
+            const limpia = idObjetivo.replace(/^#/, '');
+            const elemento = document.getElementById(limpia);
+            if (!elemento) return;
+
+            const seccionActiva = elemento.closest('[data-modal-unidad]') || (elemento.hasAttribute('data-modal-unidad') ? elemento : null);
+            if (!seccionActiva) return;
+
+            if (disparador) ultimoDisparador = disparador;
+
+            secciones.forEach((s) => {
+                s.hidden = s !== seccionActiva;
+            });
+
+            const numTexto = seccionActiva.querySelector('.seccion-num')?.textContent.trim() || 'Detalle de unidad';
+            const tituloTexto = seccionActiva.querySelector('h2')?.textContent.trim() || '';
+            etiqueta.textContent = tituloTexto ? `${numTexto} · ${tituloTexto}` : numTexto;
+
+            botonesNav.forEach((btn) => {
+                const activo = btn.dataset.destino === seccionActiva.id;
+                btn.classList.toggle('activo', activo);
+                btn.setAttribute('aria-current', activo ? 'true' : 'false');
+            });
+
+            visor.hidden = false;
+            document.body.classList.add('visor-abierto');
+            requestAnimationFrame(() => {
+                visor.classList.add('activo');
+            });
+
+            if (elemento !== seccionActiva) {
+                requestAnimationFrame(() => {
+                    elemento.scrollIntoView({ behavior: quietud ? 'auto' : 'smooth', block: 'start' });
+                });
+            } else {
+                cuerpo.scrollTop = 0;
+            }
+
+            botonCerrar.focus({ preventScroll: true });
+        };
+
+        const cerrarUnidad = () => {
+            if (visor.hidden) return;
+            visor.classList.remove('activo');
+            document.body.classList.remove('visor-abierto');
+
+            if (window.location.hash) {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+
+            const finalizar = () => {
+                visor.hidden = true;
+                if (ultimoDisparador && typeof ultimoDisparador.focus === 'function') {
+                    ultimoDisparador.focus({ preventScroll: true });
+                }
+            };
+
+            if (quietud) {
+                finalizar();
+            } else {
+                window.setTimeout(finalizar, 280);
+            }
+        };
+
+        // Eventos para abrir al hacer clic en las tarjetas o enlaces hacia unidades
+        document.addEventListener('click', (ev) => {
+            const disparador = ev.target.closest('[data-abrir-unidad], a[href^="#"]');
+            if (!disparador) return;
+
+            const id = disparador.dataset.abrirUnidad || disparador.getAttribute('href')?.slice(1);
+            if (!id) return;
+
+            const destino = document.getElementById(id);
+            if (!destino || !destino.closest('[data-modal-unidad]')) return;
+
+            ev.preventDefault();
+            abrirUnidad(id, disparador);
+        });
+
+        // Eventos para cerrar (fondo oscuro, botón cerrar y tecla Escape)
+        visor.querySelectorAll('[data-cerrar-visor]').forEach((el) => {
+            el.addEventListener('click', cerrarUnidad);
+        });
+
+        document.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Escape' && !visor.hidden) {
+                ev.preventDefault();
+                cerrarUnidad();
+            }
+        });
+
+        // Si se entra desde otra página con hash (ej. temas.html#unidad-1), abrir automáticamente
+        if (window.location.hash) {
+            const hashId = window.location.hash.slice(1);
+            const destino = document.getElementById(hashId);
+            if (destino && destino.closest('[data-modal-unidad]')) {
+                abrirUnidad(hashId);
+            }
+        }
+    }
+
     /* ---------- Inicio ---------- */
     activarVisibles();
     document.querySelectorAll('[data-pestanas]').forEach(activarPestanas);
@@ -195,4 +351,5 @@
     document.querySelectorAll('[data-glosario]').forEach(activarGlosario);
     activarRevelar();
     document.querySelectorAll('[data-cuestionario]').forEach(activarCuestionario);
+    activarModalUnidades();
 })();

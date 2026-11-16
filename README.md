@@ -5,7 +5,8 @@ Sitio web académico estático desarrollado en **HTML5** y **CSS3** para organiz
 ## 📂 Estructura del Proyecto
 
 ```text
-├── index.html                        # Hoja inicial principal ("Materias vistas con Mahecha")
+├── index.html                        # Hoja inicial principal ("Explora y Aprende")
+├── logos/                            # Iconos y favicons del sitio (SVG, ICO y PNG)
 ├── css/
 │   ├── carta-estelar.css             # Base del diseño "Carta estelar" (fondo, encabezado, pie)
 │   ├── portada.css                   # Exclusivo de la hoja inicial

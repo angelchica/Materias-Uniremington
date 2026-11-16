@@ -22,6 +22,11 @@
     color: var(--niebla);
 }
 
+/* Dos tarjetas principales (Unidad 01 y Unidad 02) */
+.card-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 /* Inicio: cuatro módulos enlazados */
 .card-grid-4 {
     grid-template-columns: repeat(4, 1fr);
@@ -96,6 +101,7 @@ a.card:focus-visible::before {
 }
 
 @media (max-width: 900px) {
+    .card-grid-2,
     .card-grid-4 {
         grid-template-columns: 1fr;
     }

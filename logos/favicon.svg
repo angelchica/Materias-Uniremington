@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Fondo cósmico del espacio profundo -->
+    <radialGradient id="spaceGrad" cx="50%" cy="50%" r="50%" fx="42%" fy="38%">
+      <stop offset="0%" stop-color="#141c38"/>
+      <stop offset="65%" stop-color="#080c1d"/>
+      <stop offset="100%" stop-color="#03050a"/>
+    </radialGradient>
+
+    <!-- Resplandor exterior del Sol -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9800" stop-opacity="0.8"/>
+      <stop offset="55%" stop-color="#f57c00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e65100" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Núcleo solar radiante -->
+    <radialGradient id="sunCore" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#fff59d"/>
+      <stop offset="60%" stop-color="#ffb300"/>
+      <stop offset="100%" stop-color="#e65100"/>
+    </radialGradient>
+
+    <!-- Planeta Tierra: Azul cósmico y atmósfera -->
+    <linearGradient id="earthGrad" x1="20%" y1="20%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Planeta Saturno: Ocre dorado -->
+    <linearGradient id="saturnGrad" x1="25%" y1="25%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Planeta Marte: Rojizo -->
+    <linearGradient id="marsGrad" x1="30%" y1="30%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="70%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Insignia circular cósmica con aro dorado exterior -->
+  <circle cx="64" cy="64" r="60" fill="url(#spaceGrad)" stroke="#f59e0b" stroke-width="2.5" stroke-opacity="0.9"/>
+  <circle cx="64" cy="64" r="57.5" fill="none" stroke="#38bdf8" stroke-width="0.9" stroke-opacity="0.45" stroke-dasharray="2.5 2.5"/>
+
+  <!-- Estrellas y destellos del fondo espacial -->
+  <circle cx="34" cy="30" r="1.1" fill="#ffffff" opacity="0.8"/>
+  <circle cx="96" cy="27" r="1.3" fill="#e0f2fe" opacity="0.9"/>
+  <circle cx="23" cy="80" r="1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="103" cy="94" r="1.1" fill="#fef08a" opacity="0.75"/>
+  <circle cx="64" cy="17" r="1" fill="#ffffff" opacity="0.75"/>
+  <circle cx="106" cy="46" r="0.9" fill="#e0f2fe" opacity="0.7"/>
+  <circle cx="21" cy="48" r="0.9" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Destello estelar de 4 puntas -->
+  <path d="M 96,27 L 97.2,22 L 98.4,27 L 103.4,28.2 L 98.4,29.4 L 97.2,34.4 L 96,29.4 L 91,28.2 Z" fill="#ffffff" opacity="0.75"/>
+
+  <!-- Plano orbital inclinado cósmico (-22 grados) -->
+  <g transform="rotate(-22 64 64)">
+    <!-- Órbita 1 (Mercurio / Interior) -->
+    <ellipse cx="64" cy="64" rx="23" ry="9.5" fill="none" stroke="#94a3b8" stroke-width="1.1" stroke-opacity="0.4" stroke-dasharray="2 3"/>
+
+    <!-- Órbita 2 (Tierra) -->
+    <ellipse cx="64" cy="64" rx="36" ry="15" fill="none" stroke="#38bdf8" stroke-width="1.3" stroke-opacity="0.55"/>
+
+    <!-- Órbita 3 (Marte) -->
+    <ellipse cx="64" cy="64" rx="46" ry="19" fill="none" stroke="#fb7185" stroke-width="1.1" stroke-opacity="0.4" stroke-dasharray="3 2.5"/>
+
+    <!-- Órbita 4 (Saturno / Exterior) -->
+    <ellipse cx="64" cy="64" rx="54" ry="22.5" fill="none" stroke="#fde047" stroke-width="1.3" stroke-opacity="0.5"/>
+
+    <!-- Mercurio / Planeta Interior -->
+    <circle cx="45" cy="58" r="3.2" fill="#fcd34d" stroke="#b45309" stroke-width="0.6"/>
+
+    <!-- Planeta Tierra con atmósfera y luna -->
+    <circle cx="88" cy="54" r="5" fill="url(#earthGrad)"/>
+    <circle cx="88" cy="54" r="5.3" fill="none" stroke="#bae6fd" stroke-width="0.7" stroke-opacity="0.8"/>
+    <!-- Mancha continental -->
+    <ellipse cx="87.5" cy="53" rx="2.2" ry="1.5" fill="#34d399" opacity="0.85"/>
+    <!-- Luna -->
+    <circle cx="95" cy="51" r="1.3" fill="#f8fafc"/>
+
+    <!-- Planeta Marte (rojo) -->
+    <circle cx="31" cy="74" r="3.6" fill="url(#marsGrad)" stroke="#991b1b" stroke-width="0.5"/>
+
+    <!-- Saturno con anillo tridimensional -->
+    <!-- Parte posterior del anillo -->
+    <ellipse cx="92" cy="77" rx="9" ry="3.8" fill="none" stroke="#ca8a04" stroke-width="1.8" opacity="0.7" transform="rotate(20 92 77)"/>
+    <!-- Cuerpo del planeta -->
+    <circle cx="92" cy="77" r="4.8" fill="url(#saturnGrad)" stroke="#b45309" stroke-width="0.6"/>
+    <!-- Franja central -->
+    <line x1="88" y1="76.5" x2="96" y2="76.5" stroke="#b45309" stroke-width="0.8" opacity="0.6"/>
+    <!-- Parte frontal del anillo -->
+    <path d="M 83.5,77.5 A 9 3.8 20 0 0 100.5,76.5" fill="none" stroke="#fef08a" stroke-width="1.8" transform="rotate(20 92 77)"/>
+  </g>
+
+  <!-- Sol Central radiante -->
+  <circle cx="64" cy="64" r="21" fill="url(#sunGlow)"/>
+  <circle cx="64" cy="64" r="12" fill="url(#sunCore)" stroke="#ffedd5" stroke-width="1"/>
+
+  <!-- Corona y destellos de luz solar -->
+  <path d="M 64,48 L 65.5,62.5 L 80,64 L 65.5,65.5 L 64,80 L 62.5,65.5 L 48,64 L 62.5,62.5 Z" fill="#fef08a" opacity="0.55"/>
+  <!-- Centro hiperbrillante -->
+  <circle cx="62" cy="62" r="3" fill="#ffffff" opacity="0.9"/>
+</svg>
