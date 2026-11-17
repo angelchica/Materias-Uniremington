@@ -1,18 +1,9 @@
-/* ===================================================
-   CARTA ESTELAR — EFECTOS COMPARTIDOS
-   Lo usan la portada y todas las páginas de Líneas de Énfasis 3.
-   1. Astrolabio giratorio (si la página tiene [data-astrolabio]).
-   2. Reloj de coordenadas en el encabezado ([data-reloj]).
-   3. Menú: centra la sección actual en móvil.
-   4. Transición suave al pasar a otra página del sitio.
-   5. Red de constelaciones en el fondo que reacciona al cursor.
-=================================================== */
+
 (() => {
     'use strict';
 
     const quietud = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* ---------- 1. Astrolabio: anillos con marcas de grados ---------- */
     const crearAnillo = (radio, marcas, largo, opacidad) => {
         let lineas = '';
         for (let i = 0; i < marcas; i++) {
@@ -36,7 +27,6 @@
             '<circle cx="930" cy="500" r="5" fill="rgba(230,193,122,.7)"/></svg>';
     }
 
-    /* ---------- 2. Reloj con fecha y hora actual en tiempo real ---------- */
     const reloj = document.querySelector('[data-reloj]');
     if (reloj) {
         const meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
@@ -57,14 +47,12 @@
         setInterval(actualizarReloj, 1000);
     }
 
-    /* ---------- 3. Menú: la sección actual queda visible en móvil ---------- */
     const enlaceActual = document.querySelector('.navbar [aria-current="page"]');
     if (enlaceActual) {
         const menu = enlaceActual.parentElement;
         menu.scrollLeft = enlaceActual.offsetLeft - (menu.clientWidth - enlaceActual.offsetWidth) / 2;
     }
 
-    /* ---------- 4. Transición al salir hacia otra página ---------- */
     const DURACION_SALIDA = 280;
     const esNavegacionInterna = (ev, enlace) => {
         if (ev.defaultPrevented || ev.button !== 0) return false;
@@ -84,11 +72,10 @@
             document.body.classList.add('saliendo');
             window.setTimeout(() => { window.location.href = enlace.href; }, DURACION_SALIDA);
         });
-        // Al volver con el botón "atrás" la página puede venir de caché: se muestra de nuevo.
+
         window.addEventListener('pageshow', () => document.body.classList.remove('saliendo'));
     }
 
-    /* ---------- 5. Red de constelaciones ---------- */
     const lienzo = document.getElementById('constelacion');
     const ctx = lienzo && lienzo.getContext ? lienzo.getContext('2d') : null;
     if (!ctx) return;

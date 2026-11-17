@@ -85,10 +85,30 @@
 
         <section class="content-panel revelar" style="--d: .7s">
             <h3>Resumen del proyecto</h3>
-            <p>Espacio reservado para describir tu proyecto final, los objetivos alcanzados y colocar el enlace o reproductor de tu video tutorial.</p>
-            <div class="note">
-                <strong>Nota:</strong> Puedes insertar aquí un video local con la etiqueta <code>&lt;video&gt;</code> o un enlace de YouTube / Drive.
+            <p>Presentación en video del proyecto final desarrollado en Líneas de Énfasis 3.</p>
+            <div class="video-proyecto" style="margin-top: 1.5rem; border: 1px solid rgba(232, 197, 122, .35); background: rgba(6, 10, 26, .6); padding: .5rem;">
+                <div id="reproductor-proyecto" style="position: relative; width: 100%; padding-top: 56.25%; background: #000;"></div>
             </div>
+            <p style="margin-top: .75rem;"><a href="https://youtu.be/vA7xY1qsFR4" target="_blank" rel="noopener" style="color: #e8c57a;">Ver el video en YouTube ↗</a></p>
+            <script>
+                /* Si la página está publicada (http/https) se usa el reproductor de YouTube.
+                   Si se abre con doble clic (file://), YouTube bloquea el reproductor (Error 153),
+                   así que se reproduce el video guardado en la carpeta /video. */
+                (function () {
+                    var cont = document.getElementById('reproductor-proyecto');
+                    var estilo = 'position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;';
+                    if (location.protocol === 'http:' || location.protocol === 'https:') {
+                        cont.innerHTML = '<iframe src="https://www.youtube.com/embed/vA7xY1qsFR4?rel=0" ' +
+                            'title="Video del proyecto — Líneas de Énfasis 3" style="' + estilo + '" ' +
+                            'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+                            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+                    } else {
+                        cont.innerHTML = '<video controls preload="metadata" playsinline style="' + estilo + '">' +
+                            '<source src="../video/Video%20linea%20de%20enfasis.mp4" type="video/mp4">' +
+                            'Tu navegador no soporta la reproducción de video.</video>';
+                    }
+                })();
+            </script>
         </section>
     </main>
 

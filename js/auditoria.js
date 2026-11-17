@@ -1,11 +1,4 @@
-/* ===================================================
-   INTERACCIONES DEL CONTENIDO DE LAS MATERIAS
-   Lo usan Auditoría de Sistemas y Líneas de Énfasis 3.
-   1. Aparición al hacer scroll       5. Glosario con filtros
-   2. Cifras que cuentan              6. Casos para revelar
-   3. Pestañas accesibles             7. Cuestionario de control
-   4. Tarjetas que se voltean
-=================================================== */
+
 (() => {
     'use strict';
 
@@ -15,7 +8,7 @@
     const quietud = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const DURACION_CONTEO = 1400;
 
-    /* ---------- 2. Cifras que cuentan ---------- */
+
     function contar(elemento) {
         const meta = Number(elemento.dataset.contador) || 0;
         if (quietud) {
@@ -33,7 +26,7 @@
         requestAnimationFrame(paso);
     }
 
-    /* ---------- 1. Aparición al hacer scroll ---------- */
+
     function activarVisibles() {
         const elementos = document.querySelectorAll('.aparecer, [data-contador]');
         const mostrar = (el) => {
@@ -57,7 +50,6 @@
         elementos.forEach((el) => observador.observe(el));
     }
 
-    /* ---------- 3. Pestañas accesibles ---------- */
     function activarPestanas(grupo) {
         const pestanas = [...grupo.querySelectorAll('[role="tab"]')];
 
@@ -89,7 +81,7 @@
         seleccionar(pestanas.find((p) => p.getAttribute('aria-selected') === 'true') || pestanas[0], false);
     }
 
-    /* ---------- 4. Tarjetas que se voltean ---------- */
+
     function activarVolteos() {
         document.querySelectorAll('.volteo').forEach((tarjeta) => {
             tarjeta.addEventListener('click', () => {
@@ -99,7 +91,7 @@
         });
     }
 
-    /* ---------- 5. Glosario con filtros ---------- */
+
     function activarGlosario(contenedor) {
         const botones = [...contenedor.querySelectorAll('[data-filtro]')];
         const terminos = [...contenedor.querySelectorAll('[data-categoria]')];
@@ -120,7 +112,7 @@
         filtrar('todos');
     }
 
-    /* ---------- 6. Casos para revelar ---------- */
+
     function activarRevelar() {
         document.querySelectorAll('[data-revelar]').forEach((boton) => {
             const objetivo = document.getElementById(boton.getAttribute('aria-controls'));
@@ -135,9 +127,6 @@
         });
     }
 
-    /* ---------- 7. Cuestionario de control ---------- */
-    /* Veredictos por tipo de cuestionario: data-cuestionario="" (control
-       interno, Auditoría) o data-cuestionario="equipo" (Líneas de Énfasis 3) */
     const VEREDICTOS = {
         control: [
             { minimo: 0.8, texto: 'Control sólido', ayuda: 'La mayoría de controles existen. El auditor aún debe pedir evidencia de que funcionan.' },
@@ -188,7 +177,7 @@
         calcular();
     }
 
-    /* ---------- 8. Visor emergente (modal) de unidades ---------- */
+
     function activarModalUnidades() {
         const secciones = [...document.querySelectorAll('[data-modal-unidad]')];
         if (!secciones.length) return;
@@ -226,7 +215,7 @@
         const botonCerrar = visor.querySelector('.visor-cerrar');
         let ultimoDisparador = null;
 
-        // Mover cada sección de unidad dentro del visor emergente y crear botones de cambio rápido
+
         const botonesNav = secciones.map((seccion, idx) => {
             seccion.querySelectorAll('.aparecer').forEach((el) => el.classList.add('visible'));
             seccion.hidden = true;
@@ -307,7 +296,6 @@
             }
         };
 
-        // Eventos para abrir al hacer clic en las tarjetas o enlaces hacia unidades
         document.addEventListener('click', (ev) => {
             const disparador = ev.target.closest('[data-abrir-unidad], a[href^="#"]');
             if (!disparador) return;
@@ -322,7 +310,6 @@
             abrirUnidad(id, disparador);
         });
 
-        // Eventos para cerrar (fondo oscuro, botón cerrar y tecla Escape)
         visor.querySelectorAll('[data-cerrar-visor]').forEach((el) => {
             el.addEventListener('click', cerrarUnidad);
         });
@@ -334,7 +321,6 @@
             }
         });
 
-        // Si se entra desde otra página con hash (ej. temas.html#unidad-1), abrir automáticamente
         if (window.location.hash) {
             const hashId = window.location.hash.slice(1);
             const destino = document.getElementById(hashId);
@@ -344,7 +330,6 @@
         }
     }
 
-    /* ---------- Inicio ---------- */
     activarVisibles();
     document.querySelectorAll('[data-pestanas]').forEach(activarPestanas);
     activarVolteos();

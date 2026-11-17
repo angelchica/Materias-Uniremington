@@ -1,17 +1,8 @@
-/* ===================================================
-   PORTADA — DISEÑO "CARTA ESTELAR"
-   Solo lo exclusivo de index.html. La base (fondo, encabezado,
-   pie, constelaciones) está en carta-estelar.css.
-=================================================== */
 
 .subject-badge,
 .subject-card-footer {
     font-family: var(--fuente-mono);
 }
-
-/* ==================================
-   TÍTULO
-================================== */
 
 .portal-title-box {
     position: relative;
@@ -40,9 +31,6 @@
     font-weight: 300;
 }
 
-/* ==================================
-   TARJETAS DE MATERIAS (PLACAS)
-================================== */
 
 .portal-subjects-grid {
     display: grid;
@@ -72,7 +60,6 @@
     background: rgba(230, 193, 122, 0.04);
 }
 
-/* Esquinas tipo placa fotográfica */
 .subject-card-btn::before,
 .subject-card-btn::after {
     content: "";
